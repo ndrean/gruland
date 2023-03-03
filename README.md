@@ -1,4 +1,6 @@
-# Builder
+# Gruland
+
+## JSON builder (Elixir)
 
 In a terminal run:
 
@@ -13,3 +15,5 @@ iex> Builder.run
 ```
 
 A file "result.json" is created
+
+## Front (Vite-PReact)
