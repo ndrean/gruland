@@ -1,12 +1,12 @@
 # Builder
 
-Run:
+In a terminal run:
 
 ```bash
 iex -S mix
 ```
 
-then in the IEx session, run:
+This open an IEx session. Then run:
 
 ```elixir
 iex> Builder.run
