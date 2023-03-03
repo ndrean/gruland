@@ -17,3 +17,9 @@ iex> Builder.run
 A file "result.json" is created
 
 ## Front (Vite-PReact)
+
+Generated with:
+
+```bash
+npm create vite@latest front-gruland --template preact
+```
