@@ -9,6 +9,6 @@ defmodule Builder do
       end
     end)
     |> Poison.encode!(%{pretty: true, indent: 2})
-    |> then(fn list -> File.write!("result.json", list) end)
+    |> then(&File.write!("result.json", &1))
   end
 end
