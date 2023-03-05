@@ -56,7 +56,8 @@
         "image": "link-to-your-photo.jpg",
         "bio": "Your bio."
       }
-    ]
+    ],
+    "id": "f36d8f2c-bb5b-11ed-b05a-3e86250ca8d9"
   },
   {
     "title": "Application Load Balancer with Lambda as target",
@@ -114,7 +115,8 @@
         "image": "https://avatars.githubusercontent.com/u/1263087",
         "bio": "AWS Community Builder in Serverless category. Serverless advocate and enthusiast."
       }
-    ]
+    ],
+    "id": "f36da0c0-bb5b-11ed-b8c6-3e86250ca8d9"
   },
   {
     "title": "Application Load Balancer with Lambda as target",
@@ -172,7 +174,8 @@
         "image": "https://avatars.githubusercontent.com/u/109047",
         "bio": "Solutions Engineer at Pulumi"
       }
-    ]
+    ],
+    "id": "f36dafd4-bb5b-11ed-91ec-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway REST API to AWS Lambda",
@@ -226,7 +229,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f36dbf6a-bb5b-11ed-975f-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway with an API Key",
@@ -282,7 +286,8 @@
         "headline": "Presented by Albert Blaya, Solutions Architect",
         "bio": "Albert is a Solutions Architect at Amazon Web Services based in Australia."
       }
-    ]
+    ],
+    "id": "f36dcbc2-bb5b-11ed-b7a9-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway with a Client Certificate",
@@ -335,7 +340,8 @@
         "headline": "Presented by Albert Blaya, Solutions Architect",
         "bio": "Albert is a Solutions Architect at Amazon Web Services based in Australia."
       }
-    ]
+    ],
+    "id": "f36dd554-bb5b-11ed-93e1-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway to Amazon CloudWatch",
@@ -387,7 +393,8 @@
         "image": "https://serverlessland.com/assets/images/resources/ericdj.jpg",
         "bio": "Eric Johnson is a Principal Developer Advocate for Serverless Applications at Amazon Web Services and is based in Northern Colorado. Eric is a fanatic about serverless and enjoys helping developers understand how serverless technologies introduces a major paradigm shift in how they approach building and running applications at massive scale with minimal administration overhead. Prior to this, Eric has worked as a developer, solutions architect and AWS Evangelist for an AWS partner company."
       }
-    ]
+    ],
+    "id": "f36ddf4a-bb5b-11ed-b564-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway Edge Custom Domain",
@@ -445,7 +452,8 @@
         "headline": "Presented by Albert Blaya, Solutions Architect",
         "bio": "Albert is a Solutions Architect at Amazon Web Services based in Australia."
       }
-    ]
+    ],
+    "id": "f36de922-bb5b-11ed-bf9e-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway Regional Custom Domain",
@@ -503,7 +511,8 @@
         "headline": "Presented by Albert Blaya, Solutions Architect",
         "bio": "Albert is a Solutions Architect at Amazon Web Services based in Australia."
       }
-    ]
+    ],
+    "id": "f36df368-bb5b-11ed-9796-3e86250ca8d9"
   },
   {
     "title": "API Gateway with a custom resource policy limiting responses to a date range",
@@ -563,7 +572,8 @@
         "image": "https://serverlessland.com/assets/images/resources/ericdj.jpg",
         "bio": "Eric Johnson is a Principal Developer Advocate for Serverless Applications at Amazon Web Services and is based in Northern Colorado. Eric is a fanatic about serverless and enjoys helping developers understand how serverless technologies introduces a major paradigm shift in how they approach building and running applications at massive scale with minimal administration overhead. Prior to this, Eric has worked as a developer, solutions architect and AWS Evangelist for an AWS partner company."
       }
-    ]
+    ],
+    "id": "f36dfc00-bb5b-11ed-bf75-3e86250ca8d9"
   },
   {
     "title": "API Gateway data validation",
@@ -619,7 +629,8 @@
         "image": "https://serverlessland.com/assets/images/resources/ericdj.jpg",
         "bio": "Eric Johnson is a Principal Developer Advocate for Serverless Applications at Amazon Web Services and is based in Northern Colorado. Eric is a fanatic about serverless and enjoys helping developers understand how serverless technologies introduces a major paradigm shift in how they approach building and running applications at massive scale with minimal administration overhead. Prior to this, Eric has worked as a developer, solutions architect and AWS Evangelist for an AWS partner company."
       }
-    ]
+    ],
+    "id": "f36e0510-bb5b-11ed-ad44-3e86250ca8d9"
   },
   {
     "title": "API Gateway HTTP API to Amazon EventBridge",
@@ -677,7 +688,8 @@
         "name": "Steven Cook",
         "bio": "Snr Solutions Architect at AWS."
       }
-    ]
+    ],
+    "id": "f36e114a-bb5b-11ed-99c8-3e86250ca8d9"
   },
   {
     "videoId": "",
@@ -743,7 +755,8 @@
         "bio": "Dmitry is a modernization architect for Professional Services at Amazon Web Services based in the US."
       }
     ],
-    "architectureURL": ""
+    "architectureURL": "",
+    "id": "f36e21f8-bb5b-11ed-881c-3e86250ca8d9"
   },
   {
     "videoId": "",
@@ -821,7 +834,8 @@
         "bio": "Cesar is a cloud engineer specialist on serverless architectures, based in the NL."
       }
     ],
-    "architectureURL": ""
+    "architectureURL": "",
+    "id": "f36e2a7c-bb5b-11ed-98b9-3e86250ca8d9"
   },
   {
     "title": "AWS API Gateway HTTP API to AWS Lambda to RDS Proxy",
@@ -875,7 +889,8 @@
         "name": "Carlos Bauer",
         "bio": "I am Technical Account Manager at AWS"
       }
-    ]
+    ],
+    "id": "f36e37a6-bb5b-11ed-a93d-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway HTTP API to AWS Lambda",
@@ -929,7 +944,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f36e432c-bb5b-11ed-adbb-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway HTTP API to AWS Lambda",
@@ -989,7 +1005,8 @@
         "name": "Carlos Bauer",
         "bio": "I am a Technical Account Manager at AWS"
       }
-    ]
+    ],
+    "id": "f36e5376-bb5b-11ed-834e-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway HTTP API to SQS to Lambda",
@@ -1048,7 +1065,8 @@
         "headline": "Presented by Dmitry Gulin, Modernization Architect, AWS",
         "bio": "Dmitry is a modernization architect for Professional Services at Amazon Web Services based in the US."
       }
-    ]
+    ],
+    "id": "f36e5baa-bb5b-11ed-a996-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway with a Lambda Token Authorizer",
@@ -1107,7 +1125,8 @@
         "headline": "Presented by Albert Blaya, Solutions Architect",
         "bio": "Albert is a Solutions Architect at Amazon Web Services based in Australia."
       }
-    ]
+    ],
+    "id": "f36e6726-bb5b-11ed-9fb8-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway to AWS Lambda",
@@ -1156,7 +1175,8 @@
         "image": "https://avatars.githubusercontent.com/u/13661966?v=4",
         "bio": "Application Development Consultant at AWS Professional Services."
       }
-    ]
+    ],
+    "id": "f36e7702-bb5b-11ed-ae2b-3e86250ca8d9"
   },
   {
     "videoId": "",
@@ -1214,7 +1234,8 @@
       "image": "https://phonetool.amazon.com/users/ibracnb",
       "bio": "Enterprise Solutions Architect @ AWS"
     },
-    "architectureURL": "https://ibrahimcesar-github.s3.amazonaws.com/patterns-apigw-lambda-cdk.png"
+    "architectureURL": "https://ibrahimcesar-github.s3.amazonaws.com/patterns-apigw-lambda-cdk.png",
+    "id": "f36e82c4-bb5b-11ed-b046-3e86250ca8d9"
   },
   {
     "videoId": "",
@@ -1271,7 +1292,8 @@
       "imageURL": "https://abhirockzz.github.io/icon.jpg",
       "headline": "Presented by Abhishek Gupta, Principal Developer Advocate at AWS"
     },
-    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/patterns-lambda-to-eventbridge.png"
+    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/patterns-lambda-to-eventbridge.png",
+    "id": "f36e8bca-bb5b-11ed-ba1a-3e86250ca8d9"
   },
   {
     "videoId": "",
@@ -1316,7 +1338,8 @@
       "name": "James Eastham",
       "headline": "Presented by James Eastham, Cloud Infrastructure Architect"
     },
-    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/patterns-lambda-to-eventbridge.png"
+    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/patterns-lambda-to-eventbridge.png",
+    "id": "f36e969c-bb5b-11ed-b13e-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway to AWS Lambda to Amazon DynamoDB",
@@ -1372,7 +1395,8 @@
         "name": "Carlos Bauer",
         "bio": "I am a Technical Account Manager at AWS"
       }
-    ]
+    ],
+    "id": "f36ea0ec-bb5b-11ed-91d3-3e86250ca8d9"
   },
   {
     "title": "API Gateway to Lambda to AWS IoT",
@@ -1430,7 +1454,8 @@
         "image": "https://avatars.githubusercontent.com/u/79330125?s=400&u=4802ebc8f24e64031052d3bf95af3dea7920357d&v=4",
         "bio": "I am a Principal Architect, AWS Cloud Architect, Full-Stack Developer, Edge AI/ML/IoT Engineer, and Serverless Enthusiast."
       }
-    ]
+    ],
+    "id": "f36eac72-bb5b-11ed-98fb-3e86250ca8d9"
   },
   {
     "title": "Response Transformation from XML to JSON in API Gateway",
@@ -1489,7 +1514,8 @@
         "name": "Vamsi Krishna Ganti",
         "bio": "Cloud Consultant at AWS focusing on Application Development."
       }
-    ]
+    ],
+    "id": "f36eb7ee-bb5b-11ed-a295-3e86250ca8d9"
   },
   {
     "title": "Lambda to MemoryDB",
@@ -1546,7 +1572,8 @@
         "image": "",
         "bio": "Mansi is a Cloud Consultant at Amazon Web Services based in India."
       }
-    ]
+    ],
+    "id": "f36ec81a-bb5b-11ed-b5da-3e86250ca8d9"
   },
   {
     "videoId": "",
@@ -1601,7 +1628,8 @@
       "headline": "Presented by Giedrius Praspaliauskas, Sr. Solutions Architect, Serverless",
       "bio": "Giedrius is a senior solutions architect focusing on serverless at Amazon Web Services based in the US. "
     },
-    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/apigw-lambda-observability.png"
+    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/apigw-lambda-observability.png",
+    "id": "f36ecfa4-bb5b-11ed-9d83-3e86250ca8d9"
   },
   {
     "title": "API Gateway to Lambda to QLDB",
@@ -1672,7 +1700,8 @@
         "image": "",
         "bio": "Solutions Architect, AWS"
       }
-    ]
+    ],
+    "id": "f36edabc-bb5b-11ed-86ba-3e86250ca8d9"
   },
   {
     "title": "Create a REST API with Amazon API Gateway, Amazon RDS and AWS Lambda with SnapStart",
@@ -1739,7 +1768,8 @@
         "image": "https://avatars.githubusercontent.com/u/45629314",
         "bio": "Senior Specialist SA, Serverless at AWS and Java fan."
       }
-    ]
+    ],
+    "id": "f36ee322-bb5b-11ed-b828-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway REST API to AWS Lambda",
@@ -1793,7 +1823,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f36eeff2-bb5b-11ed-853a-3e86250ca8d9"
   },
   {
     "title": "ApiGateway Endpoint to Generate SignedURL",
@@ -1849,7 +1880,8 @@
         "image": "",
         "bio": "AWS - Cloud Application Architect"
       }
-    ]
+    ],
+    "id": "f36efb8c-bb5b-11ed-86b8-3e86250ca8d9"
   },
   {
     "videoId": "",
@@ -1913,7 +1945,8 @@
         "bio": "Dmitry is a modernization architect for Professional Services at Amazon Web Services based in the US."
       }
     ],
-    "architectureURL": "https://ibrahimcesar-github.s3.amazonaws.com/patterns-apigw-lambda-cdk.png"
+    "architectureURL": "https://ibrahimcesar-github.s3.amazonaws.com/patterns-apigw-lambda-cdk.png",
+    "id": "f36f0b2c-bb5b-11ed-8b49-3e86250ca8d9"
   },
   {
     "title": "API Gateway to Lambda with SnapStart",
@@ -1965,9 +1998,9 @@
         "name": "Mark Sailes",
         "bio": "Senior Specialist Solutions Architect, Serverless"
       }
-    ]
+    ],
+    "id": "f36f15e0-bb5b-11ed-86bd-3e86250ca8d9"
   },
-  null,
   {
     "title": "API Gateway REST API to Lambda function and AWS Translate",
     "testing": {
@@ -2026,7 +2059,8 @@
         "image": "./sudheer.jpg",
         "bio": "Sudheer is a Cloud Application Architect at AWS ProServ."
       }
-    ]
+    ],
+    "id": "f36f3c00-bb5b-11ed-b9c0-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway REST API with Mapping templates for status code and parameter mapping.",
@@ -2078,7 +2112,8 @@
         "image": "https://photos.app.goo.gl/m4om6YSqu7Q2yKqw8",
         "bio": "A Serverless Cloud Engineer and technical writer, who works on building efficient and scalable solutions using AWS services."
       }
-    ]
+    ],
+    "id": "f36f4966-bb5b-11ed-8441-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway with cache enabled",
@@ -2134,7 +2169,8 @@
         "headline": "Presented by Albert Blaya, Solutions Architect",
         "bio": "Albert is a Solutions Architect at Amazon Web Services based in Australia."
       }
-    ]
+    ],
+    "id": "f36f582a-bb5b-11ed-81b9-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway with Resource Policy",
@@ -2189,7 +2225,8 @@
         "headline": "Presented by Albert Blaya, Solutions Architect",
         "bio": "Albert is a Solutions Architect at Amazon Web Services based in Australia."
       }
-    ]
+    ],
+    "id": "f36f6342-bb5b-11ed-864f-3e86250ca8d9"
   },
   {
     "videoId": "",
@@ -2249,7 +2286,8 @@
         "bio": "Dmitry is a modernization architect for Professional Services at Amazon Web Services based in the US."
       }
     ],
-    "architectureURL": ""
+    "architectureURL": "",
+    "id": "f36f6bbc-bb5b-11ed-8076-3e86250ca8d9"
   },
   {
     "title": "API Gateway REST API to EventBridge with event payload composition and SQS as target",
@@ -2306,7 +2344,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f36f76fc-bb5b-11ed-aa69-3e86250ca8d9"
   },
   {
     "title": "API Gateway REST API to Amazon EventBridge",
@@ -2359,7 +2398,8 @@
         "name": "Carlos Bauer",
         "bio": "I am Technical Account Manager at AWS"
       }
-    ]
+    ],
+    "id": "f36f8386-bb5b-11ed-8aa7-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway with a HTTP integration",
@@ -2412,7 +2452,8 @@
         "headline": "Presented by Albert Blaya, Solutions Architect",
         "bio": "Albert is a Solutions Architect at Amazon Web Services based in Australia."
       }
-    ]
+    ],
+    "id": "f36f97d6-bb5b-11ed-ae60-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway with a Mock integration",
@@ -2465,7 +2506,8 @@
         "headline": "Presented by Albert Blaya, Solutions Architect",
         "bio": "Albert is a Solutions Architect at Amazon Web Services based in Australia."
       }
-    ]
+    ],
+    "id": "f36fa30c-bb5b-11ed-808f-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway with a VPC Link integration",
@@ -2519,7 +2561,8 @@
         "headline": "Presented by Albert Blaya, Solutions Architect",
         "bio": "Albert is a Solutions Architect at Amazon Web Services based in Australia."
       }
-    ]
+    ],
+    "id": "f36fabc2-bb5b-11ed-a932-3e86250ca8d9"
   },
   {
     "title": "Amazon Route53 to Amazon API Gateway failover",
@@ -2566,7 +2609,8 @@
         "image": "https://serverlessland.com/assets/images/resources/ericdj.jpg",
         "bio": "Eric Johnson is a Principal Developer Advocate for Serverless Applications at Amazon Web Services and is based in Northern Colorado. Eric is a fanatic about serverless and enjoys helping developers understand how serverless technologies introduces a major paradigm shift in how they approach building and running applications at massive scale with minimal administration overhead. Prior to this, Eric has worked as a developer, solutions architect and AWS Evangelist for an AWS partner company."
       }
-    ]
+    ],
+    "id": "f36fb414-bb5b-11ed-a879-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway with a S3 integration",
@@ -2625,7 +2669,8 @@
         "headline": "Presented by Albert Blaya, Solutions Architect",
         "bio": "Albert is a Solutions Architect at Amazon Web Services based in Australia."
       }
-    ]
+    ],
+    "id": "f36fbc52-bb5b-11ed-bebc-3e86250ca8d9"
   },
   {
     "videoId": "",
@@ -2670,7 +2715,8 @@
       "name": "James Eastham",
       "headline": "Presented by James Eastham, Cloud Infrastructure Architect"
     },
-    "architectureURL": ""
+    "architectureURL": "",
+    "id": "f36fc5d0-bb5b-11ed-9ed4-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway REST API with SNS SMS integration",
@@ -2721,7 +2767,8 @@
         "image": "https://drive.google.com/file/d/1H62Y6-JfUTiT-gIwDRYH6R45y7KJVHvN/view",
         "bio": "A Serverless Cloud Engineer who works on building scalable, economic and sustainable solutions using AWS"
       }
-    ]
+    ],
+    "id": "f36fd16a-bb5b-11ed-be74-3e86250ca8d9"
   },
   {
     "title": "API Gateway HTTP API to SQS",
@@ -2779,7 +2826,8 @@
         "name": "Steven Cook",
         "bio": "Senior Solutions Architect, AWS."
       }
-    ]
+    ],
+    "id": "f36fddb8-bb5b-11ed-b120-3e86250ca8d9"
   },
   {
     "title": "API Gateway Usage Plan",
@@ -2835,7 +2883,8 @@
         "image": "https://serverlessland.com/assets/images/resources/ericdj.jpg",
         "bio": "Eric Johnson is a Principal Developer Advocate for Serverless Applications at Amazon Web Services and is based in Northern Colorado. Eric is a fanatic about serverless and enjoys helping developers understand how serverless technologies introduces a major paradigm shift in how they approach building and running applications at massive scale with minimal administration overhead. Prior to this, Eric has worked as a developer, solutions architect and AWS Evangelist for an AWS partner company."
       }
-    ]
+    ],
+    "id": "f36fe8e4-bb5b-11ed-b174-3e86250ca8d9"
   },
   {
     "title": "API Gateway WebSocket API connection ID tracking",
@@ -2893,7 +2942,8 @@
         "image": "",
         "bio": "Giedrius is a senior solutions architect focusing on serverless at Amazon Web Services based in the US."
       }
-    ]
+    ],
+    "id": "f36ffa78-bb5b-11ed-801e-3e86250ca8d9"
   },
   {
     "title": "API Gateway WebSocket API to Step Functions Standard (Asynchronous Execution)",
@@ -2951,7 +3001,8 @@
         "image": "",
         "bio": "Giedrius is a senior solutions architect focusing on serverless at Amazon Web Services based in the US."
       }
-    ]
+    ],
+    "id": "f3700284-bb5b-11ed-9551-3e86250ca8d9"
   },
   {
     "title": "API Gateway WebSocket API to Step Functions Express (Synchronous Execution)",
@@ -3009,7 +3060,8 @@
         "image": "",
         "bio": "Giedrius is a senior solutions architect focusing on serverless at Amazon Web Services based in the US."
       }
-    ]
+    ],
+    "id": "f3700df6-bb5b-11ed-9c88-3e86250ca8d9"
   },
   {
     "title": "API Gateway WebSocket API to SQS to AWS Lambda",
@@ -3072,7 +3124,8 @@
         "name": "Steven Cook",
         "bio": "Senior Solutions Architect at AWS."
       }
-    ]
+    ],
+    "id": "f37015da-bb5b-11ed-bc9d-3e86250ca8d9"
   },
   {
     "title": "API Gateway WebSocket API to SQS to AWS Lambda",
@@ -3137,7 +3190,8 @@
         "name": "Carlos Bauer",
         "bio": "I am Technical Account Manager at AWS"
       }
-    ]
+    ],
+    "id": "f3701ef4-bb5b-11ed-8abf-3e86250ca8d9"
   },
   {
     "title": "AppConfig Feature Flag with CDK (Typescript)",
@@ -3203,7 +3257,8 @@
         "image": "https://avatars.githubusercontent.com/u/1263087",
         "bio": "AWS Community Builder in Serverless category. Serverless advocate and enthusisast."
       }
-    ]
+    ],
+    "id": "f3702a84-bb5b-11ed-876c-3e86250ca8d9"
   },
   {
     "title": "AWS AppConfig integration with Lambda extensions",
@@ -3257,7 +3312,8 @@
         "image": "https://serverlessland.com/assets/images/resources/contributors/ext-daniele-frasca.jpg",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f37035b0-bb5b-11ed-9bdc-3e86250ca8d9"
   },
   {
     "title": "Authenticate AppSync Api with Cognito",
@@ -3319,7 +3375,8 @@
         "image": "https://rosius.s3.us-east-2.amazonaws.com/ro.jpeg",
         "bio": "AWS Serverless Hero with a high affinity for building fullstack serverless apps"
       }
-    ]
+    ],
+    "id": "f37045f0-bb5b-11ed-bc27-3e86250ca8d9"
   },
   {
     "title": "AWS AppSync to Amazon DynamoDB - Single table design",
@@ -3381,7 +3438,8 @@
         "image": "https://pbs.twimg.com/profile_images/1610321865213444096/OttGok0S_400x400.jpg",
         "bio": "Senior Developer Advocate | AWS AppSync 🦦"
       }
-    ]
+    ],
+    "id": "f37050c2-bb5b-11ed-839b-3e86250ca8d9"
   },
   {
     "title": "Invoke a Step functions workflow from Appsync",
@@ -3447,7 +3505,8 @@
         "image": "https://rosius.s3.us-east-2.amazonaws.com/ro.jpeg",
         "bio": "AWS Serverless Hero with a high affinity for building fullstack serverless apps."
       }
-    ]
+    ],
+    "id": "f3705c16-bb5b-11ed-99b4-3e86250ca8d9"
   },
   {
     "title": "Invoke a Step functions workflow from Appsync",
@@ -3509,7 +3568,8 @@
         "image": "https://rosius.s3.us-east-2.amazonaws.com/ro.jpeg",
         "bio": "AWS Serverless Hero with a high affinity for building fullstack serverless apps."
       }
-    ]
+    ],
+    "id": "f37066a2-bb5b-11ed-a641-3e86250ca8d9"
   },
   {
     "title": "AppSync to MongoDB",
@@ -3572,7 +3632,8 @@
         "image": "https://pbs.twimg.com/profile_images/1610321865213444096/OttGok0S_400x400.jpg",
         "bio": "Michael Liendo is a fullstack developer, avid taco eater, and Senior Developer Advocate for AWS AppSync."
       }
-    ]
+    ],
+    "id": "f3707e9e-bb5b-11ed-b605-3e86250ca8d9"
   },
   {
     "videoId": "",
@@ -3654,7 +3715,8 @@
       "headline": "Presented by Andrii Sorochan, Developer",
       "bio": "Andrii is Developer from Ukraine"
     },
-    "architectureURL": ""
+    "architectureURL": "",
+    "id": "f3708bfa-bb5b-11ed-be1f-3e86250ca8d9"
   },
   {
     "title": "AppSync to SNS",
@@ -3710,7 +3772,8 @@
         "image": "https://pbs.twimg.com/profile_images/1610321865213444096/OttGok0S_400x400.jpg",
         "bio": "Senior Developer Advocate | AWS AppSync 🦦"
       }
-    ]
+    ],
+    "id": "f37098ac-bb5b-11ed-9cf9-3e86250ca8d9"
   },
   {
     "title": "API authentication using Cognito User Pool client credentials flow",
@@ -3762,7 +3825,8 @@
         "image": "https://github.com/suhasini-udayar.png",
         "bio": "Cloud Application Architect"
       }
-    ]
+    ],
+    "id": "f370a392-bb5b-11ed-af6f-3e86250ca8d9"
   },
   {
     "title": "EventBridge to Step Functions and failure events to SQS",
@@ -3819,7 +3883,8 @@
         "linkedin": "https://www.linkedin.com/in/shankar-srinivasan-3863a110",
         "bio": "I am a Cloud Application Architect at AWS. I specialize in architecting and developing serverless, event-driven solutions on AWS."
       }
-    ]
+    ],
+    "id": "f370ae0a-bb5b-11ed-91da-3e86250ca8d9"
   },
   {
     "title": "Step Functions to S3 in CDK",
@@ -3870,7 +3935,8 @@
         "image": "../assets/images/resources/harshihs.jpg",
         "bio": "Harshitha Shashidhar is an Cloud Application architect who loves to build the serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f370b832-bb5b-11ed-a18a-3e86250ca8d9"
   },
   {
     "title": "Serverless Data Enrichment Pipeline with Persistence",
@@ -3923,7 +3989,8 @@
         "image": "",
         "bio": "AWS - Cloud Application Architect"
       }
-    ]
+    ],
+    "id": "f370c278-bb5b-11ed-a383-3e86250ca8d9"
   },
   {
     "title": "Implementing the claim check pattern using EventBridge Pipes.",
@@ -3978,7 +4045,8 @@
         "image": "https://avatars.githubusercontent.com/u/29404931",
         "bio": "Solutions Architect at AWS, passionate about event-driven architectures and Serverless."
       }
-    ]
+    ],
+    "id": "f370d27c-bb5b-11ed-9348-3e86250ca8d9"
   },
   {
     "title": "Amazon Cloudfront distribution on front of an Amazon API Gateway HTTP API to AWS Lambda",
@@ -4032,7 +4100,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f370db78-bb5b-11ed-9c6b-3e86250ca8d9"
   },
   {
     "title": "CloudFront to S3 - Static Website",
@@ -4091,7 +4160,8 @@
         "image": "",
         "bio": "AWS - Cloud Application Architect"
       }
-    ]
+    ],
+    "id": "f370e618-bb5b-11ed-8971-3e86250ca8d9"
   },
   {
     "title": "Amazon Cloudfront distribution on front of an Amazon API Gateway HTTP API to AWS Lambda",
@@ -4145,7 +4215,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f370f09a-bb5b-11ed-8718-3e86250ca8d9"
   },
   {
     "title": "Amazon CloudFront to AWS Lambda URLs",
@@ -4198,7 +4269,8 @@
         "name": "Steven Cook",
         "bio": "Senior Solutions Architect at AWS."
       }
-    ]
+    ],
+    "id": "f3710396-bb5b-11ed-8793-3e86250ca8d9"
   },
   {
     "title": "Amazon CloudFront to AWS Lambda URLs",
@@ -4252,9 +4324,9 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f3710c74-bb5b-11ed-8a6c-3e86250ca8d9"
   },
-  null,
   {
     "title": "AWS CloudFront to Amazon S3",
     "testing": {
@@ -4300,7 +4372,8 @@
         "image": "https://avatars.githubusercontent.com/u/13661966?v=4",
         "bio": "Application Development Consultant at AWS Professional Services."
       }
-    ]
+    ],
+    "id": "f3711624-bb5b-11ed-96f0-3e86250ca8d9"
   },
   {
     "title": "Amazon CloudFront to AWS WAF to Amazon S3 using .Net CDK",
@@ -4362,7 +4435,8 @@
         "image": "",
         "bio": "Cloud Application Architect at AWS"
       }
-    ]
+    ],
+    "id": "f37120ba-bb5b-11ed-8789-3e86250ca8d9"
   },
   {
     "title": "Cloudwatch Logs Subscription to Kinesis Firehose",
@@ -4421,7 +4495,8 @@
         "image": "https://avatars.githubusercontent.com/u/1263087",
         "bio": "AWS Community Builder in Serverless category. Serverless advocate and enthusiast."
       }
-    ]
+    ],
+    "id": "f3712b78-bb5b-11ed-b001-3e86250ca8d9"
   },
   {
     "title": "Cloudwatch Logs Subscription to Lambda",
@@ -4479,7 +4554,8 @@
         "image": "https://avatars.githubusercontent.com/u/1263087",
         "bio": "AWS Community Builder in Serverless category. Serverless advocate and enthusiast."
       }
-    ]
+    ],
+    "id": "f3713d2a-bb5b-11ed-b932-3e86250ca8d9"
   },
   {
     "title": "Cognito to API Gateway private REST API",
@@ -4544,7 +4620,8 @@
         "image": "",
         "bio": "Principal Solutions Architect at AWS"
       }
-    ]
+    ],
+    "id": "f3714590-bb5b-11ed-8b05-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway with a Cognito User Pools Authorizer",
@@ -4598,7 +4675,8 @@
         "headline": "Presented by Albert Blaya, Solutions Architect",
         "bio": "Albert is a Solutions Architect at Amazon Web Services based in Australia."
       }
-    ]
+    ],
+    "id": "f3714fea-bb5b-11ed-bca2-3e86250ca8d9"
   },
   {
     "title": "Amazon Cognito User Pool",
@@ -4652,7 +4730,8 @@
         "headline": "Presented by Albert Blaya, Solutions Architect",
         "bio": "Albert is a Solutions Architect at Amazon Web Services based in Australia."
       }
-    ]
+    ],
+    "id": "f371595e-bb5b-11ed-ab80-3e86250ca8d9"
   },
   {
     "title": "Kinesis to Kinesis using EventBridge Pipes with content filter pattern",
@@ -4704,7 +4783,8 @@
         "image": "https://avatars.githubusercontent.com/u/29404931",
         "bio": "Solutions Architect at AWS, passionate about event-driven architectures and Serverless."
       }
-    ]
+    ],
+    "id": "f371680e-bb5b-11ed-89ee-3e86250ca8d9"
   },
   {
     "title": "CloudWatch Logs Subscription to Lambda with SNS to SQS",
@@ -4763,7 +4843,8 @@
         "image": "",
         "bio": "AWS - Cloud Application Architect"
       }
-    ]
+    ],
+    "id": "f3717056-bb5b-11ed-8e5d-3e86250ca8d9"
   },
   {
     "title": "Delayed EventBridge events with EventBridge Scheduler",
@@ -4809,7 +4890,8 @@
         "image": "../assets/images/resources/dboyne.png",
         "bio": "Senior Developer Advocate at AWS focusing on EDA and Serverless."
       }
-    ]
+    ],
+    "id": "f37176dc-bb5b-11ed-bb65-3e86250ca8d9"
   },
   {
     "title": "DynamoDB to Lambda to EventBridge",
@@ -4865,7 +4947,8 @@
         "name": "Steven Cook",
         "bio": "Senior Solutions Architect at AWS."
       }
-    ]
+    ],
+    "id": "f3718c76-bb5b-11ed-b24c-3e86250ca8d9"
   },
   {
     "videoId": "",
@@ -4922,7 +5005,8 @@
       "headline": "Presented by James Beswick, Developer Advocate",
       "bio": "James is a senior developer advocate for Serverless Applications at Amazon Web Services based in the US. Prior to joining AWS Ben worked in a number of different technical roles specializing in workflow Automation and web development."
     },
-    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/patterns-lambda-to-eventbridge.png"
+    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/patterns-lambda-to-eventbridge.png",
+    "id": "f37198b0-bb5b-11ed-badc-3e86250ca8d9"
   },
   {
     "videoId": "",
@@ -4979,7 +5063,8 @@
       "headline": "Presented by James Beswick, Developer Advocate",
       "bio": "James is a senior developer advocate for Serverless Applications at Amazon Web Services based in the US. Prior to joining AWS Ben worked in a number of different technical roles specializing in workflow Automation and web development."
     },
-    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/patterns-lambda-to-eventbridge.png"
+    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/patterns-lambda-to-eventbridge.png",
+    "id": "f371a36e-bb5b-11ed-ac0b-3e86250ca8d9"
   },
   {
     "videoId": "",
@@ -5036,7 +5121,8 @@
       "headline": "Presented by James Beswick, Developer Advocate",
       "bio": "James is a senior developer advocate for Serverless Applications at Amazon Web Services based in the US. Prior to joining AWS Ben worked in a number of different technical roles specializing in workflow Automation and web development."
     },
-    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/patterns-lambda-to-eventbridge.png"
+    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/patterns-lambda-to-eventbridge.png",
+    "id": "f371b1f6-bb5b-11ed-b02e-3e86250ca8d9"
   },
   {
     "title": "DynamoDB Streams to SQS using EventBridge Pipes",
@@ -5099,7 +5185,8 @@
         "image": "https://avatars.githubusercontent.com/u/4333425",
         "bio": "Tim Wondergem is a Cloud Application Architect at AWS whose passions include event driven systems serverless."
       }
-    ]
+    ],
+    "id": "f371ba48-bb5b-11ed-b879-3e86250ca8d9"
   },
   {
     "title": "DynamoDB seed data on create with custom resource using CDK (Typescript)",
@@ -5156,7 +5243,8 @@
         "image": "https://avatars.githubusercontent.com/u/1263087",
         "bio": "AWS Community Builder in Serverless category. Serverless advocate and enthusisast."
       }
-    ]
+    ],
+    "id": "f371c0f6-bb5b-11ed-a4a4-3e86250ca8d9"
   },
   {
     "title": "Amazon DynamoDB Stream to AWS Lambda",
@@ -5203,7 +5291,8 @@
         "image": "https://avatars.githubusercontent.com/u/21244341?s=96&v=4",
         "bio": "Pankaj Rawat is a Lead Consultant at Amazon Web Services."
       }
-    ]
+    ],
+    "id": "f371cb3c-bb5b-11ed-a501-3e86250ca8d9"
   },
   {
     "title": "Amazon Dynamodb Streams to AWS Lambda to Amazon EventBridge",
@@ -5265,7 +5354,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f371d56e-bb5b-11ed-aaae-3e86250ca8d9"
   },
   {
     "title": "Amazon Dynamodb Streams to AWS Lambda to Amazon EventBridge",
@@ -5327,7 +5417,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f371df64-bb5b-11ed-a67a-3e86250ca8d9"
   },
   {
     "title": "DynamoDB to Lambda",
@@ -5384,7 +5475,8 @@
         "name": "Steven Cook",
         "bio": "Senior Solutions Architect at AWS."
       }
-    ]
+    ],
+    "id": "f371f44a-bb5b-11ed-b7f2-3e86250ca8d9"
   },
   {
     "title": "Outbox pattern with DynamoDB and EventBridge",
@@ -5430,7 +5522,8 @@
         "image": "../assets/images/resources/dboyne.jpg",
         "bio": "Senior Developer Advocate at AWS focusing on EDA and Serverless."
       }
-    ]
+    ],
+    "id": "f3720156-bb5b-11ed-bf9c-3e86250ca8d9"
   },
   {
     "title": "Live Streaming on AWS for SRT/Zixi/RIST/RTP FEC input sources",
@@ -5487,7 +5580,8 @@
         "headline": "Presented by Corneliu Croitoru, Prototyping Architect",
         "bio": "Developer at heart, in 2018 joined AWS as a Solution Architect and in 2021 joined EMEA Prototyping Team. Now he is building, jointly with customers, the most exciting and innovative prototypes on AWS. Specialized on Serverless/Edge Services/Media Streaming."
       }
-    ]
+    ],
+    "id": "f3720d4a-bb5b-11ed-875f-3e86250ca8d9"
   },
   {
     "title": "Live Streaming on AWS using RTP/RTMP sources",
@@ -5533,7 +5627,8 @@
         "headline": "Presented by Corneliu Croitoru, Prototyping Architect",
         "bio": "Developer at heart, in 2018 joined AWS as a Solution Architect and since 2021 building, jointly with customers, the most exciting and innovative prototypes on AWS."
       }
-    ]
+    ],
+    "id": "f3721b1e-bb5b-11ed-bbd4-3e86250ca8d9"
   },
   {
     "title": "Live Streaming content at scale using Amazon CloudFront",
@@ -5583,7 +5678,8 @@
         "headline": "Presented by Corneliu Croitoru, Prototyping Architect",
         "bio": "Developer at heart, in 2018 joined AWS as a Solution Architect and in 2021 joined EMEA Prototyping Team. Now he is building, jointly with customers, the most exciting and innovative prototypes on AWS. Specialized on Serverless/Edge Services/Media Streaming"
       }
-    ]
+    ],
+    "id": "f3722514-bb5b-11ed-acd9-3e86250ca8d9"
   },
   {
     "title": "EventBridge to CloudWatch Logs",
@@ -5640,7 +5736,8 @@
         "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2021/06/29/Amir-Khairalomoum.jpg",
         "bio": "Amir is a Sr. Solutions Architect at AWS. He supports customers in their digital transformation and their cloud journey to AWS. He is passionate about serverless technologies."
       }
-    ]
+    ],
+    "id": "f3723400-bb5b-11ed-bd6f-3e86250ca8d9"
   },
   {
     "title": "EventBridge event enrichment with AWS Lambda",
@@ -5686,7 +5783,8 @@
         "image": "../assets/images/resources/dboyne.jpg",
         "bio": "Senior Developer Advocate at AWS focusing on EDA and Serverless."
       }
-    ]
+    ],
+    "id": "f372418e-bb5b-11ed-bfc8-3e86250ca8d9"
   },
   {
     "title": "Eventbridge to Kinesis Firehose to S3",
@@ -5744,7 +5842,8 @@
         "image": "https://media-exp1.licdn.com/dms/image/C4E03AQGFaDVfkIJi4g/profile-displayphoto-shrink_200_200/0/1620953260457?e=1671062400&v=beta&t=pVt_BUU-r7MtlMwcOxgXgtaUM2tVRe4CUtlUknM--os",
         "bio": "Partner Solutions Architect @ AWS. Serverless enthusiast."
       }
-    ]
+    ],
+    "id": "f3724bc0-bb5b-11ed-8bbe-3e86250ca8d9"
   },
   {
     "title": "Amazon EventBridge to Amazon Firehose Delivery Stream to Amazon S3 using .Net CDK",
@@ -5811,7 +5910,8 @@
         "image": "",
         "bio": "Cloud Application Architect at AWS"
       }
-    ]
+    ],
+    "id": "f372562e-bb5b-11ed-b338-3e86250ca8d9"
   },
   {
     "title": "Event Bridge Global Endpoints - Active Acttive",
@@ -5868,7 +5968,8 @@
         "image": "link-to-your-photo.jpg",
         "bio": "Your bio."
       }
-    ]
+    ],
+    "id": "f3727438-bb5b-11ed-bce5-3e86250ca8d9"
   },
   {
     "title": "EventBridge to Lambda",
@@ -5925,7 +6026,8 @@
         "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2021/06/29/Amir-Khairalomoum.jpg",
         "bio": "Amir is a Sr. Solutions Architect at AWS. He supports customers in their digital transformation and their cloud journey to AWS. He is passionate about serverless technologies."
       }
-    ]
+    ],
+    "id": "f3727f14-bb5b-11ed-aa60-3e86250ca8d9"
   },
   {
     "title": "Amazon EventBridge to AWS Lambda",
@@ -5979,7 +6081,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f3728914-bb5b-11ed-8e7f-3e86250ca8d9"
   },
   {
     "title": "AWS Lambda to Amazon EventBridge",
@@ -6037,7 +6140,8 @@
         "image": "",
         "bio": "Solutions Architect, AWS"
       }
-    ]
+    ],
+    "id": "f3729aa8-bb5b-11ed-9260-3e86250ca8d9"
   },
   {
     "title": "DynamoDB Stream to AWS Lambda with Step Function Event Enrichment",
@@ -6093,7 +6197,8 @@
         "image": "./smoitra.png",
         "bio": "Sayan is a Solutions Architect at Amazon Web Services based in India."
       }
-    ]
+    ],
+    "id": "f372a2b4-bb5b-11ed-93e3-3e86250ca8d9"
   },
   {
     "title": "DynamoDB Stream to EventBridge Bus using EventBridge Pipes",
@@ -6148,7 +6253,8 @@
         "image": "../assets/images/resources/dboyne.png",
         "bio": "Senior Developer Advocate at AWS focusing on EDA and Serverless."
       }
-    ]
+    ],
+    "id": "f372a8a4-bb5b-11ed-868f-3e86250ca8d9"
   },
   {
     "title": "Change data capture events from DynamoDB to EventBridge Bus using filters",
@@ -6211,7 +6317,8 @@
         "image": "../assets/images/resources/dboyne.png",
         "bio": "Senior Developer Advocate at AWS focusing on EDA and Serverless."
       }
-    ]
+    ],
+    "id": "f372ae8a-bb5b-11ed-88ba-3e86250ca8d9"
   },
   {
     "title": "DynamoDB Stream to Amazon SNS with Amazon EventBridge Pipes",
@@ -6266,7 +6373,8 @@
         "image": "./smoitra.png",
         "bio": "Associate Solutions Architect, CSC"
       }
-    ]
+    ],
+    "id": "f372b4ac-bb5b-11ed-af74-3e86250ca8d9"
   },
   {
     "title": "DynamoDB Stream to SQS queue using EventBridge Pipes with CDK Python",
@@ -6336,7 +6444,8 @@
         "image": "https://avatars.githubusercontent.com/u/1263087",
         "bio": "AWS Community Builder in Serverless category. Serverless advocate and enthusiast."
       }
-    ]
+    ],
+    "id": "f372bf74-bb5b-11ed-8afe-3e86250ca8d9"
   },
   {
     "title": "Kinesis to Kinesis with filtering using EventBridge Pipes",
@@ -6399,7 +6508,8 @@
         "image": "../assets/images/resources/dboyne.png",
         "bio": "Senior Developer Advocate at AWS focusing on EDA and Serverless."
       }
-    ]
+    ],
+    "id": "f372cae6-bb5b-11ed-bd9b-3e86250ca8d9"
   },
   {
     "title": "EventBridge Pipes with Amazon MSK as source and Lambda function as target",
@@ -6464,7 +6574,8 @@
         "image": "https://media.licdn.com/dms/image/C4E03AQEB6pHc64s7_w/profile-displayphoto-shrink_400_400/0/1596015570736?e=1681948800&v=beta&t=P5_awh6zx-dBEXCSI94ksIjOcKEtknqyQkvQjMGTnzc",
         "bio": "Principal Serverless Specialist at AWS"
       }
-    ]
+    ],
+    "id": "f372df0e-bb5b-11ed-9733-3e86250ca8d9"
   },
   {
     "title": "DynamoDB Stream to EventBridge using Spitter pattern",
@@ -6527,7 +6638,8 @@
         "image": "../assets/images/resources/dboyne.png",
         "bio": "Senior Developer Advocate at AWS focusing on EDA and Serverless."
       }
-    ]
+    ],
+    "id": "f372e97c-bb5b-11ed-997c-3e86250ca8d9"
   },
   {
     "title": "Enrich SQS Message data with Amazon EventBridge Pipes using API destinations",
@@ -6590,7 +6702,8 @@
         "linkedin": "https://www.linkedin.com/in/sachin1doshi/",
         "bio": "AWS Application Architect"
       }
-    ]
+    ],
+    "id": "f372f304-bb5b-11ed-90fb-3e86250ca8d9"
   },
   {
     "title": "Enrich SQS message data with EventBridge Pipes using Salesforce via API Destination",
@@ -6655,7 +6768,8 @@
         "image": "https://phonetool.amazon.com/users/merohan",
         "bio": "Cloud Application Architect at AWS"
       }
-    ]
+    ],
+    "id": "f3730312-bb5b-11ed-99df-3e86250ca8d9"
   },
   {
     "title": "SQS to EventBridge Bus using EventBridge Pipes",
@@ -6717,7 +6831,8 @@
         "name": "James Eastham",
         "bio": "Senior Cloud Architect at AWS focusing on .NET and Serverless."
       }
-    ]
+    ],
+    "id": "f3730ac4-bb5b-11ed-b94f-3e86250ca8d9"
   },
   {
     "title": "SQS to EventBridge Bus using EventBridge Pipes",
@@ -6786,7 +6901,8 @@
         "image": "https://avatars.githubusercontent.com/u/1263087",
         "bio": "AWS Community Builder in Serverless category. Serverless advocate and enthusiast."
       }
-    ]
+    ],
+    "id": "f373108c-bb5b-11ed-bc00-3e86250ca8d9"
   },
   {
     "title": "SQS to EventBridge Bus using EventBridge Pipes",
@@ -6849,7 +6965,8 @@
         "image": "../assets/images/resources/dboyne.png",
         "bio": "Senior Developer Advocate at AWS focusing on EDA and Serverless."
       }
-    ]
+    ],
+    "id": "f37318c0-bb5b-11ed-927e-3e86250ca8d9"
   },
   {
     "title": "SQS to EventBridge Bus using EventBridge Pipes",
@@ -6912,7 +7029,8 @@
         "image": "../assets/images/resources/dboyne.png",
         "bio": "Senior Developer Advocate at AWS focusing on EDA and Serverless."
       }
-    ]
+    ],
+    "id": "f3731e56-bb5b-11ed-a1bf-3e86250ca8d9"
   },
   {
     "title": "SQS to Lambda with Step Functions event enrichment",
@@ -6975,7 +7093,8 @@
         "image": "../assets/images/resources/dboyne.png",
         "bio": "Senior Developer Advocate at AWS focusing on EDA and Serverless."
       }
-    ]
+    ],
+    "id": "f37327ac-bb5b-11ed-ad67-3e86250ca8d9"
   },
   {
     "title": "Split SQS Messages into multiple SQS queus using EventBridge Pipe with CDK Python",
@@ -7045,7 +7164,8 @@
         "image": "https://avatars.githubusercontent.com/u/1263087",
         "bio": "AWS Community Builder in Serverless category. Serverless advocate and enthusiast."
       }
-    ]
+    ],
+    "id": "f373310c-bb5b-11ed-856f-3e86250ca8d9"
   },
   {
     "title": "SQS to SQS with EventBridge Pipes and Lambda Enrichment",
@@ -7107,7 +7227,8 @@
         "name": "James Eastham",
         "bio": "Senior Cloud Architect at AWS focusing on .NET and Serverless."
       }
-    ]
+    ],
+    "id": "f373405c-bb5b-11ed-a19a-3e86250ca8d9"
   },
   {
     "title": "SQS to Step Function Workflow using EventBridge Pipes",
@@ -7169,7 +7290,8 @@
         "name": "James Eastham",
         "bio": "Senior Cloud Architect at AWS focusing on .NET and Serverless."
       }
-    ]
+    ],
+    "id": "f37347fa-bb5b-11ed-a03b-3e86250ca8d9"
   },
   {
     "title": "SQS to trigger Step Function using EventBridge Pipe with CDK Python",
@@ -7238,7 +7360,8 @@
         "image": "https://avatars.githubusercontent.com/u/1263087",
         "bio": "AWS Community Builder in Serverless category. Serverless advocate and enthusiast."
       }
-    ]
+    ],
+    "id": "f3735006-bb5b-11ed-a522-3e86250ca8d9"
   },
   {
     "title": "SQS to Step Functions with EventBridge Pipes",
@@ -7301,7 +7424,8 @@
         "image": "https://avatars.githubusercontent.com/u/856463?s=400&u=ace30327876b4d197d0ca3c94dee2e679fb34801&v=4",
         "bio": "AWS Serverless Specialist Solutions Architect"
       }
-    ]
+    ],
+    "id": "f37355f6-bb5b-11ed-ac77-3e86250ca8d9"
   },
   {
     "title": "EventBridge Scheduler Sweaper: Remove one-time schedules after they run",
@@ -7356,7 +7480,8 @@
         "image": "../assets/images/resources/dboyne.png",
         "bio": "Senior Developer Advocate at AWS focusing on EDA and Serverless."
       }
-    ]
+    ],
+    "id": "f3735b64-bb5b-11ed-b9ce-3e86250ca8d9"
   },
   {
     "title": "EventBridge Scheduler to start and stop EC2 instances Monday to Friday",
@@ -7411,7 +7536,8 @@
         "image": "../assets/images/resources/dboyne.png",
         "bio": "Senior Developer Advocate at AWS focusing on EDA and Serverless."
       }
-    ]
+    ],
+    "id": "f3736564-bb5b-11ed-9232-3e86250ca8d9"
   },
   {
     "title": "EventBridge Scheduler to raise EventBridge event every 5 minutes with CDK Python",
@@ -7472,7 +7598,8 @@
         "image": "https://avatars.githubusercontent.com/u/1263087",
         "bio": "AWS Community Builder in Serverless category. Serverless advocate and enthusiast."
       }
-    ]
+    ],
+    "id": "f3736f8c-bb5b-11ed-b0dd-3e86250ca8d9"
   },
   {
     "title": "EventBridge Scheduler to raise EventBridge event every 5 minutes with CDK",
@@ -7527,7 +7654,8 @@
         "image": "../assets/images/resources/dboyne.png",
         "bio": "Senior Developer Advocate at AWS focusing on EDA and Serverless."
       }
-    ]
+    ],
+    "id": "f373801c-bb5b-11ed-ac01-3e86250ca8d9"
   },
   {
     "title": "EventBridge Scheduler to Lambda every 5 minutes with CDK",
@@ -7582,7 +7710,8 @@
         "image": "../assets/images/resources/dboyne.png",
         "bio": "Senior Developer Advocate at AWS focusing on EDA and Serverless."
       }
-    ]
+    ],
+    "id": "f373894a-bb5b-11ed-85ba-3e86250ca8d9"
   },
   {
     "title": "EventBridge Scheduler to Lambda every 5 minutes",
@@ -7637,7 +7766,8 @@
         "image": "../assets/images/resources/dboyne.jpg",
         "bio": "Senior Developer Advocate at AWS focusing on EDA and Serverless."
       }
-    ]
+    ],
+    "id": "f3738ef4-bb5b-11ed-83c8-3e86250ca8d9"
   },
   {
     "title": "Amazon EventBridge Scheduled to AWS Lambda",
@@ -7694,7 +7824,8 @@
         "name": "Steven Cook",
         "bio": "Senior Solutions Architect, AWS."
       }
-    ]
+    ],
+    "id": "f37398fe-bb5b-11ed-a026-3e86250ca8d9"
   },
   {
     "title": "Scheduled EventBridge rule for Lambda",
@@ -7752,7 +7883,8 @@
         "image": "",
         "bio": "Solutions Architect, AWS"
       }
-    ]
+    ],
+    "id": "f373a25e-bb5b-11ed-9089-3e86250ca8d9"
   },
   {
     "title": "Notify consumers of schema changes with Schema Registry events",
@@ -7798,7 +7930,8 @@
         "image": "../assets/images/resources/dboyne.png",
         "bio": "Senior Developer Advocate at AWS focusing on EDA and Serverless."
       }
-    ]
+    ],
+    "id": "f373b1f4-bb5b-11ed-a877-3e86250ca8d9"
   },
   {
     "title": "Amazon Eventbridge to Amazon SNS",
@@ -7854,7 +7987,8 @@
         "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2021/06/29/Amir-Khairalomoum.jpg",
         "bio": "Amir is a Sr. Solutions Architect at AWS. He supports customers in their digital transformation and their cloud journey to AWS. He is passionate about serverless technologies."
       }
-    ]
+    ],
+    "id": "f373ba46-bb5b-11ed-b7a1-3e86250ca8d9"
   },
   {
     "title": "Amazon Eventbridge to Amazon SQS",
@@ -7910,7 +8044,8 @@
         "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2021/06/29/Amir-Khairalomoum.jpg",
         "bio": "Amir is a Sr. Solutions Architect at AWS. He supports customers in their digital transformation and their cloud journey to AWS. He is passionate about serverless technologies."
       }
-    ]
+    ],
+    "id": "f373cbd0-bb5b-11ed-b68e-3e86250ca8d9"
   },
   {
     "videoId": "",
@@ -7976,7 +8111,8 @@
         "bio": "Dmitry is a modernization architect for Professional Services at Amazon Web Services based in the US."
       }
     ],
-    "architectureURL": ""
+    "architectureURL": "",
+    "id": "f373d3e6-bb5b-11ed-a99c-3e86250ca8d9"
   },
   {
     "title": "Kinesis Firehose Data Transformation with Lambda ",
@@ -8033,7 +8169,8 @@
         "image": "https://media-exp1.licdn.com/dms/image/C4E03AQGFaDVfkIJi4g/profile-displayphoto-shrink_200_200/0/1620953260457?e=1671062400&v=beta&t=pVt_BUU-r7MtlMwcOxgXgtaUM2tVRe4CUtlUknM--os",
         "bio": "Partner Solutions Architect @ AWS. Serverless enthusiast."
       }
-    ]
+    ],
+    "id": "f373ddc8-bb5b-11ed-9406-3e86250ca8d9"
   },
   {
     "title": "Kinesis Firehose Data Transformation with Lambda",
@@ -8090,7 +8227,8 @@
         "image": "https://media-exp1.licdn.com/dms/image/C4E03AQGFaDVfkIJi4g/profile-displayphoto-shrink_200_200/0/1620953260457?e=1671062400&v=beta&t=pVt_BUU-r7MtlMwcOxgXgtaUM2tVRe4CUtlUknM--os",
         "bio": "Partner Solutions Architect @ AWS. Serverless enthusiast."
       }
-    ]
+    ],
+    "id": "f373e6c4-bb5b-11ed-946c-3e86250ca8d9"
   },
   {
     "title": "AWS Glue Job trigger a Lambda Function over Eventbridge Rule",
@@ -8152,7 +8290,8 @@
         "image": "https://serverlessland.com/assets/images/resources/contributors/ext-jose-albino-neto.jpg",
         "bio": "Cloud Application Architect @ AWS"
       }
-    ]
+    ],
+    "id": "f373f59c-bb5b-11ed-8adc-3e86250ca8d9"
   },
   {
     "title": "AWS IoT to DynamoDB",
@@ -8219,7 +8358,8 @@
         "image": "https://1drv.ms/u/s!AufpCThJxKa2g50banMoavhl7i5EUg",
         "bio": "Udit is a AWS 6x Certified Cloud Enthusiast who love building solutions."
       }
-    ]
+    ],
+    "id": "f373fb46-bb5b-11ed-86e4-3e86250ca8d9"
   },
   {
     "title": "IoT Core to DynamoDB",
@@ -8277,7 +8417,8 @@
         "image": "https://avatars.githubusercontent.com/u/79330125?s=400&u=4802ebc8f24e64031052d3bf95af3dea7920357d&v=4",
         "bio": "I am a Principal Architect, AWS Cloud Architect, Full-Stack Developer, Edge AI/ML/IoT Engineer, and Serverless Enthusiast."
       }
-    ]
+    ],
+    "id": "f3740226-bb5b-11ed-913e-3e86250ca8d9"
   },
   {
     "title": "IoT Core to Kinesis Data Firehose to S3",
@@ -8339,7 +8480,8 @@
         "image": "https://avatars.githubusercontent.com/u/79330125?s=400&u=4802ebc8f24e64031052d3bf95af3dea7920357d&v=4",
         "bio": "I am a Principal Architect, AWS Cloud Architect, Full-Stack Developer, Edge AI/ML/IoT Engineer, and Serverless Enthusiast."
       }
-    ]
+    ],
+    "id": "f374097e-bb5b-11ed-8dc6-3e86250ca8d9"
   },
   {
     "title": "IoT Core to Timestream",
@@ -8397,7 +8539,8 @@
         "image": "https://avatars.githubusercontent.com/u/79330125?s=400&u=4802ebc8f24e64031052d3bf95af3dea7920357d&v=4",
         "bio": "I am a Principal Architect, AWS Cloud Architect, Full-Stack Developer, Edge AI/ML/IoT Engineer, and Serverless Enthusiast."
       }
-    ]
+    ],
+    "id": "f374120c-bb5b-11ed-8e3b-3e86250ca8d9"
   },
   {
     "title": "Kinesis Video Stream to Rekognition Stream Processor to Lambda",
@@ -8463,7 +8606,8 @@
         "image": "https://media-exp1.licdn.com/dms/image/C4D03AQHzylyiG6DQkA/profile-displayphoto-shrink_800_800/0/1614623784713?e=1671667200&v=beta&t=hnWLZlw1kp38ZwBeLbHUiFkcnJznwmFqA5MGRLaz8kE",
         "bio": "Partner Solutions Architect @ AWS. IoT x Serverless Enthusiast"
       }
-    ]
+    ],
+    "id": "f3741b1c-bb5b-11ed-996a-3e86250ca8d9"
   },
   {
     "title": "Lambda to Athena",
@@ -8523,7 +8667,8 @@
         "image": "https://drive.google.com/file/d/1AZFquOkafEQRUlrT4hKOtIbt4Cq66SHd/view?usp=sharing",
         "bio": "I am Saborni Bhattacharya and I love making technical contents on my YouTube channel - https://www.youtube.com/channel/UCpYl6SiNRBfcZoi4EKqIwog. Here is my blog link as well - https://learnandexplorewithsab.blogspot.com/"
       }
-    ]
+    ],
+    "id": "f3742b52-bb5b-11ed-954e-3e86250ca8d9"
   },
   {
     "videoId": "",
@@ -8580,7 +8725,8 @@
       "headline": "Presented by James Beswick, Developer Advocate",
       "bio": "James is a senior developer advocate for Serverless Applications at Amazon Web Services based in the US. Prior to joining AWS Ben worked in a number of different technical roles specializing in workflow Automation and web development."
     },
-    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/patterns-lambda-to-eventbridge.png"
+    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/patterns-lambda-to-eventbridge.png",
+    "id": "f37430e8-bb5b-11ed-be43-3e86250ca8d9"
   },
   {
     "title": "Sentiment analysis with Lambda and Comprehend",
@@ -8637,7 +8783,8 @@
         "headline": "Presented by Tommy Whelan",
         "bio": "Data/ ML Engineer @ AWS"
       }
-    ]
+    ],
+    "id": "f3743642-bb5b-11ed-a00a-3e86250ca8d9"
   },
   {
     "title": "Lambda Destinations to Lambda and SQS",
@@ -8694,7 +8841,8 @@
         "image": "https://marcia.dev/images/marcia_profile.jpg",
         "bio": "AWS Developer Advocate, AWS Serverless"
       }
-    ]
+    ],
+    "id": "f3743dea-bb5b-11ed-a39e-3e86250ca8d9"
   },
   {
     "title": "AWS Lambda To Amazon DynamoDB",
@@ -8748,7 +8896,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f374488a-bb5b-11ed-af52-3e86250ca8d9"
   },
   {
     "title": "AWS Event Source Mapping for Lambda from AmazonMQ RabbitMQ",
@@ -8808,7 +8957,8 @@
         "image": "https://avatars.githubusercontent.com/u/27500154?v=4",
         "bio": "Tsvetko is a Senior Partner Solutions Architect based out of Atlanta, GA."
       }
-    ]
+    ],
+    "id": "f374592e-bb5b-11ed-a34a-3e86250ca8d9"
   },
   {
     "title": "AWS Event Source Mapping for Lambda from Amazon SQS",
@@ -8866,7 +9016,8 @@
         "image": "https://avatars.githubusercontent.com/u/27500154?v=4",
         "bio": "Tsvetko is a Senior Partner Solutions Architect based out of Atlanta, GA."
       }
-    ]
+    ],
+    "id": "f37461b2-bb5b-11ed-805c-3e86250ca8d9"
   },
   {
     "title": "Lambda to EventBridge",
@@ -8919,7 +9070,8 @@
         "name": "Steven Cook",
         "bio": "Senior Solutions Architect, AWS"
       }
-    ]
+    ],
+    "id": "f374721a-bb5b-11ed-8639-3e86250ca8d9"
   },
   {
     "title": "AWS Lambda to Amazon EventBridge",
@@ -8973,7 +9125,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f37479c2-bb5b-11ed-ac6e-3e86250ca8d9"
   },
   {
     "title": "Lambda to EventBridge",
@@ -9028,9 +9181,9 @@
         "name": "Alex Nelson",
         "bio": "Senior Solutions Architect, AWS"
       }
-    ]
+    ],
+    "id": "f374814c-bb5b-11ed-8428-3e86250ca8d9"
   },
-  null,
   {
     "title": "AWS Lambda to Amazon EventBridge",
     "testing": {
@@ -9087,7 +9240,8 @@
         "image": "",
         "bio": "Solutions Architect, AWS"
       }
-    ]
+    ],
+    "id": "f3748a02-bb5b-11ed-9cea-3e86250ca8d9"
   },
   {
     "title": "Lambda Extension for SSM Parameter Store with CDK (Typescript)",
@@ -9140,7 +9294,8 @@
         "image": "https://avatars.githubusercontent.com/u/1263087",
         "bio": "AWS Community Builder in Serverless category. Serverless advocate and enthusisast."
       }
-    ]
+    ],
+    "id": "f37492f4-bb5b-11ed-850e-3e86250ca8d9"
   },
   {
     "title": "Lambda function URL",
@@ -9192,7 +9347,8 @@
         "image": "link-to-your-photo.jpg",
         "bio": "Senior Developer Advocate"
       }
-    ]
+    ],
+    "id": "f3749b82-bb5b-11ed-ad52-3e86250ca8d9"
   },
   {
     "title": "Lambda Function URL",
@@ -9256,7 +9412,8 @@
         "image": "",
         "bio": "AWS Community Builder"
       }
-    ]
+    ],
+    "id": "f374abfe-bb5b-11ed-b9b0-3e86250ca8d9"
   },
   {
     "title": "Lambda Function URL",
@@ -9316,7 +9473,8 @@
         "image": "",
         "bio": "Solutions Architect, AWS"
       }
-    ]
+    ],
+    "id": "f374b36a-bb5b-11ed-a8a2-3e86250ca8d9"
   },
   {
     "title": "Lambda Function URL",
@@ -9373,7 +9531,8 @@
         "image": "https://internal-cdn.amazon.com/badgephotos.amazon.com/?uid=merohan",
         "bio": "Associated Cloud Application Architect at AWS Professional Services"
       }
-    ]
+    ],
+    "id": "f374b8ba-bb5b-11ed-8555-3e86250ca8d9"
   },
   {
     "videoId": "",
@@ -9430,7 +9589,8 @@
       "imageURL": "https://abhirockzz.github.io/icon.jpg",
       "headline": "Presented by Abhishek Gupta, Principal Developer Advocate at AWS"
     },
-    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/patterns-lambda-to-eventbridge.png"
+    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/patterns-lambda-to-eventbridge.png",
+    "id": "f374c008-bb5b-11ed-8dcc-3e86250ca8d9"
   },
   {
     "title": "Lambda to Glue to S3",
@@ -9488,7 +9648,8 @@
         "image": "https://phonetool.amazon.com/users/sarora",
         "bio": "Shruti is a Cloud Application Architect with AWS Professional Services Team and is passionate about serverless development in Cloud using Data Processing and AI/ML services."
       }
-    ]
+    ],
+    "id": "f374c53a-bb5b-11ed-8d54-3e86250ca8d9"
   },
   {
     "title": "Event driven vulnerability scanning with EventBridge and Lambda",
@@ -9539,7 +9700,8 @@
         "image": "../assets/images/resources/dboyne.png",
         "bio": "Senior Developer Advocate at AWS focusing on EDA and Serverless."
       }
-    ]
+    ],
+    "id": "f374ca58-bb5b-11ed-9497-3e86250ca8d9"
   },
   {
     "title": "AWS Lambda to AWS IoT Core",
@@ -9598,7 +9760,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f374d386-bb5b-11ed-99bb-3e86250ca8d9"
   },
   {
     "title": "Lambda to Kinesis Data Stream to Kinesis",
@@ -9656,7 +9819,8 @@
         "image": "https://drive.google.com/file/d/1AZFquOkafEQRUlrT4hKOtIbt4Cq66SHd/view?usp=sharing",
         "bio": "I am Saborni Bhattacharya and I love making technical contents on my YouTube channel - https://www.youtube.com/channel/UCpYl6SiNRBfcZoi4EKqIwog. Here is my blog link as well - https://learnandexplorewithsab.blogspot.com/"
       }
-    ]
+    ],
+    "id": "f374dbc4-bb5b-11ed-a67c-3e86250ca8d9"
   },
   {
     "videoId": "",
@@ -9713,7 +9877,8 @@
       "headline": "Presented by James Beswick, Developer Advocate",
       "bio": "James is a senior developer advocate for Serverless Applications at Amazon Web Services based in the US. Prior to joining AWS Ben worked in a number of different technical roles specializing in workflow Automation and web development."
     },
-    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/patterns-lambda-to-eventbridge.png"
+    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/patterns-lambda-to-eventbridge.png",
+    "id": "f374e434-bb5b-11ed-858a-3e86250ca8d9"
   },
   {
     "title": "Lambda PowerShell Runtime",
@@ -9766,7 +9931,8 @@
         "image": "/assets/images/resources/jrwood.jpg",
         "bio": "Julian Wood helps developers and builders learn about and love how serverless technologies can transform the way they build and run applications. I was an infrastructure architect and manager in global enterprises and start-ups for more than 25 years before going all in on serverless at AWS."
       }
-    ]
+    ],
+    "id": "f374ee98-bb5b-11ed-83a9-3e86250ca8d9"
   },
   {
     "title": "Lambda Secrets Manager with PowerTools",
@@ -9826,7 +9992,8 @@
         "image": "",
         "bio": "AWS - Cloud Application Architect"
       }
-    ]
+    ],
+    "id": "f374f7da-bb5b-11ed-bf06-3e86250ca8d9"
   },
   {
     "title": "AWS Lambda to Amazon Rekognition",
@@ -9882,7 +10049,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f3750838-bb5b-11ed-b298-3e86250ca8d9"
   },
   {
     "title": "Asynchronous invocation between Lambda functions with S3 when payload size is large",
@@ -9942,7 +10110,8 @@
         "image": "https://avatars.githubusercontent.com/SeoyeonPark",
         "bio": "Seoyeon is an Associate Application Developer at AWS Professional Services based in Seoul."
       }
-    ]
+    ],
+    "id": "f3750f5e-bb5b-11ed-9bf2-3e86250ca8d9"
   },
   {
     "title": "AWS Lambda to Amazon S3",
@@ -9996,7 +10165,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f37518dc-bb5b-11ed-98f8-3e86250ca8d9"
   },
   {
     "title": "Lambda Secrets Manager Extension",
@@ -10048,9 +10218,9 @@
         "image": "https://media-exp1.licdn.com/dms/image/C5603AQE_pcOIRvZiZw/profile-displayphoto-shrink_800_800/0/1599620216972?e=1671667200&v=beta&t=c9jJCkwElOTcMvmOmKeSnbfb7VhdR2Skt2EfoAD1yAw",
         "bio": "I'm a Serverless Cloud Engineer specializing in serverless event driven systems at AWS and an avid backpacker."
       }
-    ]
+    ],
+    "id": "f3752188-bb5b-11ed-9922-3e86250ca8d9"
   },
-  null,
   {
     "title": "Invoke an AWS Step Functions workflow from AWS Lambda",
     "testing": {
@@ -10105,7 +10275,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f37536a0-bb5b-11ed-8b4a-3e86250ca8d9"
   },
   {
     "title": "Lambda to SNS with filters to Lambda",
@@ -10162,7 +10333,8 @@
         "image": "link-to-your-photo.jpg",
         "bio": "Your bio."
       }
-    ]
+    ],
+    "id": "f3753bfa-bb5b-11ed-a3da-3e86250ca8d9"
   },
   {
     "title": "Lambda to SNS to Lambda",
@@ -10215,7 +10387,8 @@
         "image": "link-to-your-photo.jpg",
         "bio": "Your bio."
       }
-    ]
+    ],
+    "id": "f3754564-bb5b-11ed-be0f-3e86250ca8d9"
   },
   {
     "title": "Lambda to SNS",
@@ -10259,11 +10432,13 @@
         "name": "Alex Nelson",
         "bio": "Senior Solutions Architect, AWS"
       }
-    ]
+    ],
+    "id": "f3754dca-bb5b-11ed-8a16-3e86250ca8d9"
   },
   {
     "userId": "jdue2-4ddqs-2ssdf",
-    "total": "25.99"
+    "total": "25.99",
+    "id": "f3755fc2-bb5b-11ed-8ac6-3e86250ca8d9"
   },
   {
     "title": "Lambda to SNS",
@@ -10321,7 +10496,8 @@
         "image": "",
         "bio": "Solutions Architect, AWS"
       }
-    ]
+    ],
+    "id": "f375644a-bb5b-11ed-85b9-3e86250ca8d9"
   },
   {
     "title": "Lambda to SQS",
@@ -10380,7 +10556,8 @@
         "name": "Steven Cook",
         "bio": "Senior Solutions Architect at AWS."
       }
-    ]
+    ],
+    "id": "f3756968-bb5b-11ed-96d4-3e86250ca8d9"
   },
   {
     "title": "AWS Lambda to Amazon SQS",
@@ -10434,7 +10611,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f375703e-bb5b-11ed-8edc-3e86250ca8d9"
   },
   {
     "title": "Lambda to SQS",
@@ -10492,7 +10670,8 @@
         "image": "",
         "bio": "Solutions Architect, AWS"
       }
-    ]
+    ],
+    "id": "f375755c-bb5b-11ed-879a-3e86250ca8d9"
   },
   {
     "title": "Lambda to SSM Parameter Store",
@@ -10553,7 +10732,8 @@
         "name": "Steven Cook",
         "bio": "Senior Solutions Architect at AWS."
       }
-    ]
+    ],
+    "id": "f3757f34-bb5b-11ed-8673-3e86250ca8d9"
   },
   {
     "title": "Lambda to SSM Parameter Store",
@@ -10612,7 +10792,8 @@
         "image": "",
         "bio": "Solutions Architect, AWS"
       }
-    ]
+    ],
+    "id": "f375889e-bb5b-11ed-85d7-3e86250ca8d9"
   },
   {
     "title": "Lambda to samples",
@@ -10653,7 +10834,8 @@
         "name": "Alex Nelson",
         "bio": "Senior Solutions Architect, AWS"
       }
-    ]
+    ],
+    "id": "f375bada-bb5b-11ed-9224-3e86250ca8d9"
   },
   {
     "title": "AWS Lambda to AWS Secrets Manager in Private Subnet",
@@ -10715,7 +10897,8 @@
         "image": "https://eercan.com/emir-ercan-ayar-2022-profile-mid.png",
         "bio": "Emir Ayar is a Tech Lead Solutions Architect on the AWS Prototyping Team to help customers build IoT, Edge AI, and Industry 4.0 solutions and implement architectural best practices."
       }
-    ]
+    ],
+    "id": "f375c23c-bb5b-11ed-af29-3e86250ca8d9"
   },
   {
     "title": "Lambda function in a VPC",
@@ -10784,7 +10967,8 @@
         "image": "",
         "bio": "AWS Community Builder"
       }
-    ]
+    ],
+    "id": "f375ca52-bb5b-11ed-a3ca-3e86250ca8d9"
   },
   {
     "title": "Lambda Web Adapter with Function URL",
@@ -10839,7 +11023,8 @@
       {
         "name": "Marcia Villalba"
       }
-    ]
+    ],
+    "id": "f375cfd4-bb5b-11ed-b093-3e86250ca8d9"
   },
   {
     "videoId": "",
@@ -10896,7 +11081,8 @@
       "headline": "Presented by Parnab Basak, AWS Solutions Architect",
       "bio": "Parnab is a Solutions Architect for the Service Creation team in AWS. He specializes in creating net new solutions that are cloud native using modern s/w dev practices like Serverless, DevOps & Analytics"
     },
-    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/patterns-lambda-to-eventbridge.png"
+    "architectureURL": "https://serverlessland.s3.amazonaws.com/assets/patterns/patterns-lambda-to-eventbridge.png",
+    "id": "f375d8ee-bb5b-11ed-abec-3e86250ca8d9"
   },
   {
     "title": "SQS to EventBridge using EventBridge Pipes with normalizer pattern",
@@ -10948,7 +11134,8 @@
         "image": "https://avatars.githubusercontent.com/u/29404931",
         "bio": "Solutions Architect at AWS, passionate about event-driven architectures and Serverless."
       }
-    ]
+    ],
+    "id": "f375e1ae-bb5b-11ed-9f5c-3e86250ca8d9"
   },
   {
     "title": "Cross Account Private API Access via Public Application Load Balancer",
@@ -11007,7 +11194,8 @@
         "image": "https://drive.google.com/file/d/1E-5koDaKEaMUtOctX32I9TLwfh3kgpAq/view?usp=drivesdk",
         "bio": "I am a Cloud Support Engineer (Serverless) at AWS"
       }
-    ]
+    ],
+    "id": "f375f5a4-bb5b-11ed-a641-3e86250ca8d9"
   },
   {
     "title": "Same/Cross Account Private API Access via Public Load Balancer",
@@ -11064,7 +11252,8 @@
         "image": "https://drive.google.com/file/d/1q872K5V1RKFHCrkwGSssWNeIwug6ZLxO/view",
         "bio": "I am a Cloud Support Engineer (Serverless) at AWS"
       }
-    ]
+    ],
+    "id": "f375faf4-bb5b-11ed-9cee-3e86250ca8d9"
   },
   {
     "title": "S3 to EventBridge",
@@ -11124,7 +11313,8 @@
         "name": "Steven Cook",
         "bio": "Senior Solutions Architect at AWS."
       }
-    ]
+    ],
+    "id": "f376042c-bb5b-11ed-8627-3e86250ca8d9"
   },
   {
     "title": "AWS S3 to AWS EventBridge to AWS Lambda",
@@ -11183,7 +11373,8 @@
         "image": "link-to-your-photo.jpg",
         "bio": "Arun is a Cloud Application Architect at AWS Professional Services based out of Dallas, TX."
       }
-    ]
+    ],
+    "id": "f3762c4a-bb5b-11ed-9da7-3e86250ca8d9"
   },
   {
     "title": "Amazon S3 to Amazon EventBridge",
@@ -11242,7 +11433,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f3763384-bb5b-11ed-94f4-3e86250ca8d9"
   },
   {
     "title": "S3 to EventBridge to Step Functions",
@@ -11305,7 +11497,8 @@
         "image": "https://avatars.githubusercontent.com/u/100202393?v=4",
         "bio": "Pascal Vogel is an Associate Solutions Architect at Amazon Web Services (AWS)."
       }
-    ]
+    ],
+    "id": "f3763906-bb5b-11ed-a321-3e86250ca8d9"
   },
   {
     "title": "S3 to MediaCovert via AWS Lambda",
@@ -11366,7 +11559,8 @@
         "image": "https://d38h74djm40icj.cloudfront.net/agutierrezl-image.png",
         "bio": "Aryam is a Solutions Architect at Amazon Web Service based in Spain"
       }
-    ]
+    ],
+    "id": "f37641e4-bb5b-11ed-8ca9-3e86250ca8d9"
   },
   {
     "title": "S3 to Lambda to Rekognition",
@@ -11425,7 +11619,8 @@
         "image": "https://avatars.githubusercontent.com/u/1263087",
         "bio": "AWS Community Builder in Serverless category. Serverless advocate and enthusiast."
       }
-    ]
+    ],
+    "id": "f3764bb2-bb5b-11ed-a04e-3e86250ca8d9"
   },
   {
     "title": "Amazon S3 integration with AWS Lambda to send email notifications about the object",
@@ -11485,7 +11680,8 @@
         "name": "Akhil Deshneni",
         "bio": "I am a Cloud Support Associate at AWS"
       }
-    ]
+    ],
+    "id": "f3765a30-bb5b-11ed-bda5-3e86250ca8d9"
   },
   {
     "title": "S3 to Lambda to Transcribe",
@@ -11542,7 +11738,8 @@
         "image": "https://media-exp1.licdn.com/dms/image/C4D03AQGLZ2P84tYXvg/profile-displayphoto-shrink_800_800/0/1611861641822?e=1666224000&v=beta&t=h1OihmKSYq4sCP3fCaSvbyTVqdMPiJfVq_Bmxd8Hsss",
         "bio": "Davonte is an Associate Cloud Developer with Amazon Web Services"
       }
-    ]
+    ],
+    "id": "f37663b8-bb5b-11ed-ba62-3e86250ca8d9"
   },
   {
     "title": "S3 replication to multiple S3 buckets with CDK",
@@ -11596,7 +11793,8 @@
         "image": "https://avatars.githubusercontent.com/u/1263087",
         "bio": "AWS Community Builder in Serverless category. Serverless advocate and enthusiast."
       }
-    ]
+    ],
+    "id": "f376850a-bb5b-11ed-b9ab-3e86250ca8d9"
   },
   {
     "title": "S3 to EventBridge Claim Check pattern with event enrichment",
@@ -11642,7 +11840,8 @@
         "image": "../assets/images/resources/dboyne.jpg",
         "bio": "Senior Developer Advocate at AWS focusing on EDA and Serverless."
       }
-    ]
+    ],
+    "id": "f3768e24-bb5b-11ed-90fe-3e86250ca8d9"
   },
   {
     "title": "AWS S3 Trigger to AWS Lambda to AWS Glue workflow",
@@ -11704,7 +11903,8 @@
         "image": "https://avatars.githubusercontent.com/u/105808773?v=4",
         "bio": "AWS Data Architect | Demonstrated leadership in Data related Technical Programs. 16 years of Proficiency in data management, analytics and visualization, data flow, data integrity, data automation and data science."
       }
-    ]
+    ],
+    "id": "f3769766-bb5b-11ed-956a-3e86250ca8d9"
   },
   {
     "title": "API Gateway and Lambda to generate S3 pre-signed URLS",
@@ -11762,7 +11962,8 @@
         "image": "https://avatars.githubusercontent.com/u/117538?v=4",
         "bio": "Jerome is a Solutions Architect Builder at AWS. Passionate about building stuff using the AWS services, and especially the serverless ones."
       }
-    ]
+    ],
+    "id": "f376a648-bb5b-11ed-b846-3e86250ca8d9"
   },
   {
     "title": "Step Functions workflow to invoke ECS tasks that read from S3",
@@ -11823,7 +12024,8 @@
         "image": "https://avatars.githubusercontent.com/u/124192288",
         "bio": "AWS Community Builder in Serverless category. Serverless advocate and enthusiast."
       }
-    ]
+    ],
+    "id": "f376af4e-bb5b-11ed-b934-3e86250ca8d9"
   },
   {
     "title": "Invoke cross account Lambda function directly via Step function",
@@ -11883,7 +12085,8 @@
         "image": "https://drive.google.com/file/d/1q872K5V1RKFHCrkwGSssWNeIwug6ZLxO/view",
         "bio": "I am a Cloud Support Engineer (Serverless) at AWS and I love to solve complex problems."
       }
-    ]
+    ],
+    "id": "f376b7e6-bb5b-11ed-88ac-3e86250ca8d9"
   },
   {
     "title": "Invoke cross account Lambda function directly via Step function",
@@ -11940,7 +12143,8 @@
         "image": "https://drive.google.com/file/d/1UE7cvxfb-fYCdl6Hjo9klOKRjjfMk7k-/view",
         "bio": "I am a Cloud Support Engineer (Serverless) at AWS and I love to solve complex problems."
       }
-    ]
+    ],
+    "id": "f376dd98-bb5b-11ed-96a8-3e86250ca8d9"
   },
   {
     "title": "Step Function to Lambda to Lambda",
@@ -12006,7 +12210,8 @@
         "image": "https://drive.google.com/file/d/1AZFquOkafEQRUlrT4hKOtIbt4Cq66SHd/view?usp=sharing",
         "bio": "I am Saborni Bhattacharya and I love making technical contents on my YouTube channel - https://www.youtube.com/channel/UCpYl6SiNRBfcZoi4EKqIwog. Here is my blog link as well - https://learnandexplorewithsab.blogspot.com/"
       }
-    ]
+    ],
+    "id": "f376e4fa-bb5b-11ed-88e5-3e86250ca8d9"
   },
   {
     "title": "Start Step Function execution within Step Function",
@@ -12068,7 +12273,8 @@
         "image": "https://avatars.githubusercontent.com/u/1263087",
         "bio": "AWS Community Builder in Serverless category. Serverless advocate and enthusiast."
       }
-    ]
+    ],
+    "id": "f376eac2-bb5b-11ed-83c2-3e86250ca8d9"
   },
   {
     "title": "SNS Archiving/Analytics with Kinesis Firehose Fanout",
@@ -12126,7 +12332,8 @@
         "image": "https://media-exp1.licdn.com/dms/image/C4E03AQGFaDVfkIJi4g/profile-displayphoto-shrink_200_200/0/1620953260457?e=1671062400&v=beta&t=pVt_BUU-r7MtlMwcOxgXgtaUM2tVRe4CUtlUknM--os",
         "bio": "Partner Solutions Architect @ AWS. Serverless enthusiast."
       }
-    ]
+    ],
+    "id": "f376f04e-bb5b-11ed-ab00-3e86250ca8d9"
   },
   {
     "title": "Lambda to SNS to SQS to Lambda",
@@ -12179,7 +12386,8 @@
         "image": "link-to-your-photo.jpg",
         "bio": "Your bio."
       }
-    ]
+    ],
+    "id": "f376f5b2-bb5b-11ed-b0ab-3e86250ca8d9"
   },
   {
     "title": "Amazon SNS to Amazon SQS to AWS Lambda",
@@ -12238,7 +12446,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f376ff94-bb5b-11ed-80bf-3e86250ca8d9"
   },
   {
     "title": "Amazon SQS connected to an Amazon ECS",
@@ -12311,9 +12520,9 @@
         "image": "https://media-exp1.licdn.com/dms/image/C5603AQETLKyceFuJnw/profile-displayphoto-shrink_800_800/0/1567630510954?e=2147483647&v=beta&t=CpkrTXviK63-4VLr89iut5lCX-M9SsxE-yTXOl6LBMQ",
         "bio": "Consultant, AppDev at AWS."
       }
-    ]
+    ],
+    "id": "f3770912-bb5b-11ed-ae69-3e86250ca8d9"
   },
-  null,
   {
     "title": "Amazon SQS to AWS Lambda",
     "testing": {
@@ -12367,7 +12576,8 @@
         "headline": "Presented by Daniele Frasca",
         "bio": "I am Daniele Frasca serverless enthusiast. I build and architect serverless applications at scale."
       }
-    ]
+    ],
+    "id": "f3771eac-bb5b-11ed-9949-3e86250ca8d9"
   },
   {
     "title": "Integrate Express State Machine with Rest API using StartSyncExecution API call",
@@ -12419,9 +12629,9 @@
         "image": "https://drive.google.com/file/d/1huHQQHRlYQ3gxrJob9pXlwE5zv5CI996/view?usp=drivesdk",
         "bio": "A Serverless Cloud Engineer and technical writer, working towards building efficient and scalable solutions using AWS services."
       }
-    ]
+    ],
+    "id": "f3772a28-bb5b-11ed-9d9b-3e86250ca8d9"
   },
-  null,
   {
     "title": "Step Functions to Polly to S3 with CDK (Typescript)",
     "testing": {
@@ -12482,7 +12692,8 @@
         "image": "https://avatars.githubusercontent.com/u/1263087",
         "bio": "AWS Community Builder in Serverless category. Serverless advocate and enthusiast."
       }
-    ]
+    ],
+    "id": "f3773b58-bb5b-11ed-bef5-3e86250ca8d9"
   },
   {
     "title": "Step Functions to Amazon SES with CDK (Typescript)",
@@ -12540,7 +12751,8 @@
         "image": "https://avatars.githubusercontent.com/u/1263087",
         "bio": "AWS Community Builder in Serverless category. Serverless advocate and enthusiast."
       }
-    ]
+    ],
+    "id": "f37740e4-bb5b-11ed-ae0c-3e86250ca8d9"
   },
   {
     "title": "Step Functions to EventBridge Scheduler with SAM & Python",
@@ -12597,7 +12809,8 @@
         "image": "https://avatars.githubusercontent.com/u/1263087",
         "bio": "AWS Community Builder in Serverless category. Serverless advocate and enthusiast."
       }
-    ]
+    ],
+    "id": "f3774666-bb5b-11ed-9318-3e86250ca8d9"
   },
   {
     "title": "Amazon API Gateway (HTTP) to AWS Lambda",
@@ -12676,7 +12889,8 @@
         "image": "https://avatars.githubusercontent.com/u/393243",
         "bio": "AWS Hero, Terraform influencer, maintainer of Terraform AWS Modules, creator of serverless.tf, weekly.tf, modules.tf, and some more."
       }
-    ]
+    ],
+    "id": "f3774c38-bb5b-11ed-b9a4-3e86250ca8d9"
   },
   {
     "title": "Amazon DynamoDB Streams to AWS Lambda",
@@ -12757,7 +12971,8 @@
         "image": "https://avatars.githubusercontent.com/u/393243",
         "bio": "AWS Hero, Terraform influencer, maintainer of Terraform AWS Modules, creator of serverless.tf, weekly.tf, modules.tf, and some more."
       }
-    ]
+    ],
+    "id": "f3775250-bb5b-11ed-93a1-3e86250ca8d9"
   },
   {
     "title": "Scheduled EventBridge rule for Lambda",
@@ -12842,7 +13057,8 @@
         "image": "https://avatars.githubusercontent.com/u/393243",
         "bio": "AWS Hero, Terraform influencer, maintainer of Terraform AWS Modules, creator of serverless.tf, weekly.tf, modules.tf, and some more."
       }
-    ]
+    ],
+    "id": "f3775886-bb5b-11ed-91a6-3e86250ca8d9"
   },
   {
     "title": "Lambda Function and Lambda Layers",
@@ -12917,7 +13133,8 @@
         "image": "https://avatars.githubusercontent.com/u/393243",
         "bio": "AWS Hero, Terraform influencer, maintainer of Terraform AWS Modules, creator of serverless.tf, weekly.tf, modules.tf, and some more."
       }
-    ]
+    ],
+    "id": "f3776240-bb5b-11ed-86a6-3e86250ca8d9"
   },
   {
     "title": "Invoke an AWS Step Functions workflow from AWS Lambda",
@@ -12991,7 +13208,8 @@
         "image": "https://avatars.githubusercontent.com/u/393243",
         "bio": "AWS Hero, Terraform influencer, maintainer of Terraform AWS Modules, creator of serverless.tf, weekly.tf, modules.tf, and some more."
       }
-    ]
+    ],
+    "id": "f3776bf0-bb5b-11ed-9dc8-3e86250ca8d9"
   },
   {
     "title": "Amazon S3 bucket notifications to AWS Lambda",
@@ -13077,7 +13295,8 @@
         "image": "https://avatars.githubusercontent.com/u/393243",
         "bio": "AWS Hero, Terraform influencer, maintainer of Terraform AWS Modules, creator of serverless.tf, weekly.tf, modules.tf, and some more."
       }
-    ]
+    ],
+    "id": "f377764a-bb5b-11ed-96dc-3e86250ca8d9"
   },
   {
     "title": "Amazon S3 with S3 Object Lambda (return image thumbnails from S3)",
@@ -13159,7 +13378,8 @@
         "image": "https://avatars.githubusercontent.com/u/393243",
         "bio": "AWS Hero, Terraform influencer, maintainer of Terraform AWS Modules, creator of serverless.tf, weekly.tf, modules.tf, and some more."
       }
-    ]
+    ],
+    "id": "f3777fa0-bb5b-11ed-a302-3e86250ca8d9"
   },
   {
     "title": "Amazon SQS Queue to AWS Lambda",
@@ -13240,7 +13460,8 @@
         "image": "https://avatars.githubusercontent.com/u/393243",
         "bio": "AWS Hero, Terraform influencer, maintainer of Terraform AWS Modules, creator of serverless.tf, weekly.tf, modules.tf, and some more."
       }
-    ]
+    ],
+    "id": "f3779378-bb5b-11ed-a408-3e86250ca8d9"
   },
   {
     "title": "AWS WAF attached to Amazon API Gateway REST API",
@@ -13297,6 +13518,7 @@
         "image": "https://serverlessland.com/assets/images/resources/ericdj.jpg",
         "bio": "Eric Johnson is a Principal Developer Advocate for Serverless Applications at Amazon Web Services and is based in Northern Colorado. Eric is a fanatic about serverless and enjoys helping developers understand how serverless technologies introduces a major paradigm shift in how they approach building and running applications at massive scale with minimal administration overhead. Prior to this, Eric has worked as a developer, solutions architect and AWS Evangelist for an AWS partner company."
       }
-    ]
+    ],
+    "id": "f3779cd8-bb5b-11ed-9420-3e86250ca8d9"
   }
 ]

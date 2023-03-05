@@ -23,7 +23,8 @@ defmodule Builder.MixProject do
   defp deps do
     [
       # {:jason, "~> 1.4"},
-      {:poison, "~> 5.0"}
+      {:poison, "~> 5.0"},
+      {:uuid, "~> 1.1"}
     ]
   end
 end
