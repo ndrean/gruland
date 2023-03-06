@@ -21,9 +21,14 @@ erl_crash.dump
 
 # Ignore package tarball (built via "mix hex.build").
 builder-*.tar
+.vscode
+.elixir_ls
+/test
+.gitignore
 
 # Temporary files, for example, from tests.
 /tmp/
 
-/front-gruland/node_modules
-/front-gruland/dist
+/front/node_modules
+/front/dist
+
