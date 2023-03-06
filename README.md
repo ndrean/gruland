@@ -16,10 +16,6 @@ iex> Builder.run
 
 A file "result.json" is created
 
-## Front (Vite-PReact)
+## Front )
 
-Generated with:
-
-```bash
-npm create vite@latest front-gruland --template preact
-```
+CRA generated with Universal-Router & Zustand
