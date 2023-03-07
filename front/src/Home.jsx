@@ -5,7 +5,7 @@ import DrawSelection from "./DrawSelection";
 import { zstore } from "./store";
 
 export default function Home({ list }) {
-  console.log(list.slice(0, 2));
+  // console.log(list.slice(0, 2));
   const [_, setSelections] = useState(null);
 
   function handleClick(e) {
@@ -17,6 +17,7 @@ export default function Home({ list }) {
     const n = e.target.name.toLowerCase();
     const v = e.target.value;
 
+    // update the state
     setSelections((sel) => {
       if (sel === null) {
         return [{ name: n, val: v }];
@@ -27,6 +28,7 @@ export default function Home({ list }) {
       }
     });
 
+    // update the store
     const curr = zstore.getState().selection;
     if (curr === null) {
       zstore.setState({ selection: [{ name: n, val: v }] });
@@ -69,7 +71,7 @@ export default function Home({ list }) {
   return (
     <div className="grid grid-cols-6  gap-2">
       <div className="border-2 ml-2 text-center col-span-2">
-        <h1>Filters</h1>
+        <p> Filters: {data.length}</p>
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           onClick={handleReset}
@@ -80,7 +82,6 @@ export default function Home({ list }) {
         <DrawSelection onhandleSelections={handleSelections} />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 col-span-4 gap-2">
-        <p>{data.length}</p>
         {/* <p>{JSON.stringify(data.slice(0, 2))}</p> */}
         {data.map((example, index) => (
           <div className="flex justify-center mb-5" key={index}>

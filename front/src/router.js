@@ -3,7 +3,9 @@ import { zstore } from "./store";
 import { getJson, githubJson } from "./github";
 
 async function setHome() {
+  // get the examples list from Gtihub or the store if present
   const list = zstore.getState().list || (await getJson(githubJson));
+  // instanciate the store in memory
   if (zstore.getState().list === null) zstore.setState({ list: list });
   const { default: Home } = await import("./Home");
   return <Home list={list} />;
@@ -31,10 +33,6 @@ const router = new UniversalRouter([
       {
         path: "/:id",
         action: async ({ params: { id } }) => setExample(id),
-      },
-      {
-        path: "/test",
-        action: async () => `<p>Hi</p>`,
       },
     ],
   },

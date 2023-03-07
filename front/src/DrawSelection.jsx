@@ -37,11 +37,10 @@ const selectMenu = [
 export default function DrawSelection({ onhandleSelections }) {
   return (
     <div onChange={onhandleSelections}>
-      {selectMenu.map(({ legend, type, names }, idx) => {
-        return (
-          <DrawFieldset legend={legend} type={type} names={names} key={idx} />
-        );
-      })}
+      {selectMenu.map(({ legend, type, names }, idx) => (
+        <DrawFieldset legend={legend} type={type} names={names} key={idx} />
+      ))}
+      )
     </div>
   );
 }

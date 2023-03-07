@@ -16,6 +16,6 @@ iex> Builder.run
 
 A file "result.json" is created
 
-## Front )
+## Front
 
 CRA generated with Universal-Router & Zustand

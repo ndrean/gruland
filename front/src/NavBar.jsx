@@ -1,7 +1,7 @@
 import history from "./history.js";
 import React from "react";
 
-const navLinks = [{ path: "/", title: "Home" }];
+const navLinks = [{ path: "/", title: "ServerlessLand examples" }];
 
 const Link = ({ path, title, handler }) => {
   return (
