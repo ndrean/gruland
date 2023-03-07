@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import history from "./history";
-import "./index.css";
 import DrawSelection from "./DrawSelection";
 import { zstore } from "./store";
 import { selectMenu, transformMenu } from "./selectMenu";
+import "./index.css";
 
 function updateZstore(n, v) {
   const curr = zstore.getState().selection;
@@ -18,11 +18,11 @@ function updateZstore(n, v) {
   }
 }
 
-function filter(list, new_selection) {
-  if (new_selection === null) {
+function filter(list, newSelection) {
+  if (newSelection === null) {
     return list;
   } else {
-    return new_selection.reduce(
+    return newSelection.reduce(
       (acc, curr) => acc.filter((ex) => ex[curr.name] === curr.val),
       list
     );
@@ -30,8 +30,8 @@ function filter(list, new_selection) {
 }
 
 export default function Home({ list }) {
-  const [_, setSelections] = useState(null);
-  // const [data, setData] = useState(list);
+  const [selections, setSelections] = useState(null);
+  const [data, setData] = useState(list);
 
   const initial = transformMenu(selectMenu);
   const [checkObject, setCheckObject] = useState(initial);
@@ -45,13 +45,15 @@ export default function Home({ list }) {
     const key = name.toLowerCase();
 
     // update the state
-    setSelections((sel) => {
-      if (sel === null) {
+    setSelections((selection) => {
+      if (selection === null) {
         return [{ name: key, val: value }];
-      } else if (!sel.find((ob) => ob.name === key)) {
-        return [...sel, { name: key, val: value }];
+      } else if (!selection.find((ob) => ob.name === key)) {
+        return [...selection, { name: key, val: value }];
       } else {
-        return sel.map((ob) => (ob.name === key ? { ...ob, val: value } : ob));
+        return selection.map((ob) =>
+          ob.name === key ? { ...ob, val: value } : ob
+        );
       }
     });
 
@@ -59,37 +61,36 @@ export default function Home({ list }) {
     updateZstore(key, value);
   }
 
-  function isChecked(val) {
-    if (checkObject[val] === true) return val;
+  function isChecked(value) {
+    if (checkObject[value] === true) return value;
   }
 
-  function handleBox({ target: { value: val, name, checked: bool } }) {
+  function handleBox({ target: { value, name, checked: bool } }) {
     const newSubObj = Object.assign(
       initial[name],
-      Object.fromEntries([[val, bool]])
+      Object.fromEntries([[value, bool]])
     );
     const newObj = Object.fromEntries([[name, newSubObj]]);
     return setCheckObject(Object.assign(checkObject, newObj));
   }
 
   function handleReset() {
-    console.log("reset");
     setSelections(null);
     zstore.setState({ selection: null });
     setCheckObject(initial);
-    zstore.setState({ data: list });
   }
 
-  // multi-criteria filtering by reducing the array of filters on the list
-  const new_selection = zstore.getState().selection;
-  zstore.setState({ data: filter(list, new_selection) });
+  // observer on the zstore.selection
+  const newSelection = zstore.getState().selection;
 
-  const newList = zstore.getState().data;
+  React.useEffect(() => {
+    setData(filter(list, newSelection));
+  }, [selections, list, newSelection]);
 
   return (
     <div className="grid grid-cols-6  gap-2">
       <div className="border-2 ml-2 text-center col-span-2">
-        <p> Filters: {newList.length}</p>
+        <p> Filters: {data.length}</p>
         <form>
           <button
             type="reset"
@@ -107,7 +108,7 @@ export default function Home({ list }) {
         </form>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 col-span-4 gap-2">
-        {newList.map((example, index) => (
+        {data.map((example, index) => (
           <div className="flex justify-center mb-5" key={index}>
             <div className="block max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700">
               <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
