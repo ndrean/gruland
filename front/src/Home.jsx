@@ -1,32 +1,49 @@
 import React, { useState } from "react";
 import history from "./history";
 import DrawSelection from "./DrawSelection";
-import { zstore } from "./store";
+// import { zstore, useZstore } from "./store";
 import { selectMenu, transformMenu } from "./selectMenu";
 import "./index.css";
 
+/*
 function updateZstore(n, v) {
   const curr = zstore.getState().selection;
   if (curr === null) {
-    zstore.setState({ selection: [{ name: n, val: v }] });
-  } else if (!curr.find((ob) => ob.name === n)) {
-    zstore.setState({ selection: [...curr, { name: n, val: v }] });
+    return zstore.setState({ selection: [{ name: n, val: v }] });
   } else {
-    zstore.setState({
-      selection: curr.map((ob) => (ob.name === n ? { ...ob, val: v } : ob)),
-    });
+    if (!curr.find((ob) => ob.name === n)) {
+      return zstore.setState({ selection: [...curr, { name: n, val: v }] });
+    } else {
+      return zstore.setState({
+        selection: curr.map((ob) => (ob.name === n ? { ...ob, val: v } : ob)),
+      });
+    }
   }
 }
 
-function filter(list, newSelection) {
-  if (newSelection === null) {
-    return list;
+function updateZ(v, n, current) {
+  if (current === null) {
+    return { selection: [{ name: n, val: v }] };
   } else {
-    return newSelection.reduce(
-      (acc, curr) => acc.filter((ex) => ex[curr.name] === curr.val),
-      list
-    );
+    if (!current.find((ob) => ob.name === n)) {
+      return { selection: [...current, { name: n, val: v }] };
+    } else {
+      return {
+        selection: current.map((ob) =>
+          ob.name === n ? { ...ob, val: v } : ob
+        ),
+      };
+    }
   }
+}
+*/
+function filter(list, newSelection) {
+  return newSelection === null
+    ? list
+    : newSelection.reduce(
+        (acc, curr) => acc.filter((ex) => ex[curr.name] === curr.val),
+        list
+      );
 }
 
 export default function Home({ list }) {
@@ -48,17 +65,19 @@ export default function Home({ list }) {
     setSelections((selection) => {
       if (selection === null) {
         return [{ name: key, val: value }];
-      } else if (!selection.find((ob) => ob.name === key)) {
-        return [...selection, { name: key, val: value }];
       } else {
-        return selection.map((ob) =>
-          ob.name === key ? { ...ob, val: value } : ob
-        );
+        if (!selection.find((ob) => ob.name === key)) {
+          return [...selection, { name: key, val: value }];
+        } else {
+          return selection.map((ob) =>
+            ob.name === key ? { ...ob, val: value } : ob
+          );
+        }
       }
     });
 
     // update the store
-    updateZstore(key, value);
+    // updateZstore(key, value);
   }
 
   function isChecked(value) {
@@ -66,26 +85,23 @@ export default function Home({ list }) {
   }
 
   function handleBox({ target: { value, name, checked: bool } }) {
-    const newSubObj = Object.assign(
-      initial[name],
-      Object.fromEntries([[value, bool]])
-    );
-    const newObj = Object.fromEntries([[name, newSubObj]]);
+    const newObj = { [name]: { ...initial[name], [value]: bool } };
     return setCheckObject(Object.assign(checkObject, newObj));
   }
 
   function handleReset() {
     setSelections(null);
-    zstore.setState({ selection: null });
     setCheckObject(initial);
+    // zstore.setState({ selection: null });
   }
 
   // observer on the zstore.selection
-  const newSelection = zstore.getState().selection;
+  // const newSelection = zstore.getState().selection;
+  // console.log(newSelection);
 
   React.useEffect(() => {
-    return setData(() => filter(list, newSelection));
-  }, [selections, list, newSelection]);
+    return setData(() => filter(list, selections));
+  }, [list, selections]);
 
   return (
     <div className="grid grid-cols-6  gap-2">

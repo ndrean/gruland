@@ -3,7 +3,7 @@ import { zstore } from "./store";
 import { getJson, githubJson } from "./github";
 
 async function setHome() {
-  // get the examples list from Gtihub or the store if present
+  // get the examples list from Gtihub or from the store if present
   const list = zstore.getState().list || (await getJson(githubJson));
   // instanciate the store in memory
   if (zstore.getState().list === null) zstore.setState({ list: list });

@@ -31,6 +31,11 @@ const selectMenu = [
   },
 ];
 
+/*
+returns a transformation of the array above:
+
+{Framework: {CDK: false, SAM: false...}, Language: {Go: false,...},...}
+*/
 function transformMenu(menu) {
   return menu
     .map((m) =>
