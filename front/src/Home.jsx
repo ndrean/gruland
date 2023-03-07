@@ -5,8 +5,7 @@ import { useZstore, initial } from "./store";
 import "./index.css";
 
 export default function Home({ list }) {
-  useZstore((state) => state.setData)(list);
-  let examples = useZstore((state) => state.data);
+  let examples = list;
 
   const setCheckboxes = useZstore((state) => state.setCheckboxes);
   setCheckboxes(initial);

@@ -1,20 +1,16 @@
-import { createStore } from "zustand/vanilla";
 import { create } from "zustand";
 import { selectMenu, transformMenu } from "./selectMenu";
 
-// setup outside React for UniversalRouter
-export const zstore = createStore(() => ({
-  list: null,
-}));
-
-const modify = (state, value, name) => {
-  if (state === null) {
+const modify = (selection, value, name) => {
+  if (selection === null) {
     return [{ name: name, val: value }];
   } else {
-    if (!state.find((ob) => ob.name === name)) {
-      return [...state, { name: name, val: value }];
+    if (!selection.find((ob) => ob.name === name)) {
+      return [...selection, { name: name, val: value }];
     } else {
-      return state.map((ob) => (ob.name === name ? { ...ob, val: value } : ob));
+      return selection.map((ob) =>
+        ob.name === name ? { ...ob, val: value } : ob
+      );
     }
   }
 };
@@ -53,7 +49,7 @@ export const useZstore = create((set) => ({
   checkboxes: {},
   setCheckboxes: setCheckboxes(set),
   updateCheckboxes: updateCheckboxes(set),
-  data: [],
+  data: null,
   setData: setData(set),
   filter: filter(set),
 }));

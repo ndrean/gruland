@@ -1,21 +1,18 @@
 import UniversalRouter from "universal-router";
-import { zstore } from "./store";
+import { useZstore } from "./store";
 import { getJson, githubJson } from "./github";
-import data from "./result";
 
-async function setHome() {
+async function createHome() {
   // get the examples list from Gtihub or from the store if present
-  const list = zstore.getState().list || data;
-  // (await getJson(githubJson));
-
+  const list = useZstore.getState().data || (await getJson(githubJson));
   // instanciate the store in memory
-  if (zstore.getState().list === null) zstore.setState({ list: list });
+  if (useZstore.getState().data === null) useZstore.setState({ data: list });
   const { default: Home } = await import("./Home");
   return <Home list={list} />;
 }
 
 async function setExample(id) {
-  const example = zstore.getState().list.filter((ex) => ex.id === id)[0];
+  const example = useZstore.getState().data.filter((ex) => ex.id === id)[0];
   const { default: Example } = await import("./Example");
   return Example({ example });
 }
@@ -31,7 +28,7 @@ const router = new UniversalRouter([
     children: [
       {
         path: "/",
-        action: async () => setHome(),
+        action: async () => createHome(),
       },
       {
         path: "/:id",
