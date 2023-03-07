@@ -1,13 +1,7 @@
 import React from "react";
 import DrawInput from "./DrawInput";
 
-export default function DrawFieldset({
-  legend,
-  type,
-  names,
-  isChecked,
-  handleBox,
-}) {
+export default function DrawFieldset({ legend, type, names, isChecked }) {
   return (
     <fieldset className="border border-solid mt-2">
       <legend className="m-2 font-bold">{legend}</legend>
@@ -19,7 +13,6 @@ export default function DrawFieldset({
             type={type}
             val={name}
             isChecked={isChecked}
-            handleBox={handleBox}
           />
         ))}
       </div>

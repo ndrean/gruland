@@ -1,6 +1,11 @@
 import React from "react";
+import { useZstore } from "./store";
 
-export default function DrawInput({ name, type, val, handleBox, isChecked }) {
+export default function DrawInput({ name, type, val, isChecked }) {
+  const updateSelection = useZstore((state) => state.updateSelection);
+  const selection = useZstore((state) => state.selection);
+  console.log(selection);
+
   return (
     <div>
       <label
@@ -18,7 +23,14 @@ export default function DrawInput({ name, type, val, handleBox, isChecked }) {
           name={name}
           value={val}
           checked={isChecked(val)}
-          onChange={handleBox}
+          onChange={(e) =>
+            updateSelection(
+              selection,
+              e.target.val,
+              e.target.name,
+              e.target.type
+            )
+          }
         />
       </label>
     </div>
