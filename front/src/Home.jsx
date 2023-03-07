@@ -1,52 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import history from "./history";
 import DrawSelection from "./DrawSelection";
-import { useZstore } from "./store";
-// import { selectMenu, transformMenu } from "./selectMenu";
+import { useZstore, initial } from "./store";
 import "./index.css";
-
-// function filter(list, newSelection) {
-//   return newSelection === null
-//     ? list
-//     : newSelection.reduce(
-//         (acc, curr) => acc.filter((ex) => ex[curr.name] === curr.val),
-//         list
-//       );
-// }
 
 export default function Home({ list }) {
   useZstore((state) => state.setData)(list);
-  const examples = useZstore((state) => state.data);
+  let examples = useZstore((state) => state.data);
 
-  // const initial = transformMenu(selectMenu);
-  // useZstore((state) => state.setCheckboxes)(initial);
-  // console.log(useZstore((state) => state.checkboxes));
-  // const [checkObject, setCheckObject] = useState(initial);
+  const setCheckboxes = useZstore((state) => state.setCheckboxes);
+  setCheckboxes(initial);
 
   function handleClick(e) {
     e.preventDefault();
     history.push({ pathname: e.target.pathname });
   }
 
-  // function handleSelections({ target: { name, value } }) {
-  //   const key = name.toLowerCase();
+  const selection = useZstore((state) => state.selection);
+  examples = useZstore((state) => state.filter)(examples, selection);
 
-  //   // update the store
-  //   useZstore(state => state.updateSelection())
-  // }
-
-  function isChecked(value) {
-    // if (checkObject[value] === true) return value;
-  }
-
-  // function handleBox({ target: { value, name, checked: bool } }) {
-  //   const newObj = { [name]: { ...initial[name], [value]: bool } };
-  //   return setCheckObject(Object.assign(checkObject, newObj));
-  // }
+  const setSelection = useZstore((state) => state.setSelection);
 
   function handleReset() {
-    // setSelections(null);
-    // setCheckObject(initial);
+    setSelection(null);
+    setCheckboxes(initial);
   }
 
   return (
@@ -62,7 +39,7 @@ export default function Home({ list }) {
             Reset
           </button>
           <hr />
-          <DrawSelection isChecked={isChecked} />
+          <DrawSelection />
         </form>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 col-span-4 gap-2">
