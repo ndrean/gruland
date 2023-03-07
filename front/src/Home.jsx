@@ -84,7 +84,7 @@ export default function Home({ list }) {
   const newSelection = zstore.getState().selection;
 
   React.useEffect(() => {
-    setData(filter(list, newSelection));
+    return setData(() => filter(list, newSelection));
   }, [selections, list, newSelection]);
 
   return (
