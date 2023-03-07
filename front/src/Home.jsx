@@ -5,8 +5,6 @@ import { useZstore, initial } from "./store";
 import "./index.css";
 
 export default function Home({ list }) {
-  let examples = list;
-
   const setCheckboxes = useZstore((state) => state.setCheckboxes);
   setCheckboxes(initial);
 
@@ -16,7 +14,7 @@ export default function Home({ list }) {
   }
 
   const selection = useZstore((state) => state.selection);
-  examples = useZstore((state) => state.filter)(examples, selection);
+  const examples = useZstore((state) => state.filter)(list, selection);
 
   const setSelection = useZstore((state) => state.setSelection);
 
