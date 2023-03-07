@@ -1,6 +1,6 @@
 import React from "react";
 import DrawFieldset from "./DrawFieldset";
-import selectMenu from "./selectMenu";
+import { selectMenu } from "./selectMenu";
 
 export default function DrawSelection({
   onhandleSelections,

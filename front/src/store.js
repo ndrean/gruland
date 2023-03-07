@@ -3,6 +3,7 @@ import { create } from "zustand";
 
 export const zstore = createStore(() => ({
   list: null,
+  data: null,
   selection: null,
 }));
 

@@ -31,4 +31,20 @@ const selectMenu = [
   },
 ];
 
-export default selectMenu;
+function transformMenu(menu) {
+  return menu
+    .map((m) =>
+      Object.fromEntries([
+        [
+          m.legend,
+          m.names.reduce((acc, curr) => {
+            acc[curr] = false;
+            return acc;
+          }, {}),
+        ],
+      ])
+    )
+    .reduce((acc, curr) => Object.assign(acc, curr), {});
+}
+
+export { selectMenu, transformMenu };
