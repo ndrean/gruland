@@ -17,7 +17,6 @@ export default function DrawInput({ name, type, val, handleBox, isChecked }) {
           id={val}
           name={name}
           value={val}
-          checked={isChecked(val)}
           onChange={handleBox}
         />
       </label>

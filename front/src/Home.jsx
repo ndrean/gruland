@@ -1,42 +1,9 @@
 import React, { useState } from "react";
 import history from "./history";
 import DrawSelection from "./DrawSelection";
-// import { zstore, useZstore } from "./store";
 import { selectMenu, transformMenu } from "./selectMenu";
 import "./index.css";
 
-/*
-function updateZstore(n, v) {
-  const curr = zstore.getState().selection;
-  if (curr === null) {
-    return zstore.setState({ selection: [{ name: n, val: v }] });
-  } else {
-    if (!curr.find((ob) => ob.name === n)) {
-      return zstore.setState({ selection: [...curr, { name: n, val: v }] });
-    } else {
-      return zstore.setState({
-        selection: curr.map((ob) => (ob.name === n ? { ...ob, val: v } : ob)),
-      });
-    }
-  }
-}
-
-function updateZ(v, n, current) {
-  if (current === null) {
-    return { selection: [{ name: n, val: v }] };
-  } else {
-    if (!current.find((ob) => ob.name === n)) {
-      return { selection: [...current, { name: n, val: v }] };
-    } else {
-      return {
-        selection: current.map((ob) =>
-          ob.name === n ? { ...ob, val: v } : ob
-        ),
-      };
-    }
-  }
-}
-*/
 function filter(list, newSelection) {
   return newSelection === null
     ? list
@@ -61,7 +28,6 @@ export default function Home({ list }) {
   function handleSelections({ target: { name, value } }) {
     const key = name.toLowerCase();
 
-    // update the state
     setSelections((selection) => {
       if (selection === null) {
         return [{ name: key, val: value }];
@@ -75,13 +41,6 @@ export default function Home({ list }) {
         }
       }
     });
-
-    // update the store
-    // updateZstore(key, value);
-  }
-
-  function isChecked(value) {
-    if (checkObject[value] === true) return value;
   }
 
   function handleBox({ target: { value, name, checked: bool } }) {
@@ -92,12 +51,7 @@ export default function Home({ list }) {
   function handleReset() {
     setSelections(null);
     setCheckObject(initial);
-    // zstore.setState({ selection: null });
   }
-
-  // observer on the zstore.selection
-  // const newSelection = zstore.getState().selection;
-  // console.log(newSelection);
 
   React.useEffect(() => {
     return setData(() => filter(list, selections));
@@ -118,7 +72,6 @@ export default function Home({ list }) {
           <hr />
           <DrawSelection
             onhandleSelections={handleSelections}
-            isChecked={isChecked}
             handleBox={handleBox}
           />
         </form>

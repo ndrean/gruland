@@ -23,5 +23,4 @@ async function renderRoute(location) {
 ///////////////////////////////
 // Listen for changes to the current location.
 history.listen(({ location }) => renderRoute(location));
-// set initial url at "/"
 history.push("/");

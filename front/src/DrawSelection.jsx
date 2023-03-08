@@ -2,11 +2,7 @@ import React from "react";
 import DrawFieldset from "./DrawFieldset";
 import { selectMenu } from "./selectMenu";
 
-export default function DrawSelection({
-  onhandleSelections,
-  isChecked,
-  handleBox,
-}) {
+export default function DrawSelection({ onhandleSelections, handleBox }) {
   return (
     <div onChange={onhandleSelections}>
       {selectMenu.map(({ legend, type, names }, idx) => (
@@ -15,7 +11,6 @@ export default function DrawSelection({
           type={type}
           names={names}
           key={idx}
-          isChecked={isChecked}
           handleBox={handleBox}
         />
       ))}
