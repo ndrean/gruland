@@ -7,8 +7,8 @@ export default function DrawInput({ name, type, val }) {
   const handleChange = () => {
     updateCheckboxes(val, name);
     updateSelection(val, name);
-    // }
   };
+
   return (
     <div>
       <label
