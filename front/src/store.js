@@ -1,6 +1,8 @@
 import { create } from "zustand";
 import { selectMenu, transformMenu } from "./selectMenu";
 
+const setData = (set) => (data) => set(() => ({ data: data }));
+
 const modify = (selection, value, name) => {
   if (selection === null) {
     return [{ name: name, val: value }];
@@ -15,14 +17,14 @@ const modify = (selection, value, name) => {
   }
 };
 
-const setData = (set) => (data) => set(() => ({ data: data }));
-
-const updateSelection = (set) => (selection, value, name) =>
-  set(() => ({ selection: modify(selection, value, name.toLowerCase()) }));
+const updateSelection = (set) => (value, name) =>
+  set((state) => ({
+    selection: modify(state.selection, value, name.toLowerCase()),
+  }));
 
 const setSelection = (set) => (data) => set(() => ({ selection: data }));
 
-const filter = (set) => (list, newSelection) => {
+const filter = () => (list, newSelection) => {
   return newSelection === null
     ? list
     : newSelection.reduce(
@@ -53,3 +55,5 @@ export const useZstore = create((set) => ({
   setData: setData(set),
   filter: filter(set),
 }));
+
+useZstore.setState({ checkboxes: initial });

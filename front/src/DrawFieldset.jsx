@@ -1,4 +1,3 @@
-import React from "react";
 import DrawInput from "./DrawInput";
 
 export default function DrawFieldset({ legend, type, names }) {

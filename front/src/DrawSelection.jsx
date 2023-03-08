@@ -1,4 +1,3 @@
-import React from "react";
 import DrawFieldset from "./DrawFieldset";
 import { selectMenu } from "./selectMenu";
 

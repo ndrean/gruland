@@ -1,5 +1,4 @@
 import history from "./history.js";
-import React from "react";
 
 const navLinks = [{ path: "/", title: "ServerlessLand examples" }];
 

@@ -1,26 +1,20 @@
-import React from "react";
 import history from "./history";
 import DrawSelection from "./DrawSelection";
 import { useZstore, initial } from "./store";
 import "./index.css";
 
 export default function Home({ list }) {
-  const setCheckboxes = useZstore((state) => state.setCheckboxes);
-  setCheckboxes(initial);
+  const selection = useZstore((state) => state.selection);
+  const examples = useZstore((state) => state.filter)(list, selection);
+
+  function handleReset() {
+    useZstore.setState({ selection: null });
+    useZstore.setState({ checkboxes: initial });
+  }
 
   function handleClick(e) {
     e.preventDefault();
     history.push({ pathname: e.target.pathname });
-  }
-
-  const selection = useZstore((state) => state.selection);
-  const examples = useZstore((state) => state.filter)(list, selection);
-
-  const setSelection = useZstore((state) => state.setSelection);
-
-  function handleReset() {
-    setSelection(null);
-    setCheckboxes(initial);
   }
 
   return (
@@ -41,7 +35,7 @@ export default function Home({ list }) {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 col-span-4 gap-2">
         {examples &&
-          examples?.map((example, index) => (
+          examples.map((example, index) => (
             <div className="flex justify-center mb-5" key={index}>
               <div className="block max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700">
                 <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">

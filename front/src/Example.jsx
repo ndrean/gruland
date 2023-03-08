@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Example({ example }) {
   const bullets = [];
   example.resources.bullets.forEach((b) =>
