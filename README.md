@@ -18,4 +18,4 @@ A file "result.json" is created
 
 ## Front
 
-CRA generated with Universal-Router & Zustand
+Vite generate Preact + Universal-Router + Zustand
