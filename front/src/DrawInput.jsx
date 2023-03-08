@@ -1,12 +1,10 @@
 import { useZstore } from "./store";
 
 export default function DrawInput({ name, type, val }) {
-  const updateSelection = useZstore((state) => state.updateSelection);
-  const updateCheckboxes = useZstore((state) => state.updateCheckboxes);
+  const filterData = useZstore((state) => state.filterData);
 
   const handleChange = () => {
-    updateCheckboxes(val, name);
-    updateSelection(val, name);
+    filterData(val, name);
   };
 
   return (

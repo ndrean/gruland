@@ -1,15 +1,14 @@
 import history from "./history";
 import DrawSelection from "./DrawSelection";
-import { useZstore, initial } from "./store";
+import { useZstore } from "./store";
 import "./index.css";
 
 export default function Home({ list }) {
-  const selection = useZstore((state) => state.selection);
-  const examples = useZstore((state) => state.filter)(list, selection);
+  let examples = useZstore((state) => state.selectedData);
 
   function handleReset() {
-    useZstore.setState({ selection: null });
-    useZstore.setState({ checkboxes: initial });
+    useZstore.setState({ filterStore: null });
+    useZstore.setState({ selectedData: useZstore.getState().initData });
   }
 
   function handleClick(e) {
@@ -20,7 +19,6 @@ export default function Home({ list }) {
   return (
     <div className="grid grid-cols-6  gap-2">
       <div className="border-2 ml-2 text-center col-span-2">
-        <p> Filters: {examples?.length}</p>
         <form>
           <button
             type="reset"
