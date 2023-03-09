@@ -3,12 +3,12 @@ import DrawSelection from "./DrawSelection";
 import { useZstore } from "./store";
 import "./index.css";
 
-export default function Home() {
+export default function Home({ list }) {
   let examples = useZstore((state) => state.selectedData);
 
   function handleReset() {
     useZstore.setState({ filterStore: null });
-    useZstore.setState({ selectedData: useZstore.getState().initData });
+    useZstore.setState({ selectedData: list });
   }
 
   function handleClick(e) {
