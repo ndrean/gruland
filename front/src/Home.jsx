@@ -5,12 +5,10 @@ import "./index.css";
 
 export default function Home() {
   let examples = useZstore((state) => state.selectedData);
-  const resetFilterMap = useZstore((state) => state.resetFilterMap);
-  const resetSelectedData = useZstore((state) => state.resetSelectedData);
+  const resetZstore = useZstore((state) => state.resetZstore);
 
   function handleReset() {
-    resetFilterMap();
-    resetSelectedData();
+    resetZstore();
   }
 
   function handleClick(e) {
