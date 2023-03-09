@@ -17,6 +17,5 @@ async function renderRoute(location) {
   }
 }
 
-///////////////////////////////
 history.listen(({ location }) => renderRoute(location));
 history.push("/");
