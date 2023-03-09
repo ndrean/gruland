@@ -1,13 +1,13 @@
 import { useZstore } from "./store";
 
 const controlCheck = (name, val) => {
-  const selection = useZstore.getState().filterMap;
-  return selection.get(name.toLowerCase()) === val ? true : false;
+  const selectionMap = useZstore.getState().filterMap;
+  return selectionMap.get(name.toLowerCase()) === val ? true : false;
 };
 
 export default function DrawInput({ name, type, val }) {
   const filterData = useZstore((state) => state.filterData);
-  const checked = controlCheck(name, val);
+  const isChecked = controlCheck(name, val);
 
   const handleChange = () => filterData(val, name);
 
@@ -27,7 +27,7 @@ export default function DrawInput({ name, type, val }) {
           id={val}
           name={name}
           value={val}
-          checked={checked}
+          checked={isChecked}
           onChange={handleChange}
         />
       </label>
