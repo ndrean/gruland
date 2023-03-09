@@ -1,13 +1,19 @@
 import DrawInput from "./DrawInput";
 
-export default function DrawFieldset({ legend, type, names }) {
+export default function DrawFieldset({ legend, type, names, handlers }) {
   return (
     <fieldset className="border border-solid mt-2">
       <legend className="m-2 font-bold">{legend}</legend>
       <div>
-        {names.map((name, id) => (
-          <DrawInput name={legend} key={id} type={type} val={name} />
-        ))}
+        {names.map((name, id) => {
+          const inputOb = {
+            name: legend,
+            val: name,
+            type,
+            handlers,
+          };
+          return <DrawInput key={id} inputOb={inputOb} />;
+        })}
       </div>
     </fieldset>
   );
