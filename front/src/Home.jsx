@@ -26,7 +26,7 @@ export default function Home() {
         >
           Reset
         </button>
-        <p>Filter: {examples.length}</p>
+        <p>Filter: {examples && examples.length}</p>
         <hr />
         <DrawSelection />
       </div>

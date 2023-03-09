@@ -5,6 +5,7 @@
 In a terminal run:
 
 ```bash
+mix deps.get
 iex -S mix
 ```
 
@@ -19,3 +20,7 @@ A file "result.json" is created
 ## Front
 
 Vite generate Preact + Universal-Router + Zustand
+
+```js
+npm i
+```

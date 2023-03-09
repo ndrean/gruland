@@ -3,8 +3,8 @@ import { useZstore } from "./store";
 import { getJson, githubJson } from "./github";
 
 async function createHome() {
-  const list = useZstore.getState().initData || (await getJson(githubJson));
   if (useZstore.getState().initData === null) {
+    const list = await getJson(githubJson);
     useZstore.setState({ initData: list, selectedData: list });
   }
   const { default: Home } = await import("./Home");
