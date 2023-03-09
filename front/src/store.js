@@ -18,4 +18,5 @@ export const useZstore = create((set, get) => ({
   filterData: filterData(set),
   resetZstore: () =>
     set({ filterMap: new Map(), selectedData: get().initData }),
+  loader: true,
 }));

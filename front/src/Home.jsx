@@ -11,6 +11,7 @@ export default function Home() {
   const resetZstore = useZstore((state) => state.resetZstore);
   const filterData = useZstore((state) => state.filterData);
   const selectionMap = useZstore((state) => state.filterMap);
+  const loader = useZstore((state) => state.loader);
 
   function handleReset() {
     resetZstore();
@@ -26,7 +27,6 @@ export default function Home() {
   }
 
   const controlCheck = (name, value) => {
-    const selectionMap = useZstore.getState().filterMap;
     return selectionMap.get(name.toLowerCase()) === value ? true : false;
   };
 
@@ -39,7 +39,9 @@ export default function Home() {
         <DrawSelection handlers={{ handleChange, controlCheck }} />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 col-span-4 gap-2">
-        {examples ? (
+        {loader ? (
+          <Loader />
+        ) : (
           examples.map((example, index) => (
             <DrawCards
               example={example}
@@ -47,8 +49,6 @@ export default function Home() {
               handleClick={handleClick}
             />
           ))
-        ) : (
-          <Loader />
         )}
       </div>
     </div>
