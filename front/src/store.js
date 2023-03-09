@@ -7,7 +7,7 @@ const filterData = (set) => (value, name) =>
       value
     );
 
-    let list = state.initData;
+    let list = [...state.initData];
     for (const [k, v] of updatedMap) {
       list = list.filter((example) => example[k] === v);
     }

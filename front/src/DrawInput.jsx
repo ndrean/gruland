@@ -1,17 +1,13 @@
 import { useZstore } from "./store";
 
-function controlCheck(name, val) {
+const controlCheck = (name, val) => {
   const selection = useZstore.getState().filterStore;
-  let checked;
-  if (selection) {
-    selection.get(name.toLowerCase()) === val
-      ? (checked = true)
-      : (checked = false);
+  if (!selection) {
+    return false;
   } else {
-    checked = false;
+    return selection.get(name.toLowerCase()) === val ? true : false;
   }
-  return checked;
-}
+};
 
 export default function DrawInput({ name, type, val }) {
   const filterData = useZstore((state) => state.filterData);
