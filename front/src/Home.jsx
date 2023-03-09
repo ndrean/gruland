@@ -4,7 +4,7 @@ import { useZstore } from "./store";
 import "./index.css";
 
 export default function Home() {
-  let examples = useZstore((state) => state.selectedData);
+  const examples = useZstore((state) => state.selectedData);
   const resetZstore = useZstore((state) => state.resetZstore);
 
   function handleReset() {
