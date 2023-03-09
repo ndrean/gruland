@@ -14,7 +14,7 @@ const filterData = (set) => (value, name) =>
 export const useZstore = create((set, get) => ({
   initData: null,
   filterMap: new Map(),
-  selectedData: null,
+  selectedData: [],
   filterData: filterData(set),
   resetFilterMap: () => set({ filterMap: new Map() }),
   resetSelectedData: () => set({ selectedData: get().initData }),

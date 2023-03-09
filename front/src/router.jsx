@@ -12,9 +12,8 @@ async function createHome() {
 }
 
 async function setExample(id) {
-  const example = useZstore
-    .getState()
-    .selectedData.filter((ex) => ex.id === id)[0];
+  const data = useZstore.getState().selectedData;
+  const example = data.filter((ex) => ex.id === id)[0];
   const { default: Example } = await import("./Example");
   return Example({ example });
 }
