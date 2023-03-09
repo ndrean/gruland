@@ -1,7 +1,21 @@
 import { useZstore } from "./store";
 
+function controlCheck(name, val) {
+  const selection = useZstore.getState().filterStore;
+  let checked;
+  if (selection) {
+    selection.get(name.toLowerCase()) === val
+      ? (checked = true)
+      : (checked = false);
+  } else {
+    checked = false;
+  }
+  return checked;
+}
+
 export default function DrawInput({ name, type, val }) {
   const filterData = useZstore((state) => state.filterData);
+  const checked = controlCheck(name, val);
 
   const handleChange = () => {
     filterData(val, name);
@@ -23,6 +37,7 @@ export default function DrawInput({ name, type, val }) {
           id={val}
           name={name}
           value={val}
+          checked={checked}
           onChange={handleChange}
         />
       </label>

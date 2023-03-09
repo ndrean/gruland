@@ -1,4 +1,4 @@
-const selectMenu = [
+export const selectMenu = [
   {
     legend: "Framework",
     type: "radio",
@@ -30,5 +30,3 @@ const selectMenu = [
     ],
   },
 ];
-
-export { selectMenu };

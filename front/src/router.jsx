@@ -8,7 +8,7 @@ async function createHome() {
     useZstore.setState({ initData: list, selectedData: list });
   }
   const { default: Home } = await import("./Home");
-  return <Home list={list} />;
+  return <Home />;
 }
 
 async function setExample(id) {
