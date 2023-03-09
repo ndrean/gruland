@@ -2,9 +2,9 @@ import history from "./history";
 import Reset from "./Reset";
 import Loader from "./Loader";
 import DrawSelection from "./DrawSelection";
+import DrawCards from "./DrawCards";
 import { useZstore } from "./store";
 import "./index.css";
-import DrawCards from "./DrawCards";
 
 export default function Home() {
   const examples = useZstore((state) => state.selectedData);

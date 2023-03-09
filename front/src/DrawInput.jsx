@@ -5,7 +5,6 @@ export default function DrawInput({ inputOb }) {
     val,
     handlers: { handleChange, controlCheck },
   } = inputOb;
-  const isChecked = controlCheck(name, val);
 
   return (
     <div>
@@ -23,7 +22,7 @@ export default function DrawInput({ inputOb }) {
           id={val}
           name={name}
           value={val}
-          checked={isChecked}
+          checked={controlCheck(name, val)}
           onChange={handleChange}
         />
       </label>
