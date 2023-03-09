@@ -4,7 +4,7 @@ export default function DrawFieldset({ legend, type, names, handlers }) {
   return (
     <fieldset className="border border-solid mt-2">
       <legend className="m-2 font-bold">{legend}</legend>
-      <div>
+      <div className="flex flex-col items-start">
         {names.map((name, id) => {
           const inputOb = {
             name: legend,

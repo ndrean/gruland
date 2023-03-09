@@ -15,8 +15,7 @@ const filterData = (set) => (value, name) =>
 async function upload() {
   if (useZstore.getState().initData === null) {
     const list = await getJson(githubJson);
-    useZstore.setState({ loader: false });
-    useZstore.setState({ initData: list, selectedData: list });
+    useZstore.setState({ initData: list, selectedData: list, loader: false });
   }
 }
 

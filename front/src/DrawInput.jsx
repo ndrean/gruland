@@ -7,7 +7,7 @@ export default function DrawInput({ inputOb }) {
   } = inputOb;
 
   return (
-    <div>
+    <div className="text-sm">
       <label
         htmlFor={val}
         className={
@@ -16,7 +16,6 @@ export default function DrawInput({ inputOb }) {
             : "hover:bg-green-200 p-1 rounded m-1"
         }
       >
-        {val}
         <input
           type={type}
           id={val}
@@ -25,6 +24,7 @@ export default function DrawInput({ inputOb }) {
           checked={controlCheck(name, val)}
           onChange={handleChange}
         />
+        {val}
       </label>
     </div>
   );

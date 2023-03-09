@@ -29,15 +29,14 @@ export default function Home() {
     return filterData(value, name);
   }
 
-  const controlCheck = (name, value) => {
-    return selectionMap.get(name.toLowerCase()) === value ? true : false;
-  };
+  const controlCheck = (name, value) =>
+    selectionMap.get(name.toLowerCase()) === value ? true : false;
 
   return (
     <div className="grid grid-cols-6  gap-2">
       <div className="border-2 ml-2 text-center col-span-2">
         <Reset handleReset={handleReset} />
-        <p>Filter: {examples && examples.length}</p>
+        <p>Filters: ({examples && examples.length} template(s))</p>
         <hr />
         <DrawSelection handlers={{ handleChange, controlCheck }} />
       </div>
