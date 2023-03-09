@@ -19,17 +19,16 @@ export default function Home({ list }) {
   return (
     <div className="grid grid-cols-6  gap-2">
       <div className="border-2 ml-2 text-center col-span-2">
-        <form>
-          <button
-            type="reset"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            onClick={handleReset}
-          >
-            Reset
-          </button>
-          <hr />
-          <DrawSelection />
-        </form>
+        <button
+          type="reset"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={handleReset}
+        >
+          Reset
+        </button>
+        <p>Filter: {examples.length}</p>
+        <hr />
+        <DrawSelection />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 col-span-4 gap-2">
         {examples &&
