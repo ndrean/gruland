@@ -11,19 +11,11 @@ const filterData = (set) => (value, name) =>
     return { selectedData: list, filterMap: updatedMap };
   });
 
-const resetFilterMap = (set) => () =>
-  set(() => ({
-    filterMap: new Map(),
-  }));
-
-const resetSelectedData = (set) => () =>
-  set((state) => ({ selectedData: state.initData }));
-
-export const useZstore = create((set) => ({
+export const useZstore = create((set, get) => ({
   initData: null,
   filterMap: new Map(),
-  resetFilterMap: resetFilterMap(set),
-  resetSelectedData: resetSelectedData(set),
   selectedData: null,
   filterData: filterData(set),
+  resetFilterMap: () => set({ filterMap: new Map() }),
+  resetSelectedData: () => set({ selectedData: get().initData }),
 }));
