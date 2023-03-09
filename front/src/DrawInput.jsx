@@ -1,6 +1,16 @@
-import React from "react";
+import { useZstore } from "./store";
 
-export default function DrawInput({ name, type, val, handleBox, isChecked }) {
+const controlCheck = (name, val) => {
+  const selectionMap = useZstore.getState().filterMap;
+  return selectionMap.get(name.toLowerCase()) === val ? true : false;
+};
+
+export default function DrawInput({ name, type, val }) {
+  const filterData = useZstore((state) => state.filterData);
+  const isChecked = controlCheck(name, val);
+
+  const handleChange = () => filterData(val, name);
+
   return (
     <div>
       <label
@@ -17,7 +27,8 @@ export default function DrawInput({ name, type, val, handleBox, isChecked }) {
           id={val}
           name={name}
           value={val}
-          onChange={handleBox}
+          checked={isChecked}
+          onChange={handleChange}
         />
       </label>
     </div>

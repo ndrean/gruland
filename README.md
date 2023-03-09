@@ -18,6 +18,4 @@ A file "result.json" is created
 
 ## Front
 
-Branch "main": CRA generated with React, Universal-Router & Zustand-Vanilla
-
-Branch "zustand": Vite geenrate with Preact, Universl-Router & Zustand hook.
+Vite generate Preact + Universal-Router + Zustand
