@@ -13,6 +13,9 @@ export default function Home() {
   const selectionMap = useZstore((state) => state.filterMap);
   const loader = useZstore((state) => state.loader);
 
+  useZstore((state) => state.upload)();
+  console.log(loader);
+
   function handleReset() {
     resetZstore();
   }

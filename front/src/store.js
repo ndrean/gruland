@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { getJson, githubJson } from "./github";
 
 const filterData = (set) => (value, name) =>
   set((state) => {
@@ -11,6 +12,14 @@ const filterData = (set) => (value, name) =>
     return { selectedData: list, filterMap: updatedMap };
   });
 
+async function upload() {
+  if (useZstore.getState().initData === null) {
+    const list = await getJson(githubJson);
+    useZstore.setState({ loader: false });
+    useZstore.setState({ initData: list, selectedData: list });
+  }
+}
+
 export const useZstore = create((set, get) => ({
   initData: null,
   filterMap: new Map(),
@@ -19,4 +28,5 @@ export const useZstore = create((set, get) => ({
   resetZstore: () =>
     set({ filterMap: new Map(), selectedData: get().initData }),
   loader: true,
+  upload: async () => upload(),
 }));
