@@ -3,7 +3,7 @@ import { selectMenu } from "./selectMenu";
 
 export default function DrawSelection({ handlers }) {
   return (
-    <div>
+    <div className="overflow-y-auto">
       {selectMenu.map(({ legend, type, names }, idx) => (
         <DrawFieldset
           legend={legend}

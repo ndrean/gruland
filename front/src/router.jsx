@@ -21,7 +21,8 @@ const router = new UniversalRouter([
         path: "/",
         action: async () => {
           upload();
-          return import("./Home").then(({ default: Home }) => <Home />);
+          const { default: Home } = await import("./Home");
+          return <Home />;
         },
       },
       {

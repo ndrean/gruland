@@ -29,27 +29,30 @@ export default function Home() {
   const controlCheck = (name, value) =>
     selectionMap.get(name.toLowerCase()) === value ? true : false;
 
+  console.log(examples);
   return (
-    <div className="grid grid-cols-3 gap-2">
-      <div className="border-2 ml-2 text-center">
-        <Reset handleReset={handleReset} />
-        <p>Filters: ({examples && examples.length} template(s))</p>
-        <hr />
-        <DrawSelection handlers={{ handleChange, controlCheck }} />
+    <div class="flex h-full">
+      <div className="flex w-72 h-full">
+        <div className="w-full flex flex-col mx-auto px-6 py-8">
+          <Reset handleReset={handleReset} />
+          <p>Filters: ({examples && examples.length} template(s))</p>
+          <hr />
+          <DrawSelection handlers={{ handleChange, controlCheck }} />
+        </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 col-span-2 gap-2">
+      <main className="flex flex-wrap justify-around w-full bg-white overflow-x-hidden overflow-y-auto mb-14">
         {loader ? (
           <Loader />
         ) : (
-          examples.map((example, index) => (
+          examples.map((example) => (
             <DrawCards
               example={example}
-              index={index}
+              index={example.id}
               handleClick={handleClick}
             />
           ))
         )}
-      </div>
+      </main>
     </div>
   );
 }
