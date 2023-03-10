@@ -1,5 +1,5 @@
 import UniversalRouter from "universal-router";
-import { useZstore } from "./store";
+import { useZstore, upload } from "./store";
 
 async function setExample(id) {
   const data = useZstore.getState().selectedData;
@@ -19,8 +19,10 @@ const router = new UniversalRouter([
     children: [
       {
         path: "/",
-        action: async () =>
-          await import("./Home").then(({ default: Home }) => <Home />),
+        action: async () => {
+          upload();
+          return import("./Home").then(({ default: Home }) => <Home />);
+        },
       },
       {
         path: "/:id",

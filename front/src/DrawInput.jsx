@@ -29,9 +29,3 @@ export default function DrawInput({ inputOb }) {
     </div>
   );
 }
-/*
-type={inputOb.type}
-          id={inputOb.val}
-          name={inputOb.name}
-          value={inputOb.val}
-          */

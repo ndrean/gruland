@@ -12,7 +12,7 @@ const filterData = (set) => (value, name) =>
     return { selectedData: list, filterMap: updatedMap };
   });
 
-async function upload() {
+export async function upload() {
   if (useZstore.getState().initData === null) {
     const list = await getJson(githubJson);
     useZstore.setState({ initData: list, selectedData: list, loader: false });
@@ -27,5 +27,4 @@ export const useZstore = create((set, get) => ({
   resetZstore: () =>
     set({ filterMap: new Map(), selectedData: get().initData }),
   loader: true,
-  upload: async () => upload(),
 }));
