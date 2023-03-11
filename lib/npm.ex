@@ -57,10 +57,6 @@ defmodule Npm do
              [stream_data | acc]
          end) do
       {:ok, result} ->
-        # IO.inspect(result)
-
-        # Jason.decode!(result)
-        # |> Map.get("results")
         %{"results" => results, "total" => total} = Jason.decode!(result)
 
         {
