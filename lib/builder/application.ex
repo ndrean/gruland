@@ -8,8 +8,7 @@ defmodule Builder.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: Builder.Worker.start_link(arg)
-      # {Builder.Worker, arg}
+      {Finch, name: Npm.Finch}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

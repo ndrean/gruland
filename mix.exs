@@ -24,7 +24,9 @@ defmodule Builder.MixProject do
     [
       # {:jason, "~> 1.4"},
       {:poison, "~> 5.0"},
-      {:uuid, "~> 1.1"}
+      {:uuid, "~> 1.1"},
+      {:jason, "~> 1.4"},
+      {:finch, "~> 0.14"}
     ]
   end
 end

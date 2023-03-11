@@ -13,6 +13,6 @@ defmodule Builder do
     end)
     |> Stream.reject(fn chunk -> chunk == nil end)
     |> Poison.encode!(%{pretty: true, indent: 2})
-    |> then(&File.write!("result.json", &1))
+    |> then(&File.write!("serverlessland-examples.json", &1))
   end
 end

@@ -7,23 +7,23 @@ export default function DrawInput({ inputOb }) {
   } = inputOb;
 
   return (
-    <div className="text-sm">
+    <div>
+      <input
+        type={type}
+        id={val}
+        name={name}
+        value={val}
+        checked={controlCheck(name, val)}
+        onChange={handleChange}
+      />
       <label
         htmlFor={val}
         className={
           name === "Framework"
-            ? "hover:bg-sky-200 p-1 rounded m-1"
-            : "hover:bg-green-200 p-1 rounded m-1"
+            ? "hover:bg-sky-200 p-1 rounded m-1 text-xl w-4 h-4"
+            : "hover:bg-green-200 p-1 rounded m-1 text-xl w-4 h-4"
         }
       >
-        <input
-          type={type}
-          id={val}
-          name={name}
-          value={val}
-          checked={controlCheck(name, val)}
-          onChange={handleChange}
-        />
         {val}
       </label>
     </div>

@@ -3,8 +3,8 @@ import DrawInput from "./DrawInput";
 export default function DrawFieldset({ legend, type, names, handlers }) {
   return (
     <fieldset className="border border-solid mt-2">
-      <legend className="m-2 font-bold">{legend}</legend>
-      <div className="flex flex-col items-start">
+      <legend className="m-2 font-bold text-lg">{legend}</legend>
+      <div className="flex flex-col items-start text-lg">
         {names.map((name, id) => {
           const inputOb = {
             name: legend,
