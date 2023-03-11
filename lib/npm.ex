@@ -12,7 +12,7 @@ defmodule Npm do
   def find(string, starting, ending) do
     Stream.resource(
       fn ->
-        {search(string), 0}
+        {search(string, 0), 0}
       end,
       fn {data, page} ->
         case search(string, 25 * page) do
@@ -20,7 +20,7 @@ defmodule Npm do
           result -> {[result], {data, page + 1}}
         end
       end,
-      fn data -> List.flatten(data) end
+      fn data -> data |> List.flatten() end
     )
     |> Enum.to_list()
     |> List.flatten()
