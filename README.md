@@ -18,6 +18,12 @@ iex> Npm.find("@aws-sdk/client", "2022-01-01", "2023-01-01")
 
 Two files are created: "aws-npm-packages.json" and "serverlessland-examples.json"
 
+<img width="702" alt="Screenshot 2023-03-11 at 01 42 08" src="https://user-images.githubusercontent.com/6793008/224469567-eca61d3d-448c-4689-ac94-7acdf4f9a8ac.png">
+<img width="422" alt="Screenshot 2023-03-11 at 01 44 37" src="https://user-images.githubusercontent.com/6793008/224469675-a996a21a-d885-4eb8-a67b-9756ce733c45.png">
+
+
+The code of AWS NPM packages can be run in a Livebook.
+
 [![Run in Livebook](https://livebook.dev/badge/v1/blue.svg)](https://livebook.dev/run?url=https://github.com/ndrean/gruland/blob/main/livebook.livemd)
 
 ## Front
