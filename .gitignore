@@ -3,3 +3,4 @@ _build
 /deps
 /front/dist/
 /front/node_modules/
+.env
