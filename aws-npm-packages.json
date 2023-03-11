@@ -1819,6 +1819,12 @@
   },
   {
     "start": "2022-01-01",
+    "package": "@aws-sdk/client-documentation-generator",
+    "end": "2023-01-01",
+    "downloads": 8177
+  },
+  {
+    "start": "2022-01-01",
     "package": "@aws-sdk/client-billingconductor",
     "end": "2023-01-01",
     "downloads": 7953
