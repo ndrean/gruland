@@ -1,0 +1,99 @@
+# AWS NPM packages downloads
+
+```elixir
+Mix.install([
+  {:poison, "~> 5.0"},
+  {:uuid, "~> 1.1"},
+  {:jason, "~> 1.4"},
+  {:finch, "~> 0.14"},
+  {:kino_vega_lite, "~> 0.1.7"}
+])
+
+Finch.start_link(name: Npm.Finch)
+```
+
+## Section
+
+```elixir
+defmodule Npm do
+  def downloaded(packagename, start, ending) do
+    registry = "https://api.npmjs.org"
+    path = "/downloads/point/" <> "#{start}" <> ":" <> "#{ending}" <> "/" <> "#{packagename}"
+
+    case Finch.build(:get, registry <> path) |> Finch.request(Npm.Finch) do
+      {:ok, %{body: body}} -> Jason.decode!(body)
+      {:error, reason} -> reason
+    end
+  end
+
+  def find(s, starting, ending) do
+    Stream.resource(
+      fn ->
+        {search(s, 0), 0}
+      end,
+      fn {data, idx} ->
+        case search(s, 25 * idx) do
+          [] -> {:halt, data}
+          res -> {[res], {data, idx + 1}}
+        end
+      end,
+      fn data -> List.flatten(data) end
+    )
+    |> Enum.to_list()
+    |> List.flatten()
+    |> Task.async_stream(&downloaded(&1, starting, ending))
+    |> Stream.map(fn {:ok, result} -> result end)
+    |> Enum.sort_by(fn result -> result["downloads"] end, :desc)
+
+    # |> Poison.encode!(%{pretty: true, indent: 2})
+    # |> then(&File.write!("aws-npm-packages.json", &1))
+  end
+
+  def search(s, from \\ 0) do
+    url = "https://api.npms.io/v2/search"
+
+    case Finch.build(:get, url <> "?q=#{s}&size=25&from=#{from}")
+         |> Finch.stream(Npm.Finch, [], fn
+           {:status, _status}, acc ->
+             acc
+
+           {:headers, _headers}, acc ->
+             acc
+
+           {:data, stream_data}, acc ->
+             [stream_data | acc]
+         end) do
+      {:ok, result} ->
+        Jason.decode!(result)
+        |> Map.get("results")
+        |> Stream.filter(fn package ->
+          Map.has_key?(package, "flags") === false &&
+            get_in(package, ["package", "name"]) |> String.contains?("@aws-sdk/client")
+        end)
+        |> Enum.map(&get_in(&1, ["package", "name"]))
+
+      {:error, reason} ->
+        IO.inspect(reason)
+        []
+    end
+  end
+end
+```
+
+```elixir
+data = Npm.find("@aws-sdk/client", "2022-01-01", "2023-01-01")
+```
+
+<!-- livebook:{"attrs":{"chart_title":null,"height":400,"layers":[{"chart_type":"bar","color_field":null,"color_field_aggregate":null,"color_field_bin":false,"color_field_scale_scheme":null,"color_field_type":null,"data_variable":"data","x_field":"downloads","x_field_aggregate":null,"x_field_bin":false,"x_field_scale_type":null,"x_field_type":"quantitative","y_field":"downloads","y_field_aggregate":null,"y_field_bin":false,"y_field_scale_type":null,"y_field_type":"quantitative"}],"vl_alias":"Elixir.VegaLite","width":600},"chunks":null,"kind":"Elixir.KinoVegaLite.ChartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+VegaLite.new(width: 600, height: 400)
+|> VegaLite.data_from_values(data, only: ["downloads"])
+|> VegaLite.mark(:bar)
+|> VegaLite.encode_field(:x, "downloads", type: :quantitative)
+|> VegaLite.encode_field(:y, "downloads", type: :quantitative)
+```
+
+```elixir
+data = Enum.map(data, fn %{"downloads" => d, "package" => name} -> Map.put(%{}, name, d) end)
+```
