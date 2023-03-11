@@ -9,7 +9,7 @@ defmodule Npm do
     end
   end
 
-  def find(s) do
+  def find(s, starting, ending) do
     Stream.resource(
       fn ->
         {search(s, 0), 0}
@@ -24,7 +24,7 @@ defmodule Npm do
     )
     |> Enum.to_list()
     |> List.flatten()
-    |> Task.async_stream(&downloaded(&1, "2022-01-01", "2023-01-01"))
+    |> Task.async_stream(&downloaded(&1, starting, ending))
     |> Stream.map(fn {:ok, result} -> result end)
     |> Enum.sort_by(fn result -> result["downloads"] end, :desc)
     |> Poison.encode!(%{pretty: true, indent: 2})
