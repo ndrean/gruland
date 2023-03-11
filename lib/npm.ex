@@ -9,15 +9,15 @@ defmodule Npm do
     end
   end
 
-  def find(s, starting, ending) do
+  def find(string, starting, ending) do
     Stream.resource(
       fn ->
-        {search(s, 0), 0}
+        {search(string), 0}
       end,
-      fn {data, idx} ->
-        case search(s, 25 * idx) do
+      fn {data, page} ->
+        case search(string, 25 * page) do
           [] -> {:halt, data}
-          res -> {[res], {data, idx + 1}}
+          result -> {[result], {data, page + 1}}
         end
       end,
       fn data -> List.flatten(data) end
@@ -31,10 +31,10 @@ defmodule Npm do
     |> then(&File.write!("aws-npm-packages.json", &1))
   end
 
-  def search(s, from \\ 0) do
+  def search(string, from \\ 0) do
     url = "https://api.npms.io/v2/search"
 
-    case Finch.build(:get, url <> "?q=#{s}&size=25&from=#{from}")
+    case Finch.build(:get, url <> "?q=#{string}&size=25&from=#{from}")
          |> Finch.stream(Npm.Finch, [], fn
            {:status, _status}, acc ->
              acc
