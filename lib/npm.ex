@@ -10,25 +10,32 @@ defmodule Npm do
   end
 
   def find(string, starting, ending) do
-    Stream.resource(
-      fn ->
-        {search(string, 0), 0}
-      end,
-      fn {data, page} ->
-        case search(string, 25 * page) do
-          [] -> {:halt, data}
-          result -> {[result], {data, page + 1}}
-        end
-      end,
-      fn data -> data |> List.flatten() end
-    )
-    |> Enum.to_list()
-    |> List.flatten()
-    |> Task.async_stream(&downloaded(&1, starting, ending))
-    |> Stream.map(fn {:ok, result} -> result end)
-    |> Enum.sort_by(fn result -> result["downloads"] end, :desc)
-    |> Poison.encode!(%{pretty: true, indent: 2})
-    |> then(&File.write!("aws-npm-packages.json", &1))
+    try do
+      Stream.resource(
+        fn ->
+          {search(string, 0), 0}
+        end,
+        fn {data, page} ->
+          case search(string, 25 * page) do
+            [] -> {:halt, data}
+            result -> {[result], {data, page + 1}}
+          end
+        end,
+        fn data -> data |> List.flatten() end
+      )
+      |> Enum.to_list()
+      |> List.flatten()
+      |> Task.async_stream(&downloaded(&1, starting, ending))
+      |> Stream.map(fn {:ok, result} -> result end)
+      |> Enum.sort_by(fn result -> result["downloads"] end, :desc)
+      |> Poison.encode!(%{pretty: true, indent: 2})
+      |> then(&File.write!("aws-npm-packages.json", &1))
+    rescue
+      e in FunctionClauseError ->
+        IO.inspect(e)
+        Process.sleep(1_000)
+        find(string, starting, ending)
+    end
   end
 
   def search(string, from \\ 0) do
