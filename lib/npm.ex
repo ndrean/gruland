@@ -1,15 +1,23 @@
 defmodule Npm do
+  require Logger
+
+  @registry "https://api.npmjs.org"
+
   def downloaded(packagename, start, ending) do
-    registry = "https://api.npmjs.org"
+    registry = @registry
     path = "/downloads/point/" <> "#{start}" <> ":" <> "#{ending}" <> "/" <> "#{packagename}"
 
     case Finch.build(:get, registry <> path) |> Finch.request(Npm.Finch) do
       {:ok, %{body: body}} -> Jason.decode!(body)
-      {:error, reason} -> reason
+      {:error, reason} -> Logger.debug(%{details: reason})
     end
   end
 
-  def find(string, starting, ending) do
+  @starting "2022-01-01"
+  @ending "2023-01-01"
+  @search "@aws-sdk/client"
+
+  def find(string \\ @search, starting \\ @starting, ending \\ @ending) do
     try do
       Stream.resource(
         fn -> {[], 0} end,
@@ -21,29 +29,31 @@ defmodule Npm do
               {:halt, data}
 
             false ->
-              {[response], {data, page + 1}}
+              {[response] |> List.flatten(), {data, page + 1}}
           end
         end,
-        fn data -> data |> List.flatten() end
+        fn _ -> nil end
       )
-      |> Enum.to_list()
-      |> List.flatten()
       |> Task.async_stream(&downloaded(&1, starting, ending))
       |> Stream.map(fn {:ok, result} -> result end)
       |> Enum.sort_by(fn result -> result["downloads"] end, :desc)
-      # |> tap(fn list -> IO.inspect(length(list)) end)
+      |> tap(fn list -> Logger.info(%{length: length(list)}) end)
       |> Poison.encode!(%{pretty: true, indent: 2})
       |> then(&File.write!("aws-npm-packages.json", &1))
     rescue
-      e in FunctionClauseError ->
+      e ->
         IO.inspect(e)
         Process.sleep(1_000)
         find(string, starting, ending)
     end
   end
 
+  # Npm.find("@aws-sdk/client", "2022-01-01", "2022-03-01")
+
+  @search_point "https://api.npms.io/v2/search"
+
   def search(string, from \\ 0) do
-    url = "https://api.npms.io/v2/search"
+    url = @search_point
 
     case Finch.build(:get, url <> "?q=#{string}&size=25&from=#{from}")
          |> Finch.stream(Npm.Finch, [], fn
@@ -69,8 +79,7 @@ defmodule Npm do
         }
 
       {:error, reason} ->
-        IO.inspect(reason)
-        []
+        Logger.warn(%{reason: reason})
     end
   end
 end

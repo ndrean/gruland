@@ -38,13 +38,11 @@ defmodule Npm do
               {:halt, data}
 
             false ->
-              {[response], {data, page + 1}}
+              {[response] |> List.flatten(), {data, page + 1}}
           end
         end,
-        fn data -> data |> List.flatten() end
+        fn _ -> nil end
       )
-      |> Enum.to_list()
-      |> List.flatten()
       |> Task.async_stream(&downloaded(&1, starting, ending))
       |> Stream.map(fn {:ok, result} -> result end)
       |> Enum.sort_by(fn result -> result["downloads"] end, :desc)
@@ -72,13 +70,9 @@ defmodule Npm do
              acc
 
            {:data, stream_data}, acc ->
-             [stream_data | acc]
+             [stream_data | acc] |> List.flatten()
          end) do
       {:ok, result} ->
-        # IO.inspect(result)
-
-        # Jason.decode!(result)
-        # |> Map.get("results")
         %{"results" => results, "total" => total} = Jason.decode!(result)
 
         {
