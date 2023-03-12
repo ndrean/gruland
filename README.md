@@ -20,7 +20,7 @@ Two files are created: "aws-npm-packages.json" and "serverlessland-examples.json
 
 The official list of AWS NPM packages is: <https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/index.html>
 
-The NPM api can be found at: <https://api-docs.npms.io/>
+The NPM api can be found at: <https://api-docs.npms.io/> and a "search" endpint <https://api.npms.io/v2/search> (paginated per 25).
 
 Total downloads in 2022 per package:
 
