@@ -29,7 +29,7 @@ defmodule Npm do
               {:halt, data}
 
             false ->
-              {[response] |> List.flatten(), {data, page + 1}}
+              {response, {data, page + 1}}
           end
         end,
         fn _ -> nil end
