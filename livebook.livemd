@@ -38,7 +38,7 @@ defmodule Npm do
               {:halt, data}
 
             false ->
-              {[response] |> List.flatten(), {data, page + 1}}
+              {response, {data, page + 1}}
           end
         end,
         fn _ -> nil end
@@ -85,8 +85,6 @@ end
 ```elixir
 data = Npm.find("@aws-sdk/client", "2022-01-01", "2023-01-01")
 ```
-
-<!-- livebook:{"attrs":{"chart_title":null,"height":400,"layers":[{"chart_type":"bar","color_field":null,"color_field_aggregate":null,"color_field_bin":false,"color_field_scale_scheme":null,"color_field_type":null,"data_variable":"data","x_field":"downloads","x_field_aggregate":null,"x_field_bin":false,"x_field_scale_type":null,"x_field_type":"quantitative","y_field":"downloads","y_field_aggregate":null,"y_field_bin":false,"y_field_scale_type":null,"y_field_type":"quantitative"}],"vl_alias":"Elixir.VegaLite","width":600},"chunks":null,"kind":"Elixir.KinoVegaLite.ChartCell","livebook_object":"smart_cell"} -->
 
 ```elixir
 VegaLite.new(width: 600, height: 400)
