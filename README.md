@@ -2,6 +2,9 @@
 
 ## JSON files (Elixir)
 
+To build the examples, fork the repo <https://github.com/aws-samples/serverless-patterns>.
+The function `Builder.run` will read all the directories and extract the "example-pattern.json" files, and concat into a new file for the front to render it.
+
 In a terminal run:
 
 ```bash

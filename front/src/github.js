@@ -1,5 +1,5 @@
 const githubJson =
-  "https://raw.githubusercontent.com/ndrean/gruland/main/result.json";
+  "https://raw.githubusercontent.com/ndrean/gruland/main/serverlessland-examples.json";
 
 async function getJson(url) {
   try {
