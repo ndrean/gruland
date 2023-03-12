@@ -61,22 +61,22 @@ defmodule Npm do
   def search(string, from \\ 0) do
     url = "https://api.npms.io/v2/search"
 
+    # |> Finch.stream(Npm.Finch, [], fn
+    #  {:status, _status}, acc ->
+    #    acc
+    #  {:headers, _headers}, acc ->
+    #    acc
+    #  {:data, stream_data}, acc ->
+    #    [stream_data | acc] |> List.flatten()
+    # end) do
     case Finch.build(:get, url <> "?q=#{string}&size=25&from=#{from}")
-         |> Finch.stream(Npm.Finch, [], fn
-           {:status, _status}, acc ->
-             acc
-
-           {:headers, _headers}, acc ->
-             acc
-
-           {:data, stream_data}, acc ->
-             [stream_data | acc] |> List.flatten()
-         end) do
-      {:ok, result} ->
+         |> Finch.request(Npm.Finch) do
+      # {:ok, result} ->
+      {:ok, %{body: result}} ->
         %{"results" => results, "total" => total} = Jason.decode!(result)
 
         {
-          Stream.filter(results, fn package ->
+          Enum.filter(results, fn package ->
             Map.has_key?(package, "flags") === false &&
               get_in(package, ["package", "name"]) |> String.contains?("@aws-sdk/client")
           end)
