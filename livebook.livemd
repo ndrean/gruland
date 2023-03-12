@@ -41,17 +41,17 @@ defmodule Npm do
               {[response] |> List.flatten(), {data, page + 1}}
           end
         end,
-        fn _-> nil end
+        fn _ -> nil end
       )
       |> Task.async_stream(&downloaded(&1, starting, ending))
       |> Stream.map(fn {:ok, result} -> result end)
       |> Enum.sort_by(fn result -> result["downloads"] end, :desc)
       |> tap(fn list -> IO.inspect(length(list)) end)
 
-      #|> Poison.encode!(%{pretty: true, indent: 2})
-      #|> then(&File.write!("aws-npm-packages.json", &1))
+      # |> Poison.encode!(%{pretty: true, indent: 2})
+      # |> then(&File.write!("aws-npm-packages.json", &1))
     rescue
-      e in FunctionClauseError ->
+      e ->
         IO.inspect(e)
         Process.sleep(1_000)
         find(string, starting, ending)
@@ -62,10 +62,10 @@ defmodule Npm do
     url = "https://api.npms.io/v2/search"
 
     case Finch.build(:get, url <> "?q=#{string}&size=25&from=#{from}")
-         |> Finch.request(Npm.Finch)
+         |> Finch.request(Npm.Finch) do
       {:ok, %{body: result}} ->
         %{"results" => results, "total" => total} = Jason.decode!(result)
-        
+
         {
           Enum.filter(results, fn package ->
             Map.has_key?(package, "flags") === false &&
