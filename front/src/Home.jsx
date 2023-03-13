@@ -29,7 +29,6 @@ export default function Home() {
   const controlCheck = (name, value) =>
     selectionMap.get(name.toLowerCase()) === value ? true : false;
 
-  console.log(examples);
   return (
     <div class="flex h-full">
       <div className="flex w-72 h-full">
