@@ -27,7 +27,7 @@ defmodule Npm do
 
     case Finch.build(:get, registry <> path) |> Finch.request(Npm.Finch) do
       {:ok, %{body: body}} ->
-        case Jason.decode(body) do
+        case Jason.decode(body <> ",") do
           {:ok, response} -> response
           {:error, reason} -> {:error, reason}
         end

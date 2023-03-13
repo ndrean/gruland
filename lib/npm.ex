@@ -8,15 +8,13 @@ defmodule Npm do
     registry = @registry
     path = "/downloads/point/" <> "#{start}" <> ":" <> "#{ending}" <> "/" <> "#{packagename}"
 
-    case Finch.build(:get, registry <> path) |> Finch.request(Npm.Finch) do
-      {:ok, %{body: body}} ->
-        case Jason.decode(body) do
-          {:ok, response} -> response
-          {:error, reason} -> {:error, reason}
-        end
-
-      {:error, reason} ->
-        {:error, reason}
+    with {:ok, %{body: result}} <- Finch.build(:get, registry <> path) |> Finch.request(Npm.Finch) do
+      case Jason.decode(result) do
+        {:ok, response} -> response
+        {:error, reason} -> reason
+      end
+    else
+      {:error, reason} -> reason
     end
   end
 
@@ -66,12 +64,7 @@ defmodule Npm do
       )
       |> Task.async_stream(&downloaded(&1, starting, ending))
       |> Stream.map(&check_response.(&1))
-      |> Enum.sort_by(
-        fn result ->
-          result["downloads"]
-        end,
-        :desc
-      )
+      |> Enum.sort_by(&Map.get(&1, "downloads"), :desc)
       |> tap(&save_to_file.(&1))
       |> Enum.map(fn %{"downloads" => d, "package" => name} ->
         Map.put(%{}, name, d)
@@ -85,26 +78,26 @@ defmodule Npm do
   end
 
   def search(string, from \\ 0) do
-    case Finch.build(:get, @search_point <> "?q=#{string}&size=25&from=#{from}")
-         |> Finch.request(Npm.Finch) do
-      {:ok, %{body: result}} ->
-        case Jason.decode(result) do
-          {:ok, %{"results" => results, "total" => total}} ->
-            {
-              Enum.filter(results, fn package ->
-                Map.has_key?(package, "flags") === false &&
-                  get_in(package, ["package", "name"]) |> String.contains?("@aws-sdk/client")
-              end)
-              |> Enum.map(&get_in(&1, ["package", "name"])),
-              total
-            }
+    with {:ok, %{body: body}} <-
+           Finch.build(:get, @search_point <> "?q=#{string}&size=25&from=#{from}")
+           |> Finch.request(Npm.Finch) do
+      case Jason.decode(body) do
+        {:ok, %{"results" => results, "total" => total}} ->
+          {
+            Enum.filter(results, fn package ->
+              Map.has_key?(package, "flags") === false &&
+                get_in(package, ["package", "name"]) |> String.contains?("@aws-sdk/client")
+            end)
+            |> Enum.map(&get_in(&1, ["package", "name"])),
+            total
+          }
 
-          {:error, reason} ->
-            {:error, reason}
-        end
-
+        {:error, reason} ->
+          reason
+      end
+    else
       {:error, reason} ->
-        {:error, reason}
+        reason
     end
   end
 end
