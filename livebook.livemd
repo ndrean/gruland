@@ -27,7 +27,10 @@ defmodule Npm do
 
     case Finch.build(:get, registry <> path) |> Finch.request(Npm.Finch) do
       {:ok, %{body: body}} ->
-        Jason.decode!(body)
+        case Jason.decode(body) do
+          {:ok, response} -> response
+          {:error, reason} -> {:error, reason}
+        end
 
       {:error, reason} ->
         {:error, reason}
@@ -103,16 +106,20 @@ defmodule Npm do
     case Finch.build(:get, @search_point <> "?q=#{string}&size=25&from=#{from}")
          |> Finch.request(Npm.Finch) do
       {:ok, %{body: result}} ->
-        %{"results" => results, "total" => total} = Jason.decode!(result)
+        case Jason.decode(result) do
+          {:ok, %{"results" => results, "total" => total}} ->
+            {
+              Enum.filter(results, fn package ->
+                Map.has_key?(package, "flags") === false &&
+                  get_in(package, ["package", "name"]) |> String.contains?("@aws-sdk/client")
+              end)
+              |> Enum.map(&get_in(&1, ["package", "name"])),
+              total
+            }
 
-        {
-          Enum.filter(results, fn package ->
-            Map.has_key?(package, "flags") === false &&
-              get_in(package, ["package", "name"]) |> String.contains?("@aws-sdk/client")
-          end)
-          |> Enum.map(&get_in(&1, ["package", "name"])),
-          total
-        }
+          {:error, reason} ->
+            {:error, reason}
+        end
 
       {:error, reason} ->
         {:error, reason}
