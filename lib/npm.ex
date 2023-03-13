@@ -37,9 +37,15 @@ defmodule Npm do
       |> Task.async_stream(&downloaded(&1, starting, ending))
       |> Stream.map(fn {:ok, result} -> result end)
       |> Enum.sort_by(fn result -> result["downloads"] end, :desc)
-      |> tap(fn list -> Logger.info(%{length: length(list)}) end)
-      |> Poison.encode!(%{pretty: true, indent: 2})
-      |> then(&File.write!("aws-npm-packages.json", &1))
+      |> tap(fn list ->
+        Logger.info(%{length: length(list)})
+
+        Task.start(fn ->
+          Poison.encode!(list, %{pretty: true, indent: 2})
+          |> then(&File.write!("aws-npm-packages.json", &1))
+        end)
+      end)
+      |> Enum.map(fn %{"downloads" => d, "package" => name} -> Map.put(%{}, name, d) end)
     rescue
       e ->
         IO.inspect(e)
