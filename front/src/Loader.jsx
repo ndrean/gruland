@@ -1,7 +1,21 @@
 export default function Loader() {
   console.log("loading...");
   return (
-    <div class="text-center">
+    <div className="flex h-full items-center justify-center space-x-2 scale-150">
+      <div
+        className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-primary motion-reduce:animate-[spin_1.5s_linear_infinite]"
+        role="status"
+      >
+        <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+          Loading...
+        </span>
+      </div>
+    </div>
+  );
+}
+
+{
+  /* <div class="text-center">
       <div role="status">
         <svg
           aria-hidden="true"
@@ -21,6 +35,5 @@ export default function Loader() {
         </svg>
         <span class="sr-only">Loading...</span>
       </div>
-    </div>
-  );
+    </div> */
 }

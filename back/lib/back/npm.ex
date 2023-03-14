@@ -1,14 +1,22 @@
-defmodule Npm do
+defmodule Back.Npm do
+  # import Ecto.Query, warn: false
+  # alias Back.Repo
+  alias Back.Npm
+
   require Logger
 
   @registry "https://api.npmjs.org"
   @search_point "https://api.npms.io/v2/search"
+  @starting "2022-01-01"
+  @ending "2023-01-01"
+  @search "@aws-sdk/client"
 
   def downloaded(packagename, start, ending) do
     registry = @registry
     path = "/downloads/point/" <> "#{start}" <> ":" <> "#{ending}" <> "/" <> "#{packagename}"
 
-    with {:ok, %{body: result}} <- Finch.build(:get, registry <> path) |> Finch.request(Npm.Finch) do
+    with {:ok, %{body: result}} <-
+           Finch.build(:get, registry <> path) |> Finch.request(Back.Finch) do
       case Jason.decode(result) do
         {:ok, response} -> response
         {:error, reason} -> reason
@@ -18,9 +26,11 @@ defmodule Npm do
     end
   end
 
-  @starting "2022-01-01"
-  @ending "2023-01-01"
-  @search "@aws-sdk/client"
+  def list_packages do
+    Npm.find()
+    # nil
+    # Repo.all(Packages)
+  end
 
   def find(string \\ @search, starting \\ @starting, ending \\ @ending) do
     check_response = fn response ->
@@ -38,7 +48,7 @@ defmodule Npm do
 
       Task.start(fn ->
         case Poison.encode(list, %{pretty: true, indent: 2}) do
-          {:ok, result} -> File.write!("aws-npm-packages.json", result)
+          {:ok, result} -> File.write!("../aws-npm-packages.json", result)
           {:error, reason} -> reason
         end
       end)
@@ -80,13 +90,13 @@ defmodule Npm do
   def search(string, from \\ 0) do
     with {:ok, %{body: body}} <-
            Finch.build(:get, @search_point <> "?q=#{string}&size=25&from=#{from}")
-           |> Finch.request(Npm.Finch) do
+           |> Finch.request(Back.Finch) do
       case Jason.decode(body) do
         {:ok, %{"results" => results, "total" => total}} ->
           {
             Enum.filter(results, fn package ->
               Map.has_key?(package, "flags") === false &&
-                get_in(package, ["package", "name"]) |> String.contains?("@aws-sdk/client")
+                get_in(package, ["package", "name"]) |> String.contains?(string)
             end)
             |> Enum.map(&get_in(&1, ["package", "name"])),
             total

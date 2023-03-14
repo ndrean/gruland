@@ -1,5 +1,5 @@
 import UniversalRouter from "universal-router";
-import { useZstore, upload } from "./store";
+import { useZstore, upload, fetchPackages } from "./store";
 
 async function setExample(id) {
   const data = useZstore.getState().selectedData;
@@ -28,8 +28,13 @@ const router = new UniversalRouter([
       {
         path: "/npm-aws",
         action: async () => {
+          // if (useZstore.getState().loadingPkg) {
+          // return { redirect: "/" };
+          // } else {
+          fetchPackages();
           const { Packages } = await import("./Packages");
           return <Packages />;
+          // }
         },
       },
       {

@@ -10,6 +10,10 @@ async function renderRoute(location) {
       pathname: location.pathname,
     });
 
+    // console.log("page redirect main", Object.keys(page));
+    // if (page.redirect) {
+    // history.push("/");
+    // } else {
     return render(<>{page}</>, root);
   } catch (err) {
     console.log(err);
