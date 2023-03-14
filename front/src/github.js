@@ -4,9 +4,7 @@ const githubJson =
 async function getJson(url) {
   try {
     const response = await fetch(url);
-    const data = await response.json();
-    // return data.filter((l) => Object.keys(l).includes("title"));
-    return data;
+    return response.json();
   } catch (err) {
     console.log(err);
   }
