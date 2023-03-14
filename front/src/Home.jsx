@@ -31,18 +31,17 @@ export default function Home() {
 
   return (
     <div class="flex h-full">
-      <div className="flex w-72 h-full">
-        <div className="w-full flex flex-col mx-auto px-6 py-8">
-          <Reset handleReset={handleReset} />
-          <p>Filters: ({examples && examples.length} template(s))</p>
-          <hr />
-          <DrawSelection handlers={{ handleChange, controlCheck }} />
-        </div>
+      <div className="flex flex-col  px-2 py-8 w-72">
+        <Reset handleReset={handleReset} />
+        <p>Filters: ({examples && examples.length} template(s))</p>
+        <hr />
+        <DrawSelection handlers={{ handleChange, controlCheck }} />
       </div>
-      <main className="flex flex-wrap justify-around w-full bg-white overflow-x-hidden overflow-y-auto mb-14">
+      <main className="  flex-wrap w-full  bg-white h-auto overflow-y-auto mb-14">
         {loader ? (
           <Loader />
         ) : (
+          examples &&
           examples.map((example) => (
             <DrawCards
               example={example}
