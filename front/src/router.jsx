@@ -26,6 +26,13 @@ const router = new UniversalRouter([
         },
       },
       {
+        path: "/npm-aws",
+        action: async () => {
+          const { Packages } = await import("./Packages");
+          return <Packages />;
+        },
+      },
+      {
         path: "/:id",
         action: async ({ params: { id } }) => setExample(id),
       },

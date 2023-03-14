@@ -1,11 +1,14 @@
 import history from "./history";
 
-const navLinks = [{ path: "/", title: "ServerlessLand examples" }];
+const navLinks = [
+  { path: "/", title: "ServerlessLand examples" },
+  { path: "/npm-aws", title: "npm AWS" },
+];
 
 const Link = ({ path, title, handler }) => {
   return (
-    <div className="flex justify-between items-center bg-blue-300 p-4">
-      <div className="flex text-4xl m-2">
+    <div className="flex flex-row justify-between items-center bg-blue-300 p-4">
+      <div className=" text-2xl m-2">
         <a href={path} onClick={handler}>
           {title}
         </a>
@@ -23,9 +26,11 @@ export default function NavBar({ children }) {
   return (
     <main className="flex h-screen bg-amber-100">
       <div className="flex-1 flex flex-col overflow-hidden">
-        {navLinks.map(({ path, title }) => (
-          <Link key={title} path={path} title={title} handler={handleNav} />
-        ))}
+        <div className="flex flex-wrap  bg-blue-300">
+          {navLinks.map(({ path, title }) => (
+            <Link key={title} path={path} title={title} handler={handleNav} />
+          ))}
+        </div>
         {children}
       </div>
     </main>
