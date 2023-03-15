@@ -40,6 +40,8 @@ The official list of AWS NPM packages is: <https://docs.aws.amazon.com/AWSJavaSc
 
 The NPM api can be found at: <https://api-docs.npms.io/> and a "search" endpint <https://api.npms.io/v2/search> (paginated per 25).
 
+4/ Results for AWS JS packages in 2022:
+
 Total downloads in 2022 per package:
 
 <img width="702" alt="Screenshot 2023-03-11 at 01 42 08" src="https://user-images.githubusercontent.com/6793008/224469567-eca61d3d-448c-4689-ac94-7acdf4f9a8ac.png">
