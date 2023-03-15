@@ -32,11 +32,14 @@ export const useZstore = create((set, get) => ({
 }));
 
 export async function fetchPackages() {
+  const host = "https://gruland.fly.dev/api/packages";
+  const local = "http://localhost:4000/api/packages";
+
   useZstore.setState({ loadingPkg: true });
 
   let packages = useZstore.getState().packages;
   if (!packages) {
-    const response = await fetch("http://localhost:4000/" + "api/packages");
+    const response = await fetch(host, { mode: "cors" });
     packages = await response.json();
   }
   useZstore.setState({ packages: packages });

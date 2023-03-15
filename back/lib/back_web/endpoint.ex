@@ -11,7 +11,9 @@ defmodule BackWeb.Endpoint do
     same_site: "Lax"
   ]
 
-  plug(CORSPlug, origin: ["https://gruland.surge.sh", "http://localhost:5173"])
+  # plug(Corsica, origins: ["https://gruland.surge.sh", "http://localhost:5173"])
+  # plug(CORSPlug, origin: "*")
+  plug(Corsica, origins: ["https://gruland.surge.sh"], max_age: 32_000_000)
 
   # socket("/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]])
 

@@ -32,7 +32,7 @@ defmodule Back.Npm do
     # Repo.all(Packages)
   end
 
-  def find(string \\ @search, starting \\ @starting, ending \\ @ending) do
+  def find(save? \\ false, string \\ @search, starting \\ @starting, ending \\ @ending) do
     check_response = fn response ->
       case response do
         {:ok, result} ->
@@ -75,7 +75,7 @@ defmodule Back.Npm do
       |> Task.async_stream(&downloaded(&1, starting, ending))
       |> Stream.map(&check_response.(&1))
       |> Enum.sort_by(&Map.get(&1, "downloads"), :desc)
-      |> tap(&save_to_file.(&1))
+      |> tap(fn data -> if save?, do: save_to_file.(data) end)
       |> Enum.map(fn %{"downloads" => d, "package" => name} ->
         Map.put(%{}, name, d)
       end)
