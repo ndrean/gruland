@@ -42,14 +42,17 @@ export async function fetchPackages(pkg) {
   let packages = useZstore.getState().packages;
   if (!packages) {
     try {
-      const response = await fetch(host + new URLSearchParams({ p: pkg }), {
+      const response = await fetch(local + new URLSearchParams({ p: pkg }), {
         mode: "cors",
       });
 
-      packages = await response.json();
-      useZstore.setState({ packages: packages });
+      if (response) {
+        packages = await response.json();
+        useZstore.setState({ packages: packages });
+      }
     } catch (error) {
-      window.alert("system down");
+      console.log(error);
+      window.alert("Error");
     }
   }
   useZstore.setState({ loadingPkg: false });
