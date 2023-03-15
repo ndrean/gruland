@@ -1,9 +1,13 @@
 # Gruland
 
+<https://gruland.surge.sh>
+
+A backend to serve the statistics on AWS package from NPM is deployed on fly.io (`curl https://gruland.fly.dev/api/packages`)
+
 ## JSON files (Elixir)
 
-To build the examples, fork the repo <https://github.com/aws-samples/serverless-patterns>.
-The function `Builder.run` will read all the directories and extract the "example-pattern.json" files, and concat into a new file for the front to render it.
+1. To build the examples, fork the repo <https://github.com/aws-samples/serverless-patterns>.
+   The function `Builder.run` will read all the directories and extract the "example-pattern.json" files, and concat into a new file for the front to render it.
 
 In a terminal run:
 
@@ -16,8 +20,26 @@ This open an IEx session. Then run:
 
 ```elixir
 iex> Builder.run
+```
+
+This creates a file "serverlessland-examples.json"
+
+2. The NPM packages are served by a deployed app. You can `curl https://gruland.fly.dev/api/packages` or use the front-end `https://gruland.surge.sh` to get them.
+
+In a terminal, run Elixir:
+
+```
+$ iex -S mix
 iex> Npm.find("@aws-sdk/client", "2022-01-01", "2023-01-01")
 ```
+
+or run the server:
+
+```
+mix phx.server
+```
+
+and `curl http://localhost:4000/api/packages`.
 
 Two files are created: "aws-npm-packages.json" and "serverlessland-examples.json"
 
@@ -40,9 +62,5 @@ The code of AWS NPM packages can be run in a Livebook.
 ## Front
 
 Vite generate Preact + Universal-Router + Zustand
-
-```js
-npm i
-```
 
 Visible at: <https://gruland.surge.sh>
