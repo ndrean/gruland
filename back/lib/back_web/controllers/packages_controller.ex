@@ -2,9 +2,14 @@ defmodule BackWeb.PackagesController do
   use BackWeb, :controller
   alias Back.Npm
 
-  def index(conn, _params) do
-    # packages = Npm.find("@grucloud")
-    packages = Npm.find("@aws-sdk/client")
-    render(conn, :index, packages: packages)
+  action_fallback(BackWeb.FallbackController)
+
+  def index(conn, %{"p" => package}) do
+    packages =
+      if package === "",
+        do: Npm.find(false, "@grucloud"),
+        else: Npm.find(false, package)
+
+    json(conn, packages)
   end
 end

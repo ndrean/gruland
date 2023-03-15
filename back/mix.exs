@@ -41,7 +41,7 @@ defmodule Back.MixProject do
       {:uuid, "~> 1.1"},
       {:jason, "~> 1.4"},
       {:finch, "~> 0.14"},
-      {:cors_plug, "~> 3.0"}
+      {:corsica, "~> 1.3"}
     ]
   end
 

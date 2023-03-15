@@ -27,14 +27,14 @@ if config_env() == :prod do
   # to check this value into version control, so we use an environment
   # variable instead.
   secret_key_base =
-    "INtZ+kz/LYm0qLbtXtqYYlRAKcuPjOph7W/6P+xVzR7DepzEbIhT0mQkWbdLDi/j" ||
+    "PzBcumARl1a5oNAR5S/vZp/gARQvqnXMmIVYw90SOtyaw8bCd1MXSCTRZu93+uC1j" ||
       System.get_env("SECRET_KEY_BASE") ||
       raise """
       environment variable SECRET_KEY_BASE is missing.
       You can generate one by calling: mix phx.gen.secret
       """
 
-  host = System.get_env("PHX_HOST") || "example.com"
+  host = System.get_env("PHX_HOST") || "gruland.fly.dev"
   port = String.to_integer(System.get_env("PORT") || "4000")
 
   config :back, BackWeb.Endpoint,

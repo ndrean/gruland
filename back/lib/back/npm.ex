@@ -26,12 +26,6 @@ defmodule Back.Npm do
     end
   end
 
-  def list_packages do
-    Npm.find()
-    # nil
-    # Repo.all(Packages)
-  end
-
   def find(save? \\ false, string \\ @search, starting \\ @starting, ending \\ @ending) do
     check_response = fn response ->
       case response do

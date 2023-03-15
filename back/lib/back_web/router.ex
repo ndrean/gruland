@@ -2,13 +2,15 @@ defmodule BackWeb.Router do
   use BackWeb, :router
 
   pipeline :api do
+    plug(Corsica, origins: ["http://localhost:5173", "https://gruland.surge.sh"])
+
     plug(:accepts, ["json"])
   end
 
   scope "/api", BackWeb do
     pipe_through(:api)
 
-    get("/packages", PackagesController, :index)
+    get("/packages", PackagesController, :index, params: "p")
   end
 
   # Enable LiveDashboard in development

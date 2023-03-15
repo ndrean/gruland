@@ -11,9 +11,7 @@ defmodule BackWeb.Endpoint do
     same_site: "Lax"
   ]
 
-  # plug(Corsica, origins: ["https://gruland.surge.sh", "http://localhost:5173"])
-  # plug(CORSPlug, origin: "*")
-  plug(Corsica, origins: ["https://gruland.surge.sh"], max_age: 32_000_000)
+  plug(Corsica, origins: ["http://localhost:5173", "https://gruland.surge.sh"])
 
   # socket("/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]])
 
@@ -24,7 +22,7 @@ defmodule BackWeb.Endpoint do
   plug(Plug.Static,
     at: "/",
     from: :back,
-    gzip: false,
+    gzip: true,
     only: BackWeb.static_paths()
   )
 

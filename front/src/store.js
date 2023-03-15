@@ -29,20 +29,30 @@ export const useZstore = create((set, get) => ({
   loader: true,
   loadingPkg: false,
   packages: null,
+  disabled: false,
+  searched_package: "@grucloud",
 }));
 
-export async function fetchPackages() {
-  const host = "https://gruland.fly.dev/api/packages";
-  const local = "http://localhost:4000/api/packages";
+export async function fetchPackages(pkg) {
+  const host = "https://gruland.fly.dev/api/packages?";
+  const local = "http://localhost:4000/api/packages?";
 
   useZstore.setState({ loadingPkg: true });
-
+  useZstore.setState({ disabled: true });
   let packages = useZstore.getState().packages;
   if (!packages) {
-    const response = await fetch(host, { mode: "cors" });
-    packages = await response.json();
+    try {
+      const response = await fetch(host + new URLSearchParams({ p: pkg }), {
+        mode: "cors",
+      });
+
+      packages = await response.json();
+      useZstore.setState({ packages: packages });
+    } catch (error) {
+      window.alert("system down");
+    }
   }
-  useZstore.setState({ packages: packages });
   useZstore.setState({ loadingPkg: false });
+  useZstore.setState({ disabled: false });
   return packages;
 }
