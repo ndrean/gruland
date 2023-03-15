@@ -1,5 +1,5 @@
 import UniversalRouter from "universal-router";
-import { useZstore, upload, fetchPackages } from "./store";
+import { useZstore, upload } from "./store";
 
 async function setExample(id) {
   const data = useZstore.getState().selectedData;

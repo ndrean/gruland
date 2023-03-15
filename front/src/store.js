@@ -33,7 +33,7 @@ export const useZstore = create((set, get) => ({
   searched_package: "@grucloud",
 }));
 
-export async function fetchPackages(pkg) {
+export async function searchPackages(pkg) {
   const host = "https://gruland.fly.dev/api/packages?";
   const local = "http://localhost:4000/api/packages?";
 
@@ -51,7 +51,6 @@ export async function fetchPackages(pkg) {
         useZstore.setState({ packages: packages });
       }
     } catch (error) {
-      console.log(error);
       window.alert("Error");
     }
   }

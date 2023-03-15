@@ -1,5 +1,5 @@
 import Loader from "./Loader";
-import { useZstore, fetchPackages } from "./store";
+import { useZstore, searchPackages } from "./store";
 
 export function Packages() {
   const loadingPkg = useZstore((state) => state.loadingPkg);
@@ -14,7 +14,7 @@ export function Packages() {
   function handleSubmit(e) {
     e.preventDefault();
     useZstore.setState({ packages: null });
-    fetchPackages(searched_package);
+    searchPackages(searched_package);
   }
   return (
     <>
