@@ -24,13 +24,13 @@ iex> Builder.run
 
 This creates a file "serverlessland-examples.json"
 
-2. The NPM packages are served by a deployed app. You can `curl https://gruland.fly.dev/api/packages` or use the front-end `https://gruland.surge.sh` to get them.
+1. The NPM packages are served by a deployed app. You can `curl https://gruland.fly.dev/api/packages` or use the front-end `https://gruland.surge.sh` to get them.
 
-In a terminal, run Elixir:
+The file "aws-npm-packages.json" is created if you set `true`:
 
 ```
 $ iex -S mix
-iex> Npm.find("@aws-sdk/client", "2022-01-01", "2023-01-01")
+iex> Npm.find(true, "@aws-sdk/client", "2022-01-01", "2023-01-01")
 ```
 
 or run the server:
@@ -40,8 +40,6 @@ mix phx.server
 ```
 
 and `curl http://localhost:4000/api/packages`.
-
-Two files are created: "aws-npm-packages.json" and "serverlessland-examples.json"
 
 The official list of AWS NPM packages is: <https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/index.html>
 
