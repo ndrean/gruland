@@ -42,21 +42,20 @@ export async function searchPackages(pkg) {
   useZstore.setState({ disabled: true });
   let packages = useZstore.getState().packages;
   if (!packages) {
-    try {
-      const response = await fetch(host + new URLSearchParams({ p: pkg }), {
-        mode: "cors",
-      });
-
-      if (response) {
-        packages = await response.json();
+    const worker = new Worker("./worker.js");
+    worker.postMessage(pkg);
+    worker.onmessage = function ({ data }) {
+      if (data) {
+        packages = data;
         useZstore.setState({ packages: packages });
+        useZstore.setState({ loadingPkg: false });
+        useZstore.setState({ disabled: false });
+      } else {
+        window.alert("Error");
+        history.push("/");
       }
-    } catch (error) {
-      window.alert("Error");
-      history.push("/");
-    }
+      worker.terminate();
+    };
   }
-  useZstore.setState({ loadingPkg: false });
-  useZstore.setState({ disabled: false });
   return packages;
 }
