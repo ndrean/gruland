@@ -11,10 +11,12 @@ defmodule Back.Npm do
   @search "@aws-sdk/client"
 
   def downloaded(packagename, start, ending) do
-    path = "/downloads/point/" <> "#{start}" <> ":" <> "#{ending}" <> "/" <> "#{packagename}"
+    path =
+      @registry <>
+        "/downloads/point/" <> "#{start}" <> ":" <> "#{ending}" <> "/" <> "#{packagename}"
 
     with {:ok, %{body: result}} <-
-           Finch.build(:get, @registry <> path) |> Finch.request(Back.Finch),
+           Finch.build(:get, path) |> Finch.request(Back.Finch),
          {:ok, response} <- Jason.decode(result) do
       response
     else
