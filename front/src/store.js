@@ -52,7 +52,7 @@ export async function searchPackages(pkg) {
         useZstore.setState({ packages: packages });
       }
     } catch (error) {
-      window.alert("Error");
+      window.alert("Error, try again!");
       history.push("/");
     }
   }

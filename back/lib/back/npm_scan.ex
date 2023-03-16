@@ -1,6 +1,6 @@
-defmodule Back.Npm do
+defmodule Back.NpmScan do
   @moduledoc """
-  Version using `Stream.resource`. Works on Fly.io.
+  Version using `Stream.scan`. Failed to use with Fly.io.
   """
   require Logger
 
@@ -21,6 +21,11 @@ defmodule Back.Npm do
     else
       {:error, reason} -> reason
     end
+  end
+
+  def scan_for(string \\ "@grucloud") do
+    1..round(Float.ceil(total(string) / 25))
+    |> Stream.transform([], fn item, acc -> {search(string, item), acc} end)
   end
 
   def find(save? \\ false, string \\ @search, starting \\ @starting, ending \\ @ending) do
@@ -45,24 +50,8 @@ defmodule Back.Npm do
       end)
     end
 
-    next = fn {data, page} ->
-      {response, total} = search(string, 25 * page)
-
-      case page * 25 >= total do
-        true ->
-          {:halt, data}
-
-        false ->
-          {response, {data, page + 1}}
-      end
-    end
-
     try do
-      Stream.resource(
-        fn -> {[], 0} end,
-        &next.(&1),
-        fn _ -> nil end
-      )
+      scan_for(string)
       |> Task.async_stream(&downloaded(&1, starting, ending))
       |> Stream.map(&check_response.(&1))
       |> Enum.sort_by(&Map.get(&1, "downloads"), :desc)
@@ -70,6 +59,7 @@ defmodule Back.Npm do
       |> Enum.map(fn %{"downloads" => d, "package" => name} ->
         Map.put(%{}, name, d)
       end)
+      |> Enum.uniq()
     rescue
       e ->
         Logger.warn(e)
@@ -78,19 +68,28 @@ defmodule Back.Npm do
     end
   end
 
+  def total(string, from \\ 0) do
+    with {:ok, %{body: body}} <-
+           Finch.build(:get, @search_point <> "?q=#{string}&size=25&from=#{from}")
+           |> Finch.request(Back.Finch),
+         {:ok, json} <- Jason.decode(body),
+         {:ok, count} <- Map.fetch(json, "total") do
+      count
+    else
+      {:error, reason} -> reason
+    end
+  end
+
   def search(string, from \\ 0) do
     with {:ok, %{body: body}} <-
            Finch.build(:get, @search_point <> "?q=#{string}&size=25&from=#{from}")
            |> Finch.request(Back.Finch),
-         {:ok, %{"results" => results, "total" => total}} <- Jason.decode(body) do
-      {
-        Stream.filter(results, fn package ->
-          Map.has_key?(package, "flags") === false &&
-            get_in(package, ["package", "name"]) |> String.contains?(string)
-        end)
-        |> Stream.map(&get_in(&1, ["package", "name"])),
-        total
-      }
+         {:ok, %{"results" => results}} <- Jason.decode(body) do
+      Stream.filter(results, fn package ->
+        Map.has_key?(package, "flags") === false &&
+          get_in(package, ["package", "name"]) |> String.contains?(string)
+      end)
+      |> Stream.map(&get_in(&1, ["package", "name"]))
     else
       {:error, reason} ->
         reason
