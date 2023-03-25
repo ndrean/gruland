@@ -1,10 +1,10 @@
 import { create } from "zustand";
 import history from "./history";
 import debounce from "lodash.debounce";
-
 import { getJson, githubJson } from "./github";
 import resources from "./resources";
 
+/** store for selecting serverlessland examples ******/
 const filterData = (set) => (value, name) =>
   set((state) => {
     const updatedMap = new Map(state.filterMap).set(name.toLowerCase(), value);
@@ -37,6 +37,8 @@ export const useZstore = create((set, get) => ({
   searched_package: "@grucloud",
 }));
 
+/** Search Packages *****************************/
+
 export async function searchPackages(pkg) {
   const host = "https://gruland.fly.dev/api/packages?";
   const local = "http://localhost:4000/api/packages?";
@@ -64,7 +66,7 @@ export async function searchPackages(pkg) {
   return packages;
 }
 
-/*****************************/
+/** Resource filtering store ***************************/
 
 const filterResources = (set) =>
   debounce(
