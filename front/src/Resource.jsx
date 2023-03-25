@@ -70,13 +70,16 @@ export function Resource() {
               form="form"
               id="form"
               onClick={handleReset}
-              className="inline-block rounded bg-slate-300 px-6 pt-2.5 pb-2 text-lg font-medium uppercase leading-normal text-black  shadow-[0_2px_3px_-2px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+              className="inline-block rounded bg-blue-700 px-6 pt-2.5 pb-2 text-lg font-medium uppercase leading-normal text-white  shadow-[0_2px_3px_-2px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
             >
               Reset
             </button>
           </form>
         </div>
       </div>
+
+      <h2>The available resources are:</h2>
+
       <div className="ml-10">
         <DisplayResource filteredResources={filteredResources} />
       </div>
