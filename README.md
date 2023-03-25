@@ -4,6 +4,10 @@ Accessible via: <https://gruland.surge.sh>
 
 A backend to serve the statistics on AWS package from NPM is deployed on fly.io (`curl https://gruland.fly.dev/api/packages?p="@grucloud"`)
 
+```bash
+> fly deploy
+```
+
 ## JSON files (Elixir)
 
 1/ To build the examples,

@@ -49,7 +49,6 @@ export async function searchPackages(pkg) {
       const response = await fetch(host + new URLSearchParams({ p: pkg }), {
         mode: "cors",
       });
-      console.log({ response });
       if (response) {
         packages = await response.json();
 
