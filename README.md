@@ -58,4 +58,17 @@ The code of AWS NPM packages can be run in a Livebook.
 
 Vite generate Preact + Universal-Router + Zustand
 
+Package.json:
+
+```json
+"dependencies": {
+    "history": "^5.3.0",
+    "preact": "^10.11.3",
+    "universal-router": "^9.1.0",
+    "zustand": "^4.3.6"
+  },
+```
+
+Erase "React" in the "node_modules".
+
 Visible at: <https://gruland.surge.sh>

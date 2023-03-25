@@ -20,28 +20,24 @@ defmodule Back.Npm do
          {:ok, response} <- Jason.decode(result) do
       response
     else
-      {:error, reason} -> reason
+      {:error, reason} ->
+        {:error, reason}
     end
   end
 
   def find(save? \\ false, string \\ @search, starting \\ @starting, ending \\ @ending) do
-    check_response = fn response ->
-      case response do
-        {:ok, result} ->
-          result
-
-        {:error, reason} ->
-          {:error, reason}
-      end
+    check_response = fn
+      {:ok, response} -> response
+      {:error, reason} -> reason
     end
 
     save_to_file = fn list ->
       Logger.info(%{length: length(list)})
 
-      Task.start(fn ->
+      Task.Supervisor.async_nolink(TSupervisor, fn ->
         case Poison.encode(list, %{pretty: true, indent: 2}) do
           {:ok, result} -> File.write!("../aws-npm-packages.json", result)
-          {:error, reason} -> reason
+          {:error, reason} -> {:error, reason}
         end
       end)
     end
@@ -58,24 +54,32 @@ defmodule Back.Npm do
       end
     end
 
-    try do
-      Stream.resource(
-        fn -> {[], 0} end,
-        &next.(&1),
-        fn _ -> nil end
-      )
-      |> Task.async_stream(&downloaded(&1, starting, ending))
-      |> Stream.map(&check_response.(&1))
-      |> Enum.sort_by(&Map.get(&1, "downloads"), :desc)
-      |> tap(fn data -> if save?, do: save_to_file.(data) end)
-      |> Enum.map(fn %{"downloads" => d, "package" => name} ->
+    cross_data = fn
+      nil ->
+        {:error, :empty}
+
+      %{"downloads" => d, "package" => name} ->
         Map.put(%{}, name, d)
-      end)
+    end
+
+    try do
+      {:ok,
+       Stream.resource(
+         fn -> {[], 0} end,
+         &next.(&1),
+         fn _ -> nil end
+       )
+       |> Task.async_stream(&downloaded(&1, starting, ending), timeout: 6_000)
+       |> Stream.map(&check_response.(&1))
+       |> Enum.sort_by(&Map.get(&1, "downloads"), :desc)
+       |> tap(fn data -> if save?, do: save_to_file.(data) end)
+       |> Enum.map(&cross_data.(&1))}
     rescue
       e ->
         Logger.warn(e)
-        Process.sleep(1_000)
-        find(string, starting, ending)
+        {:error, :emtpy}
+        #     Process.sleep(1_000)
+        #     find(string, starting, ending)
     end
   end
 
@@ -94,7 +98,7 @@ defmodule Back.Npm do
       }
     else
       {:error, reason} ->
-        reason
+        {:error, reason}
     end
   end
 end

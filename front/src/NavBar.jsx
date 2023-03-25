@@ -2,7 +2,8 @@ import history from "./history";
 
 const navLinks = [
   { path: "/", title: "ServerlessLand examples" },
-  { path: "/npm-aws", title: "npm AWS" },
+  { path: "/resources", title: "Resources" },
+  { path: "/npm-aws", title: "npm packages" },
 ];
 
 const Link = ({ path, title, handler }) => {

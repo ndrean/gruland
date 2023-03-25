@@ -1,11 +1,16 @@
 import UniversalRouter from "universal-router";
-import { useZstore, upload } from "./store";
+import { useZstore, upload, useResource } from "./store";
+import resources from "./resources.js";
 
 async function setExample(id) {
   const data = useZstore.getState().selectedData;
   const example = data.filter((ex) => ex.id === id)[0];
   const { default: Example } = await import("./Example");
   return Example({ example });
+}
+
+function setResources() {
+  useResource.setState({ resources });
 }
 
 const router = new UniversalRouter([
@@ -30,6 +35,14 @@ const router = new UniversalRouter([
         action: async () => {
           const { Packages } = await import("./Packages");
           return <Packages />;
+        },
+      },
+      {
+        path: "/resources",
+        action: async () => {
+          setResources();
+          const { Resource } = await import("./Resource");
+          return <Resource />;
         },
       },
       {

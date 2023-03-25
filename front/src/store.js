@@ -1,6 +1,9 @@
 import { create } from "zustand";
-import { getJson, githubJson } from "./github";
 import history from "./history";
+import debounce from "lodash.debounce";
+
+import { getJson, githubJson } from "./github";
+import resources from "./resources";
 
 const filterData = (set) => (value, name) =>
   set((state) => {
@@ -46,9 +49,10 @@ export async function searchPackages(pkg) {
       const response = await fetch(host + new URLSearchParams({ p: pkg }), {
         mode: "cors",
       });
-
+      console.log({ response });
       if (response) {
         packages = await response.json();
+
         useZstore.setState({ packages: packages });
       }
     } catch (error) {
@@ -60,3 +64,25 @@ export async function searchPackages(pkg) {
   useZstore.setState({ disabled: false });
   return packages;
 }
+
+/*****************************/
+
+const filterResources = (set) =>
+  debounce(
+    (query) =>
+      set((state) => {
+        const filtered = state.resources.filter((resource) =>
+          resource.title.toLowerCase().includes(query.toLowerCase())
+        );
+        return { filteredResources: filtered };
+      }),
+    500
+  );
+export const useResource = create((set) => ({
+  query: "",
+  setQuery: (q) => set(() => ({ query: q })),
+  resources,
+  setResources: (resources) => set(() => ({ resources })),
+  filteredResources: resources,
+  filterResources: filterResources(set),
+}));

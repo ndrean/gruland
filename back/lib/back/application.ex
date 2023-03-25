@@ -12,6 +12,7 @@ defmodule Back.Application do
       BackWeb.Telemetry,
       {Phoenix.PubSub, name: Back.PubSub},
       {Finch, name: Back.Finch},
+      {Task.Supervisor, name: TSupervisor},
       # Start the Endpoint (http/https)
       BackWeb.Endpoint
     ]

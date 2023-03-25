@@ -2,7 +2,9 @@ defmodule BackWeb.Router do
   use BackWeb, :router
 
   pipeline :api do
-    plug(Corsica, origins: ["http://localhost:5173", "https://gruland.surge.sh"])
+    plug(Corsica,
+      origins: ["http://localhost:5173", "http://localhost:5174", "https://gruland.surge.sh"]
+    )
 
     plug(:accepts, ["json"])
   end
