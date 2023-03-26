@@ -75,7 +75,7 @@ const filterResources = (set) =>
         const filtered = state.resources.filter((resource) =>
           resource.title.toLowerCase().includes(query.toLowerCase())
         );
-        return { filteredResources: filtered };
+        return { filteredResources: filtered, query: query };
       }),
     500
   );

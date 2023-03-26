@@ -29,17 +29,10 @@ function DisplayResource({ filteredResources }) {
 
 export function Resource() {
   const query = useResource((state) => state.query);
+  const setQuery = useResource((state) => state.setQuery);
   const filterResources = useResource((state) => state.filterResources);
   const filteredResources = useResource((state) => state.filteredResources);
   const resetResources = useResource((state) => state.resetResources);
-
-  const handleChange = ({ target: { value } }) => {
-    useResource.setState({ query: value });
-    return filterResources(value);
-  };
-
-  const resetQuery = () => useResource.setState({ query: "" });
-  const handleReset = () => resetResources();
 
   return (
     <>
@@ -47,8 +40,8 @@ export function Resource() {
         <div className="relative mb-3 xl:w-96" data-te-input-wrapper-init>
           <form id="form" className="flex space-x-2">
             <input
-              onChange={handleChange}
-              onBlur={resetQuery}
+              onChange={(e) => filterResources(e.target.value)}
+              onBlur={() => setQuery("")}
               value={query}
               type="search"
               id="search"
@@ -66,7 +59,7 @@ export function Resource() {
               type="button"
               form="form"
               id="form"
-              onClick={handleReset}
+              onClick={resetResources}
               className="inline-block rounded bg-blue-700 px-6 pt-2.5 pb-2 text-lg font-medium uppercase leading-normal text-white  shadow-[0_2px_3px_-2px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
             >
               Reset
