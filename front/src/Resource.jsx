@@ -31,6 +31,7 @@ export function Resource() {
   const query = useResource((state) => state.query);
   const filterResources = useResource((state) => state.filterResources);
   const filteredResources = useResource((state) => state.filteredResources);
+  const resetResources = useResource((state) => state.resetResources);
 
   const handleChange = ({ target: { value } }) => {
     useResource.setState({ query: value });
@@ -38,12 +39,7 @@ export function Resource() {
   };
 
   const resetQuery = () => useResource.setState({ query: "" });
-
-  const handleReset = (e) => {
-    e.preventDefault();
-    const allResources = useResource.getState().resources;
-    return useResource.setState({ filteredResources: allResources });
-  };
+  const handleReset = () => resetResources();
 
   return (
     <>
@@ -67,6 +63,7 @@ export function Resource() {
               <span className="truncate max-w-[90%] text-black">Search</span>
             </label>
             <button
+              type="button"
               form="form"
               id="form"
               onClick={handleReset}

@@ -79,11 +79,17 @@ const filterResources = (set) =>
       }),
     500
   );
-export const useResource = create((set) => ({
+
+const resetResources = (set) => () =>
+  set(() => ({
+    filteredResources: resources,
+    query: "",
+  }));
+
+export const useResource = create((set, get) => ({
   query: "",
   setQuery: (q) => set(() => ({ query: q })),
-  resources,
-  setResources: (resources) => set(() => ({ resources })),
   filteredResources: resources,
   filterResources: filterResources(set),
+  resetResources: resetResources(set),
 }));
