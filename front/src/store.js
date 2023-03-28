@@ -48,7 +48,7 @@ export async function searchPackages(pkg) {
   let packages = useZstore.getState().packages;
   if (!packages) {
     try {
-      const response = await fetch(local + new URLSearchParams({ p: pkg }), {
+      const response = await fetch(host + new URLSearchParams({ p: pkg }), {
         mode: "cors",
       });
       if (response) {
