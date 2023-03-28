@@ -72,8 +72,10 @@ const filterResources = (set) =>
   debounce(
     (query) =>
       set((state) => {
-        const filtered = state.resources.filter((resource) =>
-          resource.title.toLowerCase().includes(query.toLowerCase())
+        const filtered = state.resources.filter(
+          (resource) =>
+            resource.type.toLowerCase().includes(query.toLowerCase()) ||
+            resource.group.toLowerCase().includes(query.toLowerCase())
         );
         return { filteredResources: filtered, query: query };
       }),

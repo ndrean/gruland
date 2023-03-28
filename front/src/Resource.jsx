@@ -21,7 +21,16 @@ function DisplayResource({ filteredResources }) {
   return (
     <ul>
       {filteredResources.map((resource, idx) => (
-        <li key={idx}>{resource.title}</li>
+        <li key={idx}>
+          {resource.group}
+          <ul className="ml-10">
+            {resource.Resources.map((Res, idres) => (
+              <li key={idres} className="list-[square]">
+                {Res}
+              </li>
+            ))}
+          </ul>
+        </li>
       ))}
     </ul>
   );
@@ -68,7 +77,7 @@ export function Resource() {
         </div>
       </div>
 
-      <h2>The available resources are:</h2>
+      <h2>{filteredResources.length} matching result(s)</h2>
 
       <div className="ml-10">
         <DisplayResource filteredResources={filteredResources} />
