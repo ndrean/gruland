@@ -77,21 +77,13 @@ const filterResources = (set) =>
             resource.type.toLowerCase().includes(query.toLowerCase()) ||
             resource.group.toLowerCase().includes(query.toLowerCase())
         );
-        return { filteredResources: filtered, query: query };
+        return { filteredResources: filtered };
       }),
     500
   );
 
-const resetResources = (set) => () =>
-  set(() => ({
-    filteredResources: resources,
-    query: "",
-  }));
-
 export const useResource = create((set, get) => ({
-  query: "",
-  setQuery: (q) => set(() => ({ query: q })),
   filteredResources: resources,
   filterResources: filterResources(set),
-  resetResources: resetResources(set),
+  resetResources: () => set(() => ({ filteredResources: resources })),
 }));
