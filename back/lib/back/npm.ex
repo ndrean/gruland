@@ -69,7 +69,7 @@ defmodule Back.Npm do
          &next.(&1),
          fn _ -> nil end
        )
-       |> Task.async_stream(&downloaded(&1, starting, ending), timeout: 6_000)
+       |> Task.async_stream(&downloaded(&1, starting, ending), timeout: 10_000)
        |> Stream.map(&check_response.(&1))
        |> Enum.sort_by(&Map.get(&1, "downloads"), :desc)
        |> tap(fn data -> if save?, do: save_to_file.(data) end)

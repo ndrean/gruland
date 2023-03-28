@@ -48,7 +48,7 @@ export async function searchPackages(pkg) {
   let packages = useZstore.getState().packages;
   if (!packages) {
     try {
-      const response = await fetch(host + new URLSearchParams({ p: pkg }), {
+      const response = await fetch(local + new URLSearchParams({ p: pkg }), {
         mode: "cors",
       });
       if (response) {
@@ -59,11 +59,12 @@ export async function searchPackages(pkg) {
     } catch (error) {
       window.alert("Error, try again!");
       history.push("/");
+    } finally {
+      useZstore.setState({ loadingPkg: false });
+      useZstore.setState({ disabled: false });
+      return packages;
     }
   }
-  useZstore.setState({ loadingPkg: false });
-  useZstore.setState({ disabled: false });
-  return packages;
 }
 
 /** Resource filtering store ***************************/
