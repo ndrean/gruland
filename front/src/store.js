@@ -4,32 +4,65 @@ import debounce from "lodash.debounce";
 import { getJson, githubJson } from "./github";
 import resources from "./resources";
 
+function reduceList(list, key) {
+  return [
+    ...new Set(
+      list.reduce((acc, curr) => {
+        if (curr[key] === undefined) return [...acc];
+        return [...acc, curr[key].toLowerCase()];
+      }, [])
+    ),
+  ];
+}
 /** store for selecting serverlessland examples ******/
 const filterData = (set) => (value, name) =>
   set((state) => {
     const updatedMap = new Map(state.filterMap).set(name.toLowerCase(), value);
-
+    let enabled = [];
     let list = [...state.initData];
     for (const [k, v] of updatedMap) {
       list = list.filter((example) => example[k] === v);
+      let key = "framework";
+      if (k === "framework") key = "language";
+      enabled = reduceList(list, key);
     }
-    return { selectedData: list, filterMap: updatedMap };
+
+    return { selectedData: list, filterMap: updatedMap, enabled: enabled };
   });
 
-export async function upload() {
-  if (useZstore.getState().initData === null) {
-    const list = await getJson(githubJson);
-    useZstore.setState({ initData: list, selectedData: list, loader: false });
-  }
-}
+const initEnabled = (list) => {
+  return list.reduce((acc, curr) => {
+    if (
+      curr.language === undefined ||
+      curr.framework === undefined ||
+      curr.language === "" ||
+      curr.language === "n/a" ||
+      curr.framework === "n/a" ||
+      curr.framework === ""
+    )
+      return acc;
+    const res = [
+      ...acc,
+      curr.language.toLowerCase(),
+      curr.framework.toLowerCase(),
+    ];
+    return [...new Set(res)];
+  }, []);
+};
 
 export const useZstore = create((set, get) => ({
   initData: null,
+  initEnabled: null,
+  enabled: [],
   filterMap: new Map(),
   selectedData: [],
   filterData: filterData(set),
   resetZstore: () =>
-    set({ filterMap: new Map(), selectedData: get().initData }),
+    set({
+      filterMap: new Map(),
+      selectedData: get().initData,
+      enabled: get().initEnabled,
+    }),
   loader: true,
   loadingPkg: false,
   packages: null,
@@ -37,6 +70,19 @@ export const useZstore = create((set, get) => ({
   searched_package: "@grucloud",
 }));
 
+export async function upload() {
+  if (useZstore.getState().initData === null) {
+    const list = await getJson(githubJson);
+    const initEnable = initEnabled(list);
+    return useZstore.setState({
+      initData: list,
+      selectedData: list,
+      loader: false,
+      enabled: initEnable,
+      initEnabled: initEnable,
+    });
+  }
+}
 /** Search Packages *****************************/
 
 export async function searchPackages(pkg) {

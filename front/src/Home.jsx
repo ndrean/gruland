@@ -8,6 +8,7 @@ import "./index.css";
 
 export default function Home() {
   const examples = useZstore((state) => state.selectedData);
+  const enabled = useZstore((state) => state.enabled);
   const resetZstore = useZstore((state) => state.resetZstore);
   const filterData = useZstore((state) => state.filterData);
   const selectionMap = useZstore((state) => state.filterMap);
@@ -35,7 +36,7 @@ export default function Home() {
         <Reset handleReset={handleReset} />
         <p>Filters: ({examples && examples.length} template(s))</p>
         <hr />
-        <DrawSelection handlers={{ handleChange, controlCheck }} />
+        <DrawSelection handlers={{ handleChange, controlCheck, enabled }} />
       </div>
       <main className="  flex-wrap w-full  bg-white h-auto overflow-y-auto mb-14">
         {loader ? (

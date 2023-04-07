@@ -3,8 +3,10 @@ export default function DrawInput({ inputOb }) {
     name,
     type,
     val,
-    handlers: { handleChange, controlCheck },
+    handlers: { handleChange, controlCheck, enabled },
   } = inputOb;
+
+  const enable = enabled.includes(val.toLowerCase());
 
   return (
     <div>
@@ -13,6 +15,7 @@ export default function DrawInput({ inputOb }) {
         id={val}
         name={name}
         value={val}
+        disabled={!enable}
         checked={controlCheck(name, val)}
         onChange={handleChange}
       />

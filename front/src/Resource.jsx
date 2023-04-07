@@ -27,7 +27,7 @@ function DisplayResource({ filteredResources }) {
           <ul className="ml-10">
             {resource.Resources.map((Res, idres) => (
               <li key={idres} className="list-[square]">
-                {Res}
+                | {Res}
               </li>
             ))}
           </ul>
