@@ -2,14 +2,21 @@
 
 ```elixir
 Mix.install([
-  {:poison, "~> 5.0"},
-  {:uuid, "~> 1.1"},
-  {:jason, "~> 1.4"},
-  {:finch, "~> 0.14"},
-  {:kino_vega_lite, "~> 0.1.7"}
+  {:finch, "~> 0.16.0"},
+  {:jsonrs, "~> 0.3.1"},
+  {:kino_vega_lite, "~> 0.1.9"}
 ])
+```
 
-Finch.start_link(name: Npm.Finch)
+```elixir
+Supervisor.start_link(
+  [
+    {Finch, name: MyFinch},
+    {Task.Supervisor, name: MyTaskSup}
+  ],
+  strategy: :one_for_one,
+  name: MySup
+)
 ```
 
 ## Section
@@ -20,45 +27,36 @@ defmodule Npm do
 
   @registry "https://api.npmjs.org"
   @search_point "https://api.npms.io/v2/search"
+  @starting "2022-01-01"
+  @ending "2023-01-01"
+  @search "@aws-sdk/client"
 
   def downloaded(packagename, start, ending) do
-    registry = @registry
-    path = "/downloads/point/" <> "#{start}" <> ":" <> "#{ending}" <> "/" <> "#{packagename}"
+    path =
+      @registry <>
+        "/downloads/point/" <> "#{start}" <> ":" <> "#{ending}" <> "/" <> "#{packagename}"
 
-    case Finch.build(:get, registry <> path) |> Finch.request(Npm.Finch) do
-      {:ok, %{body: body}} ->
-        case Jason.decode(body <> ",") do
-          {:ok, response} -> response
-          {:error, reason} -> {:error, reason}
-        end
-
+    with {:ok, %{body: result}} <-
+           Finch.build(:get, path) |> Finch.request(MyFinch),
+         {:ok, response} <- Jsonrs.decode(to_string(result)) do
+      response
+    else
       {:error, reason} ->
         {:error, reason}
     end
   end
 
-  @starting "2022-01-01"
-  @ending "2023-01-01"
-  @search "@aws-sdk/client"
-
-  def find(string \\ @search, starting \\ @starting, ending \\ @ending) do
-    check_response = fn response ->
-      case response do
-        {:ok, result} ->
-          result
-
-        {:error, reason} ->
-          {:error, reason}
-      end
+  def find(save? \\ false, string \\ @search, starting \\ @starting, ending \\ @ending) do
+    check_response = fn
+      {:ok, response} -> response
+      {:error, reason} -> reason
     end
 
     save_to_file = fn list ->
-      Logger.info(%{length: length(list)})
-
-      Task.start(fn ->
-        case Poison.encode(list, %{pretty: true, indent: 2}) do
-          {:ok, result} -> File.write!("aws-npm-packages.json", result)
-          {:error, reason} -> reason
+      Task.Supervisor.async_nolink(MyTaskSup, fn ->
+        case Jsonrs.encode(list, lean: true, pretty: true) do
+          {:ok, result} -> File.write!("../aws-npm-packages.json", result)
+          {:error, reason} -> {:error, reason}
         end
       end)
     end
@@ -75,52 +73,55 @@ defmodule Npm do
       end
     end
 
-    try do
-      Stream.resource(
-        fn -> {[], 0} end,
-        &next.(&1),
-        fn _ -> nil end
-      )
-      |> Task.async_stream(&downloaded(&1, starting, ending))
-      |> Stream.map(&check_response.(&1))
-      |> Enum.sort_by(
-        fn result ->
-          result["downloads"]
-        end,
-        :desc
-      )
-      |> tap(&save_to_file.(&1))
+    cross_data = fn
+      nil ->
+        {:error, :empty}
 
-      # |> Enum.map(fn %{"downloads" => d, "package" => name} ->
-      #  Map.put(%{}, name, d)
-      # end)
+      %{"downloads" => d, "package" => name} ->
+        Map.put(%{}, name, d)
+    end
+
+    try do
+      {:ok,
+       Stream.resource(
+         fn -> {[], 0} end,
+         &next.(&1),
+         fn _ -> nil end
+       )
+       |> Task.async_stream(&downloaded(&1, starting, ending), timeout: 10_000)
+       |> Stream.map(&check_response.(&1))
+       |> Enum.sort_by(&Map.get(&1, "downloads"), :desc)
+       |> tap(fn data -> if save?, do: save_to_file.(data) end)
+       |> Enum.map(&cross_data.(&1))}
     rescue
       e ->
         Logger.warn(e)
-        Process.sleep(1_000)
-        find(string, starting, ending)
+        {:error, :emtpy}
+        #     Process.sleep(1_000)
+        #     find(string, starting, ending)
     end
   end
 
   def search(string, from \\ 0) do
-    case Finch.build(:get, @search_point <> "?q=#{string}&size=25&from=#{from}")
-         |> Finch.request(Npm.Finch) do
-      {:ok, %{body: result}} ->
-        case Jason.decode(result) do
-          {:ok, %{"results" => results, "total" => total}} ->
-            {
-              Enum.filter(results, fn package ->
-                Map.has_key?(package, "flags") === false &&
-                  get_in(package, ["package", "name"]) |> String.contains?("@aws-sdk/client")
-              end)
-              |> Enum.map(&get_in(&1, ["package", "name"])),
-              total
-            }
+    url =
+      @search_point
+      |> URI.new!()
+      |> URI.append_query(URI.encode_query(%{q: string, size: 25, from: from}))
+      |> URI.to_string()
 
-          {:error, reason} ->
-            {:error, reason}
-        end
-
+    with {:ok, %{body: body}} <-
+           Finch.build(:get, url)
+           |> Finch.request(MyFinch),
+         {:ok, %{"results" => results, "total" => total}} <- Jsonrs.decode(body) do
+      {
+        Stream.filter(results, fn package ->
+          Map.has_key?(package, "flags") === false &&
+            get_in(package, ["package", "name"]) |> String.contains?(string)
+        end)
+        |> Stream.map(&get_in(&1, ["package", "name"])),
+        total
+      }
+    else
       {:error, reason} ->
         {:error, reason}
     end
@@ -129,7 +130,7 @@ end
 ```
 
 ```elixir
-data = Npm.find("@aws-sdk/client", "2022-01-01", "2023-01-01")
+data = Npm.find(false, "@aws-sdk/client", "2022-01-01", "2023-01-01")
 ```
 
 ```elixir
