@@ -5,7 +5,7 @@ defmodule Back.MixProject do
     [
       app: :back,
       version: "0.1.0",
-      elixir: "~> 1.14",
+      elixir: "~> 1.15",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
@@ -37,9 +37,10 @@ defmodule Back.MixProject do
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
       {:plug_cowboy, "~> 2.5"},
-      {:poison, "~> 5.0"},
+      # {:poison, "~> 5.0"},
       {:uuid, "~> 1.1"},
-      {:jason, "~> 1.4"},
+      # {:jason, "~> 1.4"},
+      {:jsonrs, "~> 0.3.1"},
       {:finch, "~> 0.14"},
       {:corsica, "~> 1.3"}
     ]

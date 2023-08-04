@@ -17,7 +17,7 @@ defmodule Back.Npm do
 
     with {:ok, %{body: result}} <-
            Finch.build(:get, path) |> Finch.request(Back.Finch),
-         {:ok, response} <- Jason.decode(result) do
+         {:ok, response} <- Jsonrs.decode(result) do
       response
     else
       {:error, reason} ->
@@ -32,10 +32,8 @@ defmodule Back.Npm do
     end
 
     save_to_file = fn list ->
-      Logger.info(%{length: length(list)})
-
       Task.Supervisor.async_nolink(TSupervisor, fn ->
-        case Poison.encode(list, %{pretty: true, indent: 2}) do
+        case Jsonrs.encode(list, lean: true, pretty: true) do
           {:ok, result} -> File.write!("../aws-npm-packages.json", result)
           {:error, reason} -> {:error, reason}
         end
@@ -84,10 +82,16 @@ defmodule Back.Npm do
   end
 
   def search(string, from \\ 0) do
+    url =
+      @search_point
+      |> URI.new!()
+      |> URI.append_query(URI.encode_query(%{q: string, size: 25, from: from}))
+      |> URI.to_string()
+
     with {:ok, %{body: body}} <-
-           Finch.build(:get, @search_point <> "?q=#{string}&size=25&from=#{from}")
+           Finch.build(:get, url)
            |> Finch.request(Back.Finch),
-         {:ok, %{"results" => results, "total" => total}} <- Jason.decode(body) do
+         {:ok, %{"results" => results, "total" => total}} <- Jsonrs.decode(body) do
       {
         Stream.filter(results, fn package ->
           Map.has_key?(package, "flags") === false &&
